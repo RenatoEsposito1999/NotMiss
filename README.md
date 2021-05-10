@@ -1,5 +1,5 @@
 # NotMiss
- PWA esame TW6
+ PWA TW6 exam
 
 NotMiss is a PWA (progressive web app) conceived by Esposito Renato and Luca Rubino for a university project of web technologies (TW6) of the Parthenope University of Naples.
 
