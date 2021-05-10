@@ -3,3 +3,8 @@
 ._m10{
     margin: 10px;
 }
+
+a, a:hover, a:visited{
+    color: white;
+    font-weight: bold;
+}
