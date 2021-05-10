@@ -1,7 +1,7 @@
 <h1><img align="left" width="32" height="32" src="https://github.com/RenatoEsposito1999/NotMiss/blob/main/IMG/logoico.ico" >NotMiss</h1>
 
 <img align="left" src="https://github.com/RenatoEsposito1999/NotMiss/blob/main/IMG/logo.png" > <h3>TW6 university project: NotMiss</h3>
-NotMiss is a <b>PWA<b> (Progressive Web App) conceived by Esposito Renato and Luca Rubino for a university project of web technologies (TW6) of the <b>Parthenope University of Naples<b>.
+NotMiss is a <b>PWA<b> (Progressive Web App) conceived by Renato Esposito and Luca Rubino for a university project of web technologies (TW6) of the <b>Parthenope University of Naples<b>.
 
 <br><br>
 
