@@ -1,0 +1,4 @@
+Modificare logo per grandezze s md e lg
+Sticky footer
+Fare pagina accedi
+Aggiungere pulsante che al click mostra un menu laterale
