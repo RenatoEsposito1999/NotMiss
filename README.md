@@ -1,11 +1,11 @@
 <h1><img align="left" width="32" height="32" src="https://github.com/RenatoEsposito1999/NotMiss/blob/main/IMG/logoico.ico" >NotMiss</h1>
 
 <img align="left" src="https://github.com/RenatoEsposito1999/NotMiss/blob/main/IMG/logo.png" > <h3>TW6 university project: NotMiss</h3>
-NotMiss is a <b>PWA<b> (Progressive Web App) conceived by Renato Esposito and Luca Rubino for a university project of web technologies (TW6) of the <b>Parthenope University of Naples<b>.
+NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato Esposito</b> and <b>Luca Rubino</b> for a university project of <a href="https://www.uniparthenope.it/ugov/degreecourse/43358"><i>Web Technologies</i>(TW6)</a> of the <b><i><a href="https://www.uniparthenope.it/">Parthenope University of Naples</a></i><b>.
 
 <br><br>
 
-<h3>Goals</h3>
+<h3><i>Goals</i></h3>
 
 ◉ The idea is to offer a platform for the management and organization of events.
 
@@ -16,7 +16,7 @@ NotMiss is a <b>PWA<b> (Progressive Web App) conceived by Renato Esposito and Lu
 ◉ NotMiss aims to be a PWA entirely dedicated to the concept of a 360 ° event.
 
 
-<h3>Functionality</h3>
+<h3><i>Functionality</i></h3>
 
 <h4>The NotMiss PWA offers the possibily:</h4>
 
