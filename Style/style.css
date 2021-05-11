@@ -1,4 +1,9 @@
 /* In this file will go the bootstrap CSS rules but adapted by us  */
+
+body{
+    min-height: 100vh;
+}
+
 ._m10{
     margin: 10px;
 }
@@ -29,9 +34,8 @@ p{
 }
 
 ._footer{
-    position: relative;
-    bottom: 0;
-
+    position: sticky;
+    top: 100%;
 }
 
 li a, li a:hover, li a:visited{
@@ -39,3 +43,40 @@ li a, li a:hover, li a:visited{
     color: #DDD;
 }
 
+
+._re-size{
+    height: auto;
+    width: 30%;
+
+}
+
+@media (min-width: 576px) {
+    ._re-size{
+        width: 32%;
+    }
+}
+
+@media (min-width: 768px) {
+    ._re-size{
+        width: 32%;
+    }
+}
+
+@media (min-width: 992px) {
+    ._re-size{
+        width: 25%;
+    }
+}
+
+@media (min-width: 1200px) {
+    ._re-size{
+        width: 13%;
+    }
+}
+
+@media (min-width: 2560px) {
+    ._re-size{
+        width: 15%;
+
+    }
+}

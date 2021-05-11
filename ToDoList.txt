@@ -1,4 +1,3 @@
-Modificare logo per grandezze s md e lg
-Sticky footer
+Ridimensionare tasti header (con js solo per risoluzione max 767px spostare select nella classe col-1 e accedi nella classe col 12 con un po di margine)
 Fare pagina accedi
 Aggiungere pulsante che al click mostra un menu laterale
