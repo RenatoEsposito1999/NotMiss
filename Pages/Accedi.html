@@ -48,18 +48,28 @@
 
 <!-- Fine header -->
 
-  <div class="container mt-5 mb-5">
+  <div class="container mt-5 mb-5 col-12">
 
     <div class="row">
 
-        <div class="col-4 offset-4">
+        <div class="col-8 offset-2 col-sm-8 offset-sm-2  col-md-4 offset-md-4 bg-warning text-center">
+
           <form>
             <label for="_email"></label>
-            <input id="_email" class="_accedi-form" type="email" placeholder="Inserisci la tua email" size="30%"> <br>
+            <input id="_email" class="_accedi-form _fEmail" type="email" placeholder="Inserisci la tua email" autocomplete="on" autofocus> <br>
+
+
             <label for="_password"></label>
-            <input id="_password" class="_accedi-form" type="password" placeholder="Inserisci la tua password" size="30%"> <br>
+            <input id="_password" class="_accedi-form _fPassw" type="password" placeholder="Inserisci la tua password" > <br>
+
+
             <label for="_Accedi"></label>
-            <input id="_Accedi" class="_accedi-form" type="submit" value="Accedi">
+            <input id="_Accedi" class="_bAccedi" type="submit" value="Accedi"> <br>
+            <hr>
+            <a href="/Pages/Registrazione.html">
+              <label for="_Registrazione"></label>
+              <input type="button" id="_Registrazione" class="_accedi-form _bCreaAcc" value="Crea un account!">
+            </a>
           </form>
         </div>
 
