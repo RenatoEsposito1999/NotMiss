@@ -8,6 +8,10 @@ body{
     margin: 10px;
 }
 
+._mt10{
+	margin-top:10px;
+}
+
 a, a:hover, a:visited{
     color: white;
     font-weight: bold;
