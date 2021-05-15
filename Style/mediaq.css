@@ -1,0 +1,47 @@
+
+@media (min-width: 576px) {
+    ._re-size{
+        width: 32%;
+    }
+}
+
+@media (min-width: 768px) {
+    ._re-size{
+        width: 32%;
+    }
+    #_Accedi{
+        width: 40%;
+    }
+
+}
+
+@media (min-width: 992px) {
+    ._re-size{
+        width: 25%;
+    }
+}
+
+@media (min-width: 1200px) {
+    ._re-size{
+        width: 13%;
+    }
+    ._bAccedi{
+        width: 8em;
+    }
+}
+
+@media (min-width: 2560px) {
+    ._re-size{
+        width: 15%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    #_Accedi{
+        width: 90%;
+    }
+}
+
+
+

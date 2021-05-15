@@ -49,75 +49,25 @@ li a, li a:hover, li a:visited{
 }
 
 
-
-._accedi-form{
-    margin: 15px;
-    width: 90%;
-}
-
-
-._fEmail{
-    margin-top: 8%;
-    margin-bottom: 3%;
-}
-
-._fEmail, ._fPassw{
-    padding: 14px 16px;
-    font-size: 17px;
-
-}
-
-._bAccedi{
-    margin-top: 4%;
-    height: 3em;
-    width: 50%;
-}
-
-._bCreaAcc{
-    margin-top: 1%;
-    width: 50%;
-    height: 3em;
-}
-
-input[type=email], input[type=password]{
-    font-size: 1.2em;
-}
-
 ._re-size{
     height: auto;
     width: 30%;
 }
 
-@media (min-width: 576px) {
-    ._re-size{
-        width: 32%;
-    }
+._BheaderSize{
+    font-size: 20px;
 }
 
-@media (min-width: 768px) {
-    ._re-size{
-        width: 32%;
-    }
+._li_info{
+    text-align: center;
 }
 
-@media (min-width: 992px) {
-    ._re-size{
-        width: 25%;
-    }
+._divAccedi{
+    background-color: white;
+    border-radius: 40px;
+    border: 1px solid #e3e3e3;
 }
 
-@media (min-width: 1200px) {
-    ._re-size{
-        width: 13%;
-    }
-    ._bAccedi{
-        width: 8em;
-    }
+._border-radius{
+    border-radius: 40px;
 }
-
-@media (min-width: 2560px) {
-    ._re-size{
-        width: 15%;
-    }
-}
-

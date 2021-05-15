@@ -1,16 +1,17 @@
-function test(){
-    console.log("Altezza: " + window.screen.height)
-    console.log("Larghezza: " + window.screen.width)
-}
-
-test()
-
-function reSizeHeader(){
+function reSizeFooter(){
     if (window.screen.width < 768) {
-        console.log("Larghezza minore di 768 quindi sposto")
-        let lang=document.getElementsByClassName("div_language")
-        lang.style.float="left";
+
+        let elems = document.getElementsByClassName('_reSizeFooter');
+        for (let i=0;i<elems.length;i+=1){
+            elems[i].style.display = 'none';
+        }
+
+
+        elems = document.getElementById("RenatoE")
+        elems.innerText="Renato E."
+        elems = document.getElementById("LucaR")
+        elems.innerText="Rubino L."
     }
 }
 
-reSizeHeader()
+reSizeFooter()

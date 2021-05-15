@@ -1,2 +1,3 @@
-Ridimensionare tasti header (con js solo per risoluzione max 767px spostare select nella classe col-1 e accedi nella classe col 12 con un po di margine)
+
 Aggiungere pulsante che al click mostra un menu laterale
+

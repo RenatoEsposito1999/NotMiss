@@ -13,33 +13,40 @@
 
   <!--  File containing our CSS rules -->
   <link rel="stylesheet" href="../Style/style.css">
+  <link rel="stylesheet" href="../Style/mediaq.css">
+  <link rel="stylesheet" href="../Style/animation.css">
 
 </head>
 <body>
 
 <!-- Header -->
-<div class="container bg-dark w-100 col-12">
+<div class="container bg-dark w-100 col-12 slideInDown">
 
   <div class="row w-100">
 
-    <div class="col-12">
-      <div class="float-right">
-        <label for="language">
-          <select id="language" class="_m10">
-            <option value="Italiano">Italiano</option>
-            <option value="English">English</option>
-          </select>
-        </label>
-        <a class="_m10" href="#">Accedi</a>
-      </div>
-
+    <div class="col-6 text-left _mt10 _BheaderSize">
+      <label for="language">
+        <select id="language">
+          <option value="Italiano">Italiano</option>
+          <option value="English">English</option>
+        </select>
+      </label>
     </div>
-  </div>
+
+
+    <div class="col-6 text-right _mt10 _BheaderSize">
+      <a href="../index.html" >Home</a>
+    </div>
+
+
+
+  </div> <!-- Fine Row -->
+
 
 
   <div class="row">
     <div class="text-center col-12 mb-2">
-      <a href="../index.html"><img class="_re-size" src="../IMG/logo.png" alt="NotMiss Logo"> </a>
+      <a href="../index.html"><img class="_re-size" src="../IMG/logo.png" alt="NotMiss Logo" id="_logo"> </a>
     </div>
   </div>
 
@@ -48,27 +55,28 @@
 
 <!-- Fine header -->
 
-  <div class="container mt-5 mb-5 col-12">
+
+  <div class="container mt-5 mb-5 col-12 ">
 
     <div class="row">
 
-        <div class="col-8 offset-2 col-sm-8 offset-sm-2  col-md-4 offset-md-4 bg-warning text-center">
+        <div class="col-8 offset-2 col-sm-8 offset-sm-2  col-md-4 offset-md-4 text-center _divAccedi fadeIn2">
 
           <form>
             <label for="_email"></label>
-            <input id="_email" class="_accedi-form _fEmail" type="email" placeholder="Inserisci la tua email" autocomplete="on" autofocus> <br>
+            <input type="email" class="form-control " id="_email" placeholder="Inserisci la tua email"  autocomplete="on" autofocus> <br>
 
 
             <label for="_password"></label>
-            <input id="_password" class="_accedi-form _fPassw" type="password" placeholder="Inserisci la tua password" > <br>
+            <input type="password" class="form-control " id="_password" placeholder="Inserisci la tua password"> <br>
 
 
             <label for="_Accedi"></label>
-            <input id="_Accedi" class="_bAccedi" type="submit" value="Accedi"> <br>
+            <button type="button" class="btn btn-outline-dark _m10 _border-radius" id="_Accedi">Accedi</button> <br>
             <hr>
-            <a href="/Pages/Registrazione.html">
+            <a href="Registrazione.html">
               <label for="_Registrazione"></label>
-              <input type="button" id="_Registrazione" class="_accedi-form _bCreaAcc" value="Crea un account!">
+              <button type="button" class="btn btn-outline-dark _m10 _border-radius" id="_Registrazione">Crea un account</button>
             </a>
           </form>
         </div>
@@ -78,27 +86,27 @@
   </div>
 
 <!-- Footer -->
-<div class="container  _footer col-12 bg-dark  align-items-center ">
+<div class="container  _footer col-12 bg-dark  align-items-center slideInUp">
 
   <div class="row">
-    <div  class="col-6 col-lg-4  offset-lg-2">
+    <div  class="col-6 col-lg-4 offset-lg-2">
       <!-- _li_info attualmente non prevede regole CSS -->
-      <ul class="_li_info">
-        <li class="_list-title" style="text-align: center">Renato Esposito</li>
-        <li style="text-align: center">Studente - <a href="https://www.uniparthenope.it/"> Università degli Studi di Napoli Parthenope</a></li>
-        <li style="text-align: center" >Matricola: 0124001881</li>
-        <li style="text-align: center"><a href="mailto:renato.esposito001@studenti.uniparthenope.it">Contatto mail</a></li>
-        <li style="text-align: center"><a href="https://github.com/RenatoEsposito1999" target="_blank">GitHub</a></li>
+      <ul class="_li_info ">
+        <li class="_list-title" id="RenatoE">Renato Esposito</li>
+        <li class="_reSizeFooter">Studente - <a href="https://www.uniparthenope.it/"> Università degli Studi di Napoli Parthenope</a></li>
+        <li class="_reSizeFooter">Matricola: 0124001881</li>
+        <li><a href="mailto:renato.esposito001@studenti.uniparthenope.it">Contatto mail</a></li>
+        <li><a href="https://github.com/RenatoEsposito1999" target="_blank">GitHub</a></li>
       </ul>
     </div>
 
     <div  class="col-6 col-lg-4">
-      <ul class="_li_info">
-        <li class="_list-title" style="text-align: center">Luca Rubino</li>
-        <li style="text-align: center">Studente - <a href="https://www.uniparthenope.it/"> Università degli Studi di Napoli Parthenope</a></li>
-        <li style="text-align: center">Matricola: 0124001934</li>
-        <li style="text-align: center"><a href="mailto:luca.rubino001@studenti.uniparthenope.it">Contatto mail</a></li>
-        <li style="text-align: center"><a href="https://github.com/luruu" target="_blank">GitHub</a></li>
+      <ul class="_li_info ">
+        <li class="_list-title" id="LucaR">Luca Rubino</li>
+        <li class="_reSizeFooter">Studente - <a href="https://www.uniparthenope.it/"> Università degli Studi di Napoli Parthenope</a></li>
+        <li class="_reSizeFooter">Matricola: 0124001934</li>
+        <li><a href="mailto:luca.rubino001@studenti.uniparthenope.it">Contatto mail</a></li>
+        <li><a href="https://github.com/luruu" target="_blank">GitHub</a></li>
       </ul>
 
     </div>
@@ -117,6 +125,7 @@
 </div>
 
 <!-- Fine Footer -->
+
 <script src="../Javascript/Global.js"></script>
 </body>
 </html>
