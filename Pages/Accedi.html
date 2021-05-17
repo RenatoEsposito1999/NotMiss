@@ -6,24 +6,19 @@
   <meta name="author" content="Renato Esposito 0124001881">
   <meta name="author" content="Luca Rubino 0124001934">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pagina d'accesso per NotMiss">
+  <meta name="description"  content="Pagina d'accesso per NotMiss">
   <title>NotMiss: Accedi</title>
   <link rel="icon" href="../IMG/logoico.ico">
   <link rel="stylesheet" href="../Style/bootstrap.css">
-
   <!--  File containing our CSS rules -->
   <link rel="stylesheet" href="../Style/style.css">
   <link rel="stylesheet" href="../Style/mediaq.css">
   <link rel="stylesheet" href="../Style/animation.css">
-
 </head>
 <body>
-
 <!-- Header -->
 <div class="container bg-dark w-100 col-12 slideInDown">
-
   <div class="row w-100">
-
     <div class="col-6 text-left _mt10 _BheaderSize">
       <label for="language">
         <select id="language">
@@ -32,64 +27,80 @@
         </select>
       </label>
     </div>
-
-
     <div class="col-6 text-right _mt10 _BheaderSize">
       <a href="index.html" >Home</a>
     </div>
-
-
-
-  </div> <!-- Fine Row -->
-
-
-
+  </div>
+  <!-- Fine Row -->
   <div class="row">
     <div class="text-center col-12 mb-2">
       <a href="index.html"><img class="_re-size" src="../IMG/logo.png" alt="NotMiss Logo" id="_logo"> </a>
     </div>
   </div>
-
-
 </div>
-
 <!-- Fine header -->
-
-
 <div class="container mt-5 mb-5 col-12 ">
-
   <div class="row">
-    <div class="col-8 offset-2 col-sm-8">
-
-    </div>
-
-    <div class="col-8 offset-2 col-sm-8 offset-sm-2  col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center _divAccedi fadeIn2">
-
+    <!-- Login -->
+    <div class="col-8 offset-2 col-sm-8 offset-sm-2  col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center _divAccedi fadeIn2" id="nascondi">
       <h1 style="margin-top: 20px" class="text-center text-black-50 ">Login</h1>
-
       <form>
         <label for="_email"></label>
         <input   type="email" class="form-control " id="_email" placeholder="Inserisci la tua email"  autocomplete="on" autofocus> <br>
-
-
         <label for="_password"></label>
         <input type="password" class="form-control " id="_password" placeholder="Inserisci la tua password"> <br>
-
-
         <label for="_Accedi"></label>
         <button type="button" class="btn btn btn-dark _m10 _border-radius" id="_Accedi">Accedi</button> <br>
         <hr>
-        <a href="Registrazione.html">
-          <label for="_Registrazione"></label>
-          <button style="margin-bottom: 20px" type="button" class="btn btn-outline-dark _m10 _border-radius" id="_Registrazione">Crea un account</button>
+        <label for="_Registrazione"></label>
+        <button style="margin-bottom: 20px" type="button" class="btn btn-outline-dark _m10 _border-radius" id="_Registrazione" onclick="registrati()">Crea un account</button>
+      </form>
+    </div>
+    <!-- Fine login  -->
+
+    <!-- Registrazione -->
+    <div class="col-8 offset-2 col-sm-8 offset-sm-2  col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center _divAccedi _ds-none" id="registrazione">
+      <h1 style="margin-top: 20px" class="text-center text-black-50 ">Registrati</h1>
+      <form>
+        <label for="_nome"></label>
+        <input   type="text" class="form-control form-inline" id="_nome" placeholder="Nome"  autocomplete="on" autofocus> <br>
+        <label for="_cognome"></label>
+        <input   type="text" class="form-control form-inline" id="_cognome" placeholder="Cognome" autocomplete="on"> <br>
+        <label for="_regEmail"></label>
+        <input   type="email" class="form-control " id="_regEmail" placeholder="Email"  autocomplete="on"> <br>
+        <label for="_regPassword"></label>
+        <input type="password" class="form-control " id="_regPassword" placeholder="Password"> <br>
+        <label for="_repassword"></label>
+        <input type="password" class="form-control _mb5"  id="_repassword" placeholder="Ripeti password">
+        <p class="text-black-50">Data di nascita:</p>
+        <label for="_data"></label>
+        <input type="date" id="_data" class="_mb5">
+        <p class="text-black-50">Sesso:</p>
+        <div class="form-check form-check-inline _mb5" >
+          <input class="form-check-input " name="sesso" type="radio" id="Uomo" value="Uomo">
+          <label class="form-check-label " for="Uomo">U</label>
+        </div>
+        <div class="form-check form-check-inline ">
+          <input class="form-check-input " name="sesso" type="radio" id="Donna" value="Donna">
+          <label class="form-check-label " for="Donna">D</label>
+        </div>
+        <div class="form-check form-check-inline ">
+          <input class="form-check-input " name="sesso" type="radio" id="Altro" value="Altro">
+          <label class="form-check-label " for="Altro">Altro</label>
+        </div>
+        <br>
+        <label for="_Iscriviti"></label>
+        <button type="button" class="btn btn btn-dark _m10 _border-radius _mb5" id="_Iscriviti" style="width: 45%">Iscriviti</button> <br>
+        <hr>
+        <label for="_Login"></label>
+        <a href="Accedi.html">
+        <button style="margin-bottom: 20px" type="button" class="btn btn-outline-dark _m10 _border-radius" id="_Login" >Torna al login</button>
         </a>
       </form>
     </div>
-
+    <!-- Fine registrazione -->
   </div>
-
 </div>
-
 <!-- Footer -->
 <div class="container  _footer col-12  align-items-center slideInUp _bg-footer">
   <hr>
@@ -104,7 +115,6 @@
         <li><a class="text-dark" href="https://github.com/RenatoEsposito1999" target="_blank">GitHub</a></li>
       </ul>
     </div>
-
     <div  class="col-6 col-lg-4">
       <ul class="_li_info ">
         <li class="_list-title text-dark" id="LucaR">Luca Rubino</li>
@@ -113,24 +123,16 @@
         <li><a class="text-dark" href="mailto:luca.rubino001@studenti.uniparthenope.it">Contatto mail</a></li>
         <li><a class="text-dark" href="https://github.com/luruu" target="_blank">GitHub</a></li>
       </ul>
-
     </div>
-
-
-
   </div>
-
   <div class="row">
-    <div class="col-12 text-center text-black-50 font-weight-bold mt-1 mb-1"> <!-- colore di prima:  text-white -->
+    <div class="col-12 text-center text-black-50 font-weight-bold mt-1 mb-1">
+      <!-- colore di prima:  text-white -->
       Copyright 2021 © NotMiss TW6
     </div>
-
   </div>
-
 </div>
-
 <!-- Fine Footer -->
-
 <script src="../Javascript/Global.js"></script>
 </body>
 </html>

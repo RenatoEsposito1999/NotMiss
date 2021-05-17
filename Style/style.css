@@ -2,6 +2,7 @@
 
 body{
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 ._m10{
@@ -76,3 +77,18 @@ li a, li a:hover, li a:visited{
     background-color: white;
 }
 
+._form-control-reg{
+    display: inline-block;
+}
+
+._mb5{
+    margin-bottom: 5%;
+}
+
+._button-fz{
+    font-size: 1.7rem;
+}
+
+._ds-none{
+    display: none;
+}
