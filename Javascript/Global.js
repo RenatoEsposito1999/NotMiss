@@ -15,3 +15,14 @@ function reSizeFooter(){
 }
 
 reSizeFooter()
+
+
+function reSizeLogo(){
+    if(window.screen.width<426){
+        console.log("TEST")
+        let elems = document.getElementById("_logo");
+        elems.src="../IMG/logo2.png"
+    }
+}
+
+reSizeLogo()

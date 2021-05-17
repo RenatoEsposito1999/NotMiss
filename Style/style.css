@@ -71,3 +71,8 @@ li a, li a:hover, li a:visited{
 ._border-radius{
     border-radius: 40px;
 }
+
+._bg-footer{
+    background-color: white;
+}
+
