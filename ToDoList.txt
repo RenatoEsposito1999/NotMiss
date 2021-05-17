@@ -1,3 +1,2 @@
-
-Aggiungere pulsante che al click mostra un menu laterale
-
+Da fare pulsante che al click mostra menu laterale
+(se abbiamo voglia e tempo) fare nella pagina di registrazione l'animazione che login ritorna al suo posto.
