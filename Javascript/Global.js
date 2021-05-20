@@ -1,54 +1,72 @@
-let accedi_form // contains form element of pages accedi.html
+let nextToInsert; // contains form element of pages accedi.html
 
-function reSizeFooter(){
+function reSizeFooter() {
     if (window.screen.width < 768) {
-
-        let elems = document.getElementsByClassName('_reSizeFooter')
-        for (let i=0;i<elems.length;i+=1){
-            elems[i].style.display = 'none'
+        let elems = document.getElementsByClassName("_reSizeFooter");
+        for (let i = 0; i < elems.length; i += 1) {
+            elems[i].style.display = "none";
         }
 
-
-        elems = document.getElementById("RenatoE")
-        elems.innerText="Renato E."
-        elems = document.getElementById("LucaR")
-        elems.innerText="Rubino L."
+        elems = document.getElementById("RenatoE");
+        elems.innerText = "Renato E.";
+        elems = document.getElementById("LucaR");
+        elems.innerText = "Rubino L.";
     }
 }
 
-reSizeFooter()
+reSizeFooter();
 
-
-function reSizeLogo(){
-    if(window.screen.width<426){
-        console.log("TEST")
-        let elems = document.getElementById("_logo")
-        elems.src="../IMG/logo2.png"
+function reSizeLogo() {
+    if (window.screen.width < 426) {
+        console.log("TEST");
+        let elems = document.getElementById("_logo");
+        elems.src = "../IMG/logo2.png";
     }
 }
 
-reSizeLogo()
+reSizeLogo();
 
+function removeRegistrazione() {
+    let tmp = document.getElementById("registrazione"); // salvo il div
+    nextToInsert = tmp;
+    tmp.remove();
+}
 
-function registrati(){
+// 1 == elimino il form login per fare spazio alla registrazione
+// 0 == elimino il form registrazione per fare spazio al login
+function registrati(IDnascondi, flag) {
     //Cambia anche l'elemento content di meta
-    let elems = document.getElementById("nascondi")
-    accedi_form=elems
-        elems.classList.remove("fadeIn2")
-        elems.classList.add("fadeOutRightBig")
+    let elems = document.getElementById(IDnascondi);
+    let tmp, _desc;
 
-    setTimeout(function(){
-        elems.parentNode.removeChild(elems)
+    if (parseInt(flag, 10) == 1) {
+        elems.classList.remove("fadeIn2");
+        tmp = elems; //faccio questa assegnazione perché in questo modo alla  i-esima chiamata nextToInsert sarà l'elemento che è stato tolto alla i-1-esima chiamata
+        elems.classList.remove("fadeInRightBig");
+        elems.classList.add("fadeOutRightBig");
+        _desc = "Pagina di registrazione per NotMiss";
+    } else if (parseInt(flag, 10) == 0) {
+        elems.classList.remove("fadeInLeftBig");
+        tmp = elems; //faccio questa assegnazione perché in questo modo alla  i-esima chiamata nextToInsert sarà l'elemento che è stato tolto alla i-1-esima chiamata
+        elems.classList.add("fadeOutLeftBig");
+        _desc = "Pagina d'accesso per NotMiss";
+    }
 
-        elems = document.getElementById("registrazione")
-        elems.classList.remove("_ds-none")
-        elems.classList.add("fadeInLeftBig")
-    }, 300);
-
-    let _desc="Pagina di registrazione per NotMiss"
     document.querySelector('meta[name="description"]').setAttribute("content", _desc);
+
+    setTimeout(function () {
+        elems = document.getElementById(IDnascondi);
+        elems.remove();
+        elems = document.getElementById("padre_login");
+        elems.appendChild(nextToInsert);
+        elems = document.getElementById(nextToInsert.id);
+
+        if (parseInt(flag, 10) == 1) {
+            elems.classList.remove("fadeOutLeftBig");
+            elems.classList.add("fadeInLeftBig");
+        } else if (parseInt(flag, 10) == 0) {
+            elems.classList.add("fadeInRightBig");
+        }
+        nextToInsert = tmp;
+    }, 500);
 }
-
-
-function
-
