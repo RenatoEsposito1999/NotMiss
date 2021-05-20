@@ -1,3 +1,5 @@
+let accedi_form // contains form element of pages accedi.html
+
 function reSizeFooter(){
     if (window.screen.width < 768) {
 
@@ -31,6 +33,7 @@ reSizeLogo()
 function registrati(){
     //Cambia anche l'elemento content di meta
     let elems = document.getElementById("nascondi")
+    accedi_form=elems
         elems.classList.remove("fadeIn2")
         elems.classList.add("fadeOutRightBig")
 
@@ -46,4 +49,6 @@ function registrati(){
     document.querySelector('meta[name="description"]').setAttribute("content", _desc);
 }
 
+
+function
 
