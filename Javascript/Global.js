@@ -17,10 +17,11 @@ function reSizeFooter() {
 reSizeFooter();
 
 function reSizeLogo() {
+
     if (window.screen.width < 426) {
-        console.log("TEST");
+        console.log("TEST")
         let elems = document.getElementById("_logo");
-        elems.src = "../IMG/logo2.png";
+        elems.src = "../IMG/logo/logo128.ico";
     }
 }
 
