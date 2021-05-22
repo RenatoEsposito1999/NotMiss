@@ -71,3 +71,4 @@ function registrati(IDnascondi, flag) {
         nextToInsert = tmp;
     }, 500);
 }
+
