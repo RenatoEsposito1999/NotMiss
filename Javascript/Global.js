@@ -19,9 +19,9 @@ reSizeFooter();
 function reSizeLogo() {
 
     if (window.screen.width < 426) {
-        console.log("TEST")
+
         let elems = document.getElementById("_logo");
-        elems.src = "../IMG/logo/logo128.ico";
+        elems.src = "../IMG/logo/logo128.png";
     }
 }
 
@@ -61,8 +61,8 @@ function registrati(IDnascondi, flag) {
         elems = document.getElementById("padre_login");
         elems.appendChild(nextToInsert);
         elems = document.getElementById(nextToInsert.id);
-
-        if (parseInt(flag, 10) == 1) {
+        //parseInt(flag, 10)
+        if ( parseInt(flag, 10) == 1 ) {
             elems.classList.remove("fadeOutLeftBig");
             elems.classList.add("fadeInLeftBig");
         } else if (parseInt(flag, 10) == 0) {
