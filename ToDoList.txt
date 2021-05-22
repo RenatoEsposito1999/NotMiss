@@ -1,1 +1,9 @@
 Da fare pulsante che al click mostra menu laterale
+
+
+<label for="language">
+                <select id="language">
+                    <option value="Italiano">Italiano</option>
+                    <option value="English">English</option>
+                </select>
+            </label>

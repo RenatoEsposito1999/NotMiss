@@ -15,24 +15,36 @@
     <link rel="stylesheet" href="../Style/style.css">
     <link rel="stylesheet" href="../Style/mediaq.css">
     <link rel="stylesheet" href="../Style/animation.css">
+    <script src="../Javascript/jquery-3.6.0.min.js"></script>
+    <script src="../Javascript/Global.js"></script>
     <noscript>
         <meta http-equiv="refresh" content="0; url=noscript.html" />
     </noscript>
+    <script>
+        $(document).ready(function(){
+            $("#_bMenu").click(function open(){
+                $("#_sidebar").css("display","block")
+            })
+            $("#_closeSB").click(function close(){
+                $("#_sidebar").css("display", "none")
+                $("#_bMenu").css("display","block")
+            })
+        })
+    </script>
 </head>
 <body class="fadeIn">
 
+<div class="_sidebar" style="display:none" id="_sidebar">
+    <button  class="w3-bar-item w3-large" id="_closeSB">Close &times;</button>
+    <p>a</p>
+</div>
 <!-- Header -->
 <div class="container bg-dark w-100 col-12 fadeIn">
 
     <div class="row w-100">
 
         <div class="col-6 text-left _mt10 _BheaderSize">
-            <label for="language">
-                <select id="language">
-                    <option value="Italiano">Italiano</option>
-                    <option value="English">English</option>
-                </select>
-            </label>
+            <img src="../IMG/Icons/threebar32.jpg" id="_bMenu">
         </div>
 
 
@@ -46,11 +58,8 @@
 
     <!-- LOGO -->
     <div class="row">
-        <div class="text-center offset-3 col-6 mb-2">
+        <div class="text-center  col-12 mb-2">
             <a href="#"><img class="" src="../IMG/logo/logoNotMiss128.png" alt="NotMiss Logo" id="_logo"> </a>
-        </div>
-        <div class="text-center col-1 " style="margin-top: 8%">
-            <p> wtf</p>
         </div>
     </div>
     <!-- Fine Logo -->
@@ -110,7 +119,5 @@
     </div>
 
 <!-- Fine Footer -->
-<script src="../Javascript/jquery-3.6.0.min.js"></script>
-<script src="../Javascript/Global.js"></script>
 </body>
 </html>

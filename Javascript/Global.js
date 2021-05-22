@@ -1,3 +1,4 @@
+
 let nextToInsert; // contains form element of pages accedi.html
 
 function reSizeFooter() {
