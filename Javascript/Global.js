@@ -2,8 +2,9 @@
 let nextToInsert; // contains form element of pages accedi.html
 
 function reSizeFooter() {
+    let elems
     if (window.screen.width < 768) {
-        let elems = document.getElementsByClassName("_reSizeFooter");
+        elems = document.getElementsByClassName("_reSizeFooter");
         for (let i = 0; i < elems.length; i += 1) {
             elems[i].style.display = "none";
         }
@@ -15,7 +16,7 @@ function reSizeFooter() {
     }
 }
 
-reSizeFooter();
+
 
 function reSizeLogo() {
 
@@ -26,7 +27,7 @@ function reSizeLogo() {
     }
 }
 
-reSizeLogo();
+
 
 function removeRegistrazione() {
     let tmp = document.getElementById("registrazione"); // salvo il div
@@ -73,3 +74,23 @@ function registrati(IDnascondi, flag) {
     }, 500);
 }
 
+
+// We have added Jquery to our project
+
+$(document).ready(function () {
+    //Open side menu
+    $("#_bMenu").click( function open(){
+        console.log("in function")
+        $("#_sidebar").css("display", "block");
+    });
+
+    //Close side menu
+    $("#_closeSB").click(function close() {
+        $("#_sidebar").css("display", "none");
+        $("#_bMenu").css("display", "block");
+    });
+
+    reSizeLogo();
+    reSizeFooter();
+
+});

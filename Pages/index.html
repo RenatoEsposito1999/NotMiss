@@ -16,21 +16,10 @@
     <link rel="stylesheet" href="../Style/mediaq.css" />
     <link rel="stylesheet" href="../Style/animation.css" />
     <script src="../Javascript/jquery-3.6.0.min.js"></script>
-    <script src="../Javascript/Global.js"></script>
+
     <noscript>
         <meta http-equiv="refresh" content="0; url=noscript.html" />
     </noscript>
-    <script>
-        $(document).ready(function () {
-            $("#_bMenu").click(function open() {
-                $("#_sidebar").css("display", "block");
-            });
-            $("#_closeSB").click(function close() {
-                $("#_sidebar").css("display", "none");
-                $("#_bMenu").css("display", "block");
-            });
-        });
-    </script>
 </head>
 <body class="fadeIn">
 <div class="_sidebar" style="display: none;" id="_sidebar">
@@ -108,5 +97,6 @@
 </div>
 
 <!-- Fine Footer -->
+<script src="../Javascript/Global.js"></script>
 </body>
 </html>
