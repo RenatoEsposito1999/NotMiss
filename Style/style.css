@@ -5,6 +5,8 @@ body{
     overflow-x: hidden;
 }
 
+
+
 ._m10{
     margin: 10px;
 }
@@ -15,6 +17,7 @@ body{
 ._ml10{
     margin-left:10px;
 }
+
 
 a, a:hover, a:visited{
     color: white;
@@ -93,29 +96,38 @@ li a, li a:hover, li a:visited{
 
 
 ._sidebar {
-    height: 100%;
     width: 200px;
-    background-color: #fff;
     position: fixed !important;
     z-index: 1;
     overflow: auto;
-}
-
-#coprente {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    z-index: 30; /* o cmq il numero più alto tra quelli degli altri z-index presenti */
-}
-
-#_bMenu,#_closeSB:hover{
-    background-color:#637377; /*Da modificare come meglio pensiamo */
-}
-#_sidebar{  /*Anche questo da modificare */
     border: 6px solid #525252;
     background-color: #D5D3D3;
     border-radius: 5px;
+}
+
+#_headersidebar{
+    width: 100%;
+}
+
+
+#_bMenu:hover,#_closeSB:hover{
+    background-color:#637377; /*Da modificare come meglio pensiamo */
+}
+
+._elementiMenu ul{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding-left: 0;
+
+}
+
+._elementiMenu li{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    color: #1d2124;
+    font-size: 1.3em;
+}
+
+._elementiMenu li:hover{
+    background-color: white;
 }
