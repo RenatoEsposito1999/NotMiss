@@ -74,23 +74,31 @@ function registrati(IDnascondi, flag) {
     }, 500);
 }
 
+function open(){
+    $("#_sidebar").css("display", "block");
+}
+
+function close(){
+    $("#_sidebar").css("display", "none");
+    $("#_bMenu").css("display", "block");
+}
 
 // We have added Jquery to our project
 
 $(document).ready(function () {
     //Open side menu
-    $("#_bMenu").click( function open(){
-        console.log("in function")
-        $("#_sidebar").css("display", "block");
-    });
+
+    $("#_bMenu").click(open);
 
     //Close side menu
-    $("#_closeSB").click(function close() {
-        $("#_sidebar").css("display", "none");
-        $("#_bMenu").css("display", "block");
-    });
+    $("#_closeSB").click(close);
 
     reSizeLogo();
     reSizeFooter();
+
+    $("#_Registrazione").click(function (){ registrati('login',1)})
+
+
+    $("#_Login").click(function (){ registrati('registrazione',0) })
 
 });
