@@ -1,3 +1,21 @@
+window.onload = () => {
+    'use strict';
+
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+            .register('./sw.js').then(function (registration) {
+
+                // Service worker registered correctly.
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            },
+            function (err) {
+
+                // Troubles in registering the service worker. :(
+                console.log('ServiceWorker registration failed: ', err);
+            });
+    }
+}
+
 
 let nextToInsert; // contains form element of pages accedi.html
 
@@ -76,11 +94,28 @@ function registrati(IDnascondi, flag) {
 
 function open(){
     $("#_sidebar").css("display", "block");
+    $("#_sidebar").removeClass("slideOutLeft")
+    $("#coprente").removeClass("fadeOut")
+    $("#_sidebar").addClass("slideInLeft")
+    $("#coprente").addClass("hide");
+    $("#coprente").addClass("fadeIn");
+    $(document.body).css("overflow", "hidden")
+}
+
+function slideOutLeft(){
+    $("#_sidebar").removeClass("slideInLeft")
+    $("#coprente").removeClass("fadeIn");
+    $("#coprente").removeClass("hide");
+    $("#_sidebar").css("display", "none");
+    $("#_bMenu").css("display", "block");
+    $(document.body).css("overflow", "initial")
 }
 
 function close(){
-    $("#_sidebar").css("display", "none");
-    $("#_bMenu").css("display", "block");
+    setTimeout(slideOutLeft,500)
+    $("#_sidebar").addClass("slideOutLeft")
+    $("#coprente").addClass("fadeOut")
+
 }
 
 // We have added Jquery to our project

@@ -103,7 +103,8 @@ li a, li a:hover, li a:visited{
     z-index: 1;
     overflow: auto;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 3px;
+    box-shadow: 4px 0 10px 0 #181818;
 }
 
 #_headersidebar{
@@ -135,18 +136,30 @@ li a, li a:hover, li a:visited{
 }
 
 ._elementiMenu li:hover{
-    background-color: white;
+    background-color: lightgray;
 }
 
-.contentHSM{
-    margin: 3%;
+.containerSM{
+    width: 100%;
+    height: 1000000000px;
+    background-color: rgba(0,0,0,.8);
+    opacity: 1;
 }
 
-coprente{
+.hide{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent url(../IMG/bg.png) repeat;
+    z-index: 30;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
 
 }
-
-
 
 
 
