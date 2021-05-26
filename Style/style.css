@@ -5,7 +5,9 @@ body{
     overflow-x: hidden;
 }
 
-
+.m3perc{
+    margin: 3%;
+}
 
 ._m10{
     margin: 10px;
@@ -100,9 +102,8 @@ li a, li a:hover, li a:visited{
     position: fixed !important;
     z-index: 1;
     overflow: auto;
-    border: 6px solid #525252;
-    background-color: #D5D3D3;
-    border-radius: 5px;
+    background-color: white;
+    border-radius: 10px;
 }
 
 #_headersidebar{
@@ -110,8 +111,13 @@ li a, li a:hover, li a:visited{
 }
 
 
-#_bMenu:hover,#_closeSB:hover{
-    background-color:#637377; /*Da modificare come meglio pensiamo */
+#_bMenu:hover{
+    border: white solid 1px /*Da modificare come meglio pensiamo */
+}
+
+#_closeSB:hover{
+    background-color: #434f5a;
+    border-radius: 5px;
 }
 
 ._elementiMenu ul{
@@ -131,3 +137,23 @@ li a, li a:hover, li a:visited{
 ._elementiMenu li:hover{
     background-color: white;
 }
+
+.contentHSM{
+    margin: 3%;
+}
+
+coprente{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

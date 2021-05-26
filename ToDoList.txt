@@ -1,9 +1,29 @@
 Da fare pulsante che al click mostra menu laterale
 
 
-<label for="language">
-                <select id="language">
-                    <option value="Italiano">Italiano</option>
-                    <option value="English">English</option>
-                </select>
-            </label>
+<div class="container col-12 w-100">
+    <div class="row w-100">
+        <div class="_sidebar col-8" style="/*display: none;/*" id="_sidebar">
+            <!-- Header side menu -->
+            <div class="bg-dark p-1 w-100">
+                <p class="contentHSM"><a href="Accedi.html">Accedi</a>
+                    <img src="../IMG/Icons/closeButton.png" class="float-right" id="_closeSB" alt="chiudi" />
+                </p>
+            </div>
+            <!--  FIne Header side menu -->
+
+            <!-- Conutenuto side menu -->
+            <div class="_elementiMenu text-left">
+                <ul>
+                    <li><span class="m3perc">Item1</span></li>
+                    <li><span class="m3perc">Item2</span></li>
+                    <li><span class="m3perc">Item3</span></li>
+                    <li><span class="m3perc">Item4</span></li>
+                    <li><span class="m3perc">Item5</span></li>
+                </ul>
+            </div>
+            <!-- FIne contenuto side menu -->
+
+        </div>
+    </div>
+</div>
