@@ -124,9 +124,9 @@ $(document).ready(function () {
         registrati('registrazione',0)
     });
 
-    $("#_freccia").click(function (){
-        console.log("TEST")
-        $("#_linguaEN").removeClass("_ds-none")
+    $("#_linguaIT").click(function (){
+        $("#_containerLG").removeClass("_ds-none")
+        $("#_containerLG").addClass("fadeIn")
     });
-});
 
+});

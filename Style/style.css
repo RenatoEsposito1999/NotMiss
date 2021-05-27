@@ -150,11 +150,12 @@ li a, li a:hover, li a:visited{
     z-index: 30;
     right:0;
     bottom:0;
-
 }
 
+._containerLG{
+    position: absolute;
+    background-color: #1c7430;
+    height: 100px;
+    width: 100px;
 
-._labelLG{
-    font-size: 1.2em;
-    color: #1d2124;
 }
