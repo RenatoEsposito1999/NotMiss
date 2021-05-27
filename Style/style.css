@@ -139,12 +139,6 @@ li a, li a:hover, li a:visited{
     background-color: lightgray;
 }
 
-.containerSM{
-    width: 100%;
-    height: 1000000000px;
-    background-color: rgba(0,0,0,.8);
-    opacity: 1;
-}
 
 .hide{
     position: fixed;
@@ -154,19 +148,13 @@ li a, li a:hover, li a:visited{
     height: 100%;
     background: transparent url(../IMG/bg.png) repeat;
     z-index: 30;
-    top:0;
-    left:0;
     right:0;
     bottom:0;
 
 }
 
 
-
-
-
-
-
-
-
-
+._labelLG{
+    font-size: 1.2em;
+    color: #1d2124;
+}

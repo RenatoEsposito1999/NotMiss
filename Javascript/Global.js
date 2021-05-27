@@ -37,7 +37,7 @@ function removeRegistrazione() {
 // 1 == elimino il form login per fare spazio alla registrazione
 // 0 == elimino il form registrazione per fare spazio al login
 function registrati(IDnascondi, flag) {
-    console.log(flag)
+
     //Cambia anche l'elemento content di meta
     let elems = document.getElementById(IDnascondi);
     let tmp, _desc;
@@ -101,28 +101,32 @@ function close(){
     $("#coprente").addClass("fadeOut")
 }
 
+
 // We have added Jquery to our project
 
 $(document).ready(function () {
     reSizeLogo();
     reSizeFooter();
 
+    //Open side menu
 
-
-});
-
-//Open side menu
-
-$("#_bMenu").click(open);
+    $("#_bMenu").click(open);
 
 //Close side menu
-$("#_closeSB").click(close);
+    $("#_closeSB").click(close);
 
 
-$("#_Registrazione").click(function (){
-    registrati('login',1)
+    $("#_Registrazione").click(function (){
+        registrati('login',1)
+    });
+
+    $("#_Login").click(function (){
+        registrati('registrazione',0)
+    });
+
+    $("#_freccia").click(function (){
+        console.log("TEST")
+        $("#_linguaEN").removeClass("_ds-none")
+    });
 });
 
-$("#_Login").click(function (){
-    registrati('registrazione',0)
-});
