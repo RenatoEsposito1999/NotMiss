@@ -1,6 +1,0 @@
-{
-    "name": "NotMis",
-    "display": "standalone",
-    "scope": "/Pages/index.html",
-    "start_url": "http://localhost:63342/NotMiss/Pages/index.html"
-}

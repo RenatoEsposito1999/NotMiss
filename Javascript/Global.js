@@ -1,22 +1,3 @@
-window.onload = () => {
-    'use strict';
-
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker
-            .register('../sw.js').then(function (registration) {
-
-                // Service worker registered correctly.
-                console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            },
-            function (err) {
-
-                // Troubles in registering the service worker. :(
-                console.log('ServiceWorker registration failed: ', err);
-            });
-    }
-}
-
-
 let nextToInsert; // contains form element of pages accedi.html
 
 function reSizeFooter() {
@@ -48,6 +29,7 @@ function reSizeLogo() {
 
 
 function removeRegistrazione() {
+    console.log("BHO")
     let tmp = document.getElementById("registrazione"); // salvo il div
     nextToInsert = tmp;
     tmp.remove();
