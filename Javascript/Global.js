@@ -29,7 +29,6 @@ function reSizeLogo() {
 
 
 function removeRegistrazione() {
-    console.log("BHO")
     let tmp = document.getElementById("registrazione"); // salvo il div
     nextToInsert = tmp;
     tmp.remove();
@@ -38,6 +37,7 @@ function removeRegistrazione() {
 // 1 == elimino il form login per fare spazio alla registrazione
 // 0 == elimino il form registrazione per fare spazio al login
 function registrati(IDnascondi, flag) {
+    console.log(flag)
     //Cambia anche l'elemento content di meta
     let elems = document.getElementById(IDnascondi);
     let tmp, _desc;
@@ -49,6 +49,7 @@ function registrati(IDnascondi, flag) {
         elems.classList.add("fadeOutRightBig");
         _desc = "Pagina di registrazione per NotMiss";
     } else if (parseInt(flag, 10) == 0) {
+
         elems.classList.remove("fadeInLeftBig");
         tmp = elems; //faccio questa assegnazione perché in questo modo alla  i-esima chiamata nextToInsert sarà l'elemento che è stato tolto alla i-1-esima chiamata
         elems.classList.add("fadeOutLeftBig");
@@ -98,25 +99,30 @@ function close(){
     setTimeout(slideOutLeft,500)
     $("#_sidebar").addClass("slideOutLeft")
     $("#coprente").addClass("fadeOut")
-
 }
 
 // We have added Jquery to our project
 
 $(document).ready(function () {
-    //Open side menu
-
-    $("#_bMenu").click(open);
-
-    //Close side menu
-    $("#_closeSB").click(close);
-
     reSizeLogo();
     reSizeFooter();
 
-    $("#_Registrazione").click(function (){ registrati('login',1)})
 
 
-    $("#_Login").click(function (){ registrati('registrazione',0) })
+});
 
+//Open side menu
+
+$("#_bMenu").click(open);
+
+//Close side menu
+$("#_closeSB").click(close);
+
+
+$("#_Registrazione").click(function (){
+    registrati('login',1)
+});
+
+$("#_Login").click(function (){
+    registrati('registrazione',0)
 });
