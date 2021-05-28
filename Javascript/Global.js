@@ -101,10 +101,32 @@ function close(){
 }
 
 
+function cambiaLingua(){
+    let lingua = document.getElementById("_Lingua")
+    let bandiera = document.getElementById("_imgLingua")
+    console.log("bandiera: "+bandiera.src)
+
+    let bandieraENpath="../IMG/Icons/logoinglese.png"
+
+    if(bandiera.src == bandieraENpath){ //ENG --> ITA
+        console.log("0")
+        lingua.innerText = "English version"
+        bandiera.src ="../IMG/Icons/italia.png"
+    }
+    else{
+        console.log("1")
+        lingua.innerText = "Versione italiana"
+        bandiera.src ="../IMG/Icons/logoinglese.png"
+    }
+
+}
+
+
 
 // We have added Jquery to our project
 
 $(document).ready(function () {
+    //-------------------------------------------PAGINA INDEX
     reSizeLogo();
     reSizeFooter();
 
@@ -116,6 +138,20 @@ $(document).ready(function () {
     $("#_closeSB").click(close);
 
 
+
+
+
+    $("#linguaDefault").click(function (){
+        $("#_containerLG").removeClass("_ds-none")
+        $("#_containerLG").addClass("fadeIn")
+    });
+
+    $("#_Lingua").click(function () {
+        cambiaLingua()
+    });
+
+
+    //------------------------------------------PAGINA ACCEDI
     $("#_Registrazione").click(function (){
         registrati('login',1)
     });
@@ -124,14 +160,6 @@ $(document).ready(function () {
         registrati('registrazione',0)
     });
 
-    $("#linguaDefault").click(function (){
-        console.log("bho")
-        $("#_containerLG").removeClass("_ds-none")
-        $("#_containerLG").addClass("fadeIn")
-    });
 
-    $("#lingua2").click(function () {
-
-    });
 
 });
