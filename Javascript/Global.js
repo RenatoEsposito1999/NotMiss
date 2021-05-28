@@ -1,5 +1,4 @@
 let nextToInsert; // contains form element of pages accedi.html
-
 function reSizeFooter() {
     let elems
     if (window.screen.width < 768) {
@@ -102,6 +101,7 @@ function close(){
 }
 
 
+
 // We have added Jquery to our project
 
 $(document).ready(function () {
@@ -124,12 +124,13 @@ $(document).ready(function () {
         registrati('registrazione',0)
     });
 
-    $("#_linguaIT").click(function (){
+    $("#linguaDefault").click(function (){
+        console.log("bho")
         $("#_containerLG").removeClass("_ds-none")
         $("#_containerLG").addClass("fadeIn")
     });
 
-    $("#_linguaEN").click(function () {
+    $("#lingua2").click(function () {
 
     });
 
