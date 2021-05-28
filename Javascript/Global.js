@@ -129,4 +129,8 @@ $(document).ready(function () {
         $("#_containerLG").addClass("fadeIn")
     });
 
+    $("#_linguaEN").click(function () {
+
+    });
+
 });
