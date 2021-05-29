@@ -24,6 +24,7 @@ let filesToCache = [
     'IMG/logo/logo32.ico',
     'IMG/logo/logo64.ico',
     'IMG/logo/logo128.ico',
+    'IMG/logo/logo144x144.png',
     'IMG/logo/logo128.png',
     'IMG/logo/logo256.ico',
     'IMG/logo/logo512.png',

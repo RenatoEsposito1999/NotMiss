@@ -1,10 +1,27 @@
 {
+  "manifest_version": 1,
+  "version": "1.0.0",
   "name": "NotMiss",
   "short_name": "NotMiss",
-  "lang": "en-US",
+  "description": "Notmiss is a PWA conceived by Renato Esposito and Luca Rubino for a university project",
+  "icons": [
+    {
+      "src": "IMG/icons/logo512.png",
+      "sizes": "512x451",
+      "type": "image/png"
+    },
+    {
+      "src": "IMG/logo/logo144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "lang": "it-IT",
   "start_url": "Pages/index.html",
   "display": "standalone",
-  "background_color": "white",
-  "theme_color": "white"
+  "orientation": "portrait-primary",
+  "background_color": "black",
+  "theme_color": "black"
 }
 
