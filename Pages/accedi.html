@@ -21,16 +21,41 @@
 </head>
 
 <body onload="removeRegistrazione()">
+<div id="coprente" class="">
+  <!--  Side Menu -->
+  <div class="_sidebar" style="display: none;" id="_sidebar">
+    <!-- Header side menu -->
+    <div class="bg-dark p-1">
+      <div class="m3perc">
+               <span id="linguaDefault">
+                   <img id="_imgLingua" src="../IMG/Icons/italia.png" alt="lingua italiana">
+               </span>
+        <a href="accedi.html" style="margin-left: 3%">Accedi</a>
+        <img src="../IMG/Icons/closeButton.png" class="float-right" id="_closeSB" alt="chiudi" />
+      </div>
+    </div>
+    <!--  FIne Header side menu -->
+
+
+    <!-- Conutenuto side menu -->
+    <div class="_elementiMenu text-left">
+      <ul>
+        <li><span style="cursor: pointer" class="m3perc " id="_Lingua"><img src="../IMG/Icons/logoinglese.png" alt="English Logo">English</span></li>
+        <hr>
+        <li><span class="m3perc"><a  class="text-dark font-weight-normal" href="info.html">About NotMiss</a></span></li>
+        <li><span class="m3perc"><a  class="text-dark font-weight-normal" href="contatti.html">Contattaci</a></span></li>
+      </ul>
+    </div>
+    <!-- FIne contenuto side menu -->
+  </div>
+  <!-- Fine Side Menu -->
+</div>
+
 <!-- Header -->
 <div class="container bg-dark w-100 col-12 slideInDown">
   <div class="row w-100">
     <div class="col-6 text-left _mt10 _BheaderSize">
-      <label for="language">
-        <select id="language">
-          <option value="Italiano">Italiano</option>
-          <option value="English">English</option>
-        </select>
-      </label>
+      <img src="../IMG/Icons/buttonMenu.png" id="_bMenu" alt="menu" style="position: fixed; z-index: 100;" />
     </div>
     <div class="col-6 text-right _mt10 _BheaderSize">
       <a href="index.html">Home</a>

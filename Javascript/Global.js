@@ -104,18 +104,20 @@ function close(){
 function cambiaLingua(){
     let lingua = document.getElementById("_Lingua")
     let bandiera = document.getElementById("_imgLingua")
-    console.log("bandiera: "+bandiera.src)
 
-    let bandieraENpath="../IMG/Icons/logoinglese.png"
 
-    if(bandiera.src == bandieraENpath){ //ENG --> ITA
-        console.log("0")
-        lingua.innerText = "English version"
+    let bandieraENpath="IMG/Icons/logoinglese.png"
+    let indexOF = bandiera.src.indexOf("IMG");
+    let substr = bandiera.src.substr(indexOF);
+
+
+
+    if( substr == bandieraENpath){ //ENG --> ITA
+        lingua.innerHTML = '<img src="../IMG/Icons/logoinglese.png" alt="English Logo">English'
         bandiera.src ="../IMG/Icons/italia.png"
     }
     else{
-        console.log("1")
-        lingua.innerText = "Versione italiana"
+        lingua.innerHTML = '<img src="../IMG/Icons/italia.png" alt="Logo Italiano">Italiano'
         bandiera.src ="../IMG/Icons/logoinglese.png"
     }
 
@@ -131,24 +133,13 @@ $(document).ready(function () {
     reSizeFooter();
 
     //Open side menu
-
     $("#_bMenu").click(open);
 
 //Close side menu
     $("#_closeSB").click(close);
 
 
-
-
-
-    $("#linguaDefault").click(function (){
-        $("#_containerLG").removeClass("_ds-none")
-        $("#_containerLG").addClass("fadeIn")
-    });
-
-    $("#_Lingua").click(function () {
-        cambiaLingua()
-    });
+    $("#_Lingua").click(cambiaLingua);
 
 
     //------------------------------------------PAGINA ACCEDI

@@ -104,6 +104,8 @@ li a, li a:hover, li a:visited{
     overflow: auto;
     background-color: white;
     border-radius: 3px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px ;
     box-shadow: 4px 0 10px 0 #181818;
 }
 
@@ -152,9 +154,16 @@ li a, li a:hover, li a:visited{
     bottom:0;
 }
 
-._containerLG{
-    position: absolute;
-    background-color: #1c7430;
-    height: 100px;
-    width: 100px;
+
+
+#_divIframe{
+    border: 1px solid grey;
+    border-radius: 10px;
+    min-height: 90%;
+}
+
+._iframe{
+    position: relative;
+    width: 90%;
+    height: 90%;
 }
