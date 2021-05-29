@@ -1,0 +1,10 @@
+{
+  "name": "NotMiss",
+  "short_name": "NotMiss",
+  "lang": "en-US",
+  "start_url": "Pages/index.html",
+  "display": "standalone",
+  "background_color": "white",
+  "theme_color": "white"
+}
+

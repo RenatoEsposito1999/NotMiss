@@ -106,19 +106,19 @@ function cambiaLingua(){
     let bandiera = document.getElementById("_imgLingua")
 
 
-    let bandieraENpath="IMG/Icons/logoinglese.png"
+    let bandieraENpath="IMG/Icons/bandierainglese.png"
     let indexOF = bandiera.src.indexOf("IMG");
     let substr = bandiera.src.substr(indexOF);
 
 
 
     if( substr == bandieraENpath){ //ENG --> ITA
-        lingua.innerHTML = '<img src="../IMG/Icons/logoinglese.png" alt="English Logo">English'
-        bandiera.src ="../IMG/Icons/italia.png"
+        lingua.innerHTML = '<img src="../IMG/Icons/bandierainglese.png" alt="English Logo">English'
+        bandiera.src ="../IMG/Icons/bandieraitalia.png"
     }
     else{
-        lingua.innerHTML = '<img src="../IMG/Icons/italia.png" alt="Logo Italiano">Italiano'
-        bandiera.src ="../IMG/Icons/logoinglese.png"
+        lingua.innerHTML = '<img src="../IMG/Icons/bandieraitalia.png" alt="Logo Italiano">Italiano'
+        bandiera.src ="../IMG/Icons/bandierainglese.png"
     }
 
 }
