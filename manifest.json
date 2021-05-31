@@ -6,7 +6,7 @@
   "description": "Notmiss is a PWA conceived by Renato Esposito and Luca Rubino for a university project",
   "icons": [
     {
-      "src": "IMG/icons/logo512.png",
+      "src": "IMG/logo/logo512.png",
       "sizes": "512x451",
       "type": "image/png"
     },

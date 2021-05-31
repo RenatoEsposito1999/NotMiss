@@ -1,2 +1,0 @@
-Fare funzione che al click della bandiera inglese si scambiano gli elementi
-tra bandiera italiana e bandiera inglese
