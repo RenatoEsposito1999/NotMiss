@@ -1,4 +1,4 @@
-
+let nextToInsert// contains form element of pages accedi.html
 function reSizeFooter() {
     let elems
     if (window.screen.width < 768) {
@@ -80,7 +80,7 @@ function cambiaLingua(){
 // We have added Jquery to our project
 
 $(document).ready(function () {
-    //-------------------------------------------PAGINA INDEX
+
     reSizeLogo();
     reSizeFooter();
 
@@ -92,9 +92,6 @@ $(document).ready(function () {
 
 
     $("#_Lingua").click(cambiaLingua);
-
-
-
 
 
 });

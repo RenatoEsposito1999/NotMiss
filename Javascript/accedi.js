@@ -1,12 +1,8 @@
-let nextToInsert; // contains form element of pages accedi.html
-
-
 function removeRegistrazione() {
     let tmp = document.getElementById("registrazione"); // salvo il div
     nextToInsert = tmp;
     tmp.remove();
 }
-
 
 
 // 1 == elimino il form login per fare spazio alla registrazione
