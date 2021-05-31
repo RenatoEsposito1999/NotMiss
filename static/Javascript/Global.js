@@ -19,9 +19,8 @@ function reSizeFooter() {
 function reSizeLogo() {
 
     if (window.screen.width < 426) {
-
         let elems = document.getElementById("_logo");
-        elems.src = "../IMG/logo/logo128.png";
+        elems.src = "static/IMG/logo/logo128.png";
     }
 }
 
@@ -65,12 +64,12 @@ function cambiaLingua(){
 
 
     if( substr == bandieraENpath){ //ENG --> ITA
-        lingua.innerHTML = '<img src="../IMG/Icons/bandierainglese.png" alt="English Logo">English'
-        bandiera.src ="../IMG/Icons/bandieraitalia.png"
+        lingua.innerHTML = '<img src="../static/IMG/Icons/bandierainglese.png" alt="English Logo">English'
+        bandiera.src ="../static/IMG/Icons/bandieraitalia.png"
     }
     else{
-        lingua.innerHTML = '<img src="../IMG/Icons/bandieraitalia.png" alt="Logo Italiano">Italiano'
-        bandiera.src ="../IMG/Icons/bandierainglese.png"
+        lingua.innerHTML = '<img src="../static/IMG/Icons/bandieraitalia.png" alt="Logo Italiano">Italiano'
+        bandiera.src ="../static/IMG/Icons/bandierainglese.png"
     }
 
 }

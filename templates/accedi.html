@@ -1,0 +1,69 @@
+{% extends 'base2.html' %}
+{% block title %}
+<title>NotMiss: Accedi</title>
+{% endblock %}
+{% block main %}
+ <!-- Login -->
+<div class="container mt-5 mb-5 col-12" id="padre">
+<div class="row" id="padre_login">
+    <div class="col-8 offset-2 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center _divAccedi fadeIn2" id="login">
+      <h1 style="margin-top: 20px;" class="text-center text-black-50">Login</h1>
+      <form>
+        <label for="_email"></label>
+        <input type="email" class="form-control" id="_email" placeholder="Inserisci la tua email" autocomplete="on" autofocus /> <br />
+        <label for="_password"></label>
+        <input type="password" class="form-control" id="_password" placeholder="Inserisci la tua password" /> <br />
+        <label for="_Accedi"></label>
+        <button type="button" class="btn btn btn-dark _m10 _border-radius" id="_Accedi">Accedi</button> <br />
+        <hr />
+        <label for="_Registrazione"></label>
+        <button style="margin-bottom: 20px;" type="button" class="btn btn-outline-dark _m10 _border-radius" id="_Registrazione">Crea un account</button>
+      </form>
+    </div>
+    <!-- Fine login  -->
+
+    <!-- Registrazione -->
+    <div class="col-8 offset-2 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center _divAccedi" id="registrazione">
+      <h1 style="margin-top: 20px;" class="text-center text-black-50">Registrati</h1>
+      <form>
+        <label for="_nome"></label>
+        <input type="text" class="form-control form-inline" id="_nome" placeholder="Nome" autocomplete="on" autofocus /> <br />
+        <label for="_cognome"></label>
+        <input type="text" class="form-control form-inline" id="_cognome" placeholder="Cognome" autocomplete="on" /> <br />
+        <label for="_regEmail"></label>
+        <input type="email" class="form-control" id="_regEmail" placeholder="Email" autocomplete="on" /> <br />
+        <label for="_regPassword"></label>
+        <input type="password" class="form-control" id="_regPassword" placeholder="Password" /> <br />
+        <label for="_repassword"></label>
+        <input type="password" class="form-control _mb5" id="_repassword" placeholder="Ripeti password" />
+        <p class="text-black-50">Data di nascita:</p>
+        <label for="_data"></label>
+        <input type="date" id="_data" class="_mb5" />
+        <p class="text-black-50">Sesso:</p>
+        <div class="form-check form-check-inline _mb5">
+          <input class="form-check-input" name="sesso" type="radio" id="Maschio" value="Maschio" />
+          <label class="form-check-label" for="Maschio">M</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" name="sesso" type="radio" id="Femmina" value="Femmina" />
+          <label class="form-check-label" for="Femmina">F</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" name="sesso" type="radio" id="Altro" value="Altro" />
+          <label class="form-check-label" for="Altro">Altro</label>
+        </div>
+        <br />
+        <label for="_Iscriviti"></label>
+        <button type="button" class="btn btn btn-dark _m10 _border-radius _mb5" id="_Iscriviti" style="width: 45%;">Iscriviti</button> <br />
+        <hr />
+        <label for="_Login"></label>
+        <button style="margin-bottom: 20px;" type="button" class="btn btn-outline-dark _m10 _border-radius" id="_Login">Torna al login</button>
+      </form>
+    </div>
+    <!-- Fine registrazione -->
+  </div>
+</div>
+{% endblock %}
+{% block localJS %}
+<script src="../static/Javascript/accedi.js"></script>
+{% endblock %}

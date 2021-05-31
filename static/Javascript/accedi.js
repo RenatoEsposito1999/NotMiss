@@ -50,6 +50,7 @@ function registrati(IDnascondi, flag) {
 
 $(document).ready(function () {
 
+    removeRegistrazione()
 
 })
 

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="It">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="PWA,html5,CSS,Python,flask,JQuery,tecnologie web,TW6,Bootstrap" />
+    <meta name="author" content="Renato Esposito 0124001881" />
+    <meta name="author" content="Luca Rubino 0124001934" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="PWA NotMiss per progetto TW6"/>
+    <meta name="theme-color" content="white"/>
+    {% block title %}
+
+    {% endblock %}
+    <link rel="manifest" href="../static/manifest.json">
+    <script src="../static/main.js"></script>
+    <link rel="icon" href="../static/IMG/logo/logo32.ico" />
+    <link rel="stylesheet" href="../static/Style/bootstrap.css" />
+
+    <!--  File containing our CSS rules -->
+    <link rel="stylesheet" href="../static/Style/style.css" />
+    <link rel="stylesheet" href="../static/Style/mediaq.css" />
+    <link rel="stylesheet" href="../static/Style/animation.css" />
+    <script src="../static/Javascript/jquery-3.6.0.min.js"></script>
+
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=noscript.html" />
+    </noscript>
+</head>
+<body class="fadeIn" style="">
+<div id="coprente" class="">
+    <!--  Side Menu -->
+    <div class="_sidebar" style="display: none;" id="_sidebar">
+        <!-- Header side menu -->
+        <div class="bg-dark p-1">
+            <div class="m3perc">
+               <span id="linguaDefault">
+                   <img id="_imgLingua" src="../static/IMG/Icons/bandieraitalia.png" alt="lingua italiana">
+               </span>
+                <a href="/accedi" style="margin-left: 3%">Accedi</a>
+                <img src="../static/IMG/Icons/closeButton.png" class="float-right" id="_closeSB" alt="chiudi" />
+            </div>
+        </div>
+        <!--  FIne Header side menu -->
+
+
+        <!-- Conutenuto side menu -->
+        <div class="_elementiMenu text-left">
+            <ul>
+                <li><span style="cursor: pointer" class="m3perc " id="_Lingua"><img src="../static/IMG/Icons/bandierainglese.png" alt="English Logo">English</span></li>
+                <hr>
+                <li><span class="m3perc"><a  class="text-dark font-weight-normal" href="/aboutus">About NotMiss</a></span></li>
+                <li><span class="m3perc"><a  class="text-dark font-weight-normal" href="/contatti">Contattaci</a></span></li>
+            </ul>
+        </div>
+        <!-- FIne contenuto side menu -->
+    </div>
+    <!-- Fine Side Menu -->
+</div>
+
+<!-- Header -->
+<div class="container bg-dark w-100 col-12 fadeIn">
+    <div class="row w-100">
+        <div class="col-6 text-left _mt10 _BheaderSize">
+            <img src="../static/IMG/Icons/buttonMenu.png" id="_bMenu" alt="menu" style="z-index: 100;" />
+        </div>
+
+        <div class="col-6 text-right _mt10 _BheaderSize">
+            <a href="/accedi">Accedi</a>
+        </div>
+    </div>
+    <!-- Fine Row -->
+
+    <!-- LOGO -->
+    <div class="row">
+        <div class="text-center col-12 mb-2">
+            <a href="/"><img class="" src="../static/IMG/logo/logoNotMiss128.png" alt="NotMiss Logo" id="_logo" /> </a>
+        </div>
+    </div>
+    <!-- Fine Logo -->
+</div>
+
+<!-- Fine header -->
+
+<!-- CONTENUTO -->
+
+
+{% block main %}
+
+{% endblock %}
+
+<!-- Footer -->
+<div class="container _footer col-12 align-items-center slideInUp _bg-footer">
+  <hr />
+  <div class="row">
+    <div class="col-6 col-lg-4 offset-lg-2">
+      <!-- _li_info attualmente non prevede regole CSS -->
+      <ul class="_li_info">
+        <li class="_list-title text-dark" id="RenatoE">Renato Esposito</li>
+        <li class="_reSizeFooter text-dark">Studente - <a class="text-dark" href="https://www.uniparthenope.it/"> Università degli Studi di Napoli Parthenope</a></li>
+        <li class="_reSizeFooter text-dark">Matricola: 0124001881</li>
+        <li><a class="text-dark" href="mailto:renato.esposito001@studenti.uniparthenope.it">Contatto mail</a></li>
+        <li><a class="text-dark" href="https://github.com/RenatoEsposito1999" target="_blank">GitHub</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-lg-4">
+      <ul class="_li_info">
+        <li class="_list-title text-dark" id="LucaR">Luca Rubino</li>
+        <li class="_reSizeFooter text-dark">Studente - <a class="text-dark" href="https://www.uniparthenope.it/"> Università degli Studi di Napoli Parthenope</a></li>
+        <li class="_reSizeFooter text-dark">Matricola: 0124001934</li>
+        <li><a class="text-dark" href="mailto:luca.rubino001@studenti.uniparthenope.it">Contatto mail</a></li>
+        <li><a class="text-dark" href="https://github.com/luruu" target="_blank">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-center text-black-50 font-weight-bold mt-1 mb-1">
+      <!-- colore di prima:  text-white -->
+      Copyright 2021 © NotMiss TW6
+    </div>
+  </div>
+</div>
+<!-- Fine Footer -->
+
+
+
+<script src="../static/Javascript/Global.js"></script>
+{% block localJS %}
+
+{% endblock %}
+
+</body>
+</html>

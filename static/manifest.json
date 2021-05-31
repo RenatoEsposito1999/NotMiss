@@ -18,7 +18,8 @@
     }
   ],
   "lang": "it-IT",
-  "start_url": "Pages/index.html",
+  "scope": "/",
+  "start_url": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "black",
