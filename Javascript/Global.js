@@ -1,4 +1,4 @@
-let nextToInsert; // contains form element of pages accedi.html
+
 function reSizeFooter() {
     let elems
     if (window.screen.width < 768) {
