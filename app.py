@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, redirect, url_for, render_template
+from flask import Flask, request, render_template
 from flask_cors import CORS
 from pymongo import MongoClient
 #   Creo un instanza del client di mongodb
@@ -7,7 +7,7 @@ client = MongoClient("mongodb://localhost:27017/")
 db = client['NotMissDB']
 #   Accedo ad una collezione / creo una collezione
 utenti = db['utenti']
-
+db_id = 0
 app = Flask(__name__)
 cors = CORS(app)
 
@@ -39,8 +39,6 @@ def sw():
 
 @app.route('/accedi.py', methods=["POST"])
 def accedi_py():
-    email = request.form['email']
-    password = request.form['password']
     return "Ok"
 
 
@@ -63,6 +61,11 @@ def registrazione_py():
     for item in first_user:
         print(item)
     return "ok"
+
+
+@app.route('/test', methods=["POST"])
+def test():
+    return "Qua vanno le query per pulire eventuali test."
 
 
 if __name__ == '__main__':
