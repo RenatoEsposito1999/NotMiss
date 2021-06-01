@@ -1,0 +1,6 @@
+Minimo da fare:
+Registrazione
+Login
+Creazione e publ. evento
+Mostra profilo.
+

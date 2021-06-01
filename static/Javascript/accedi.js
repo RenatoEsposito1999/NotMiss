@@ -63,3 +63,37 @@ $("#_Login").click(function (){
     registrati('registrazione',0)
 });
 
+
+$("#_Accedi").click( function (){
+    $.ajax({
+            url: "http://localhost:5000/accedi.py",
+            type: "POST",
+            data: {
+                email: $("#_email").val(),
+                password: $("#_password").val()
+            },
+        success: function (){
+            window.location.replace("/")
+        },
+        error: function () {
+            document.write("Errore di richiestaaaaaaaaaaa")
+        }
+    });
+
+});
+
+
+$("#_Iscriviti").click(function (){
+     $.ajax({
+            url: "http://localhost:5000/registrazione.py",
+            type: "POST",
+            data: {
+                nome:  $("#_nome").val(),
+                cognome: $("#_cognome").val(),
+                email: $("#_regEmail").val(),
+                password: $("#_regPassword").val(),
+                data: $("#_data").val()
+            }
+     });
+
+});
