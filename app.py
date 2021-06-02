@@ -49,24 +49,26 @@ def registrazione_py():
     email = request.form["email"]
     password = request.form["password"]
     data = request.form["data"]
-    account = {
-        "nome": nome,
-        "cognome": cognome,
-        "email": email,
-        "password": password,
-        "data": data
-    }
-    utenti.insert_one(account)
-    first_user = utenti.find()
-    for item in first_user:
-        print(item)
-    return "ok"
-
-
-@app.route('/test', methods=["POST"])
-def test():
-    return "Qua vanno le query per pulire eventuali test."
+    sex = request.form["sex"]
+    query = {"email": email}
+    result = utenti.find(query).count()
+    if result:
+        return "0"
+    else:
+        account = {
+            "nome": nome,
+            "cognome": cognome,
+            "email": email,
+            "password": password,
+            "data": data,
+            "sex": sex
+        }
+        utenti.insert_one(account)
+        return "1"
 
 
 if __name__ == '__main__':
     app.run()
+
+
+#   db.utenti.drop()

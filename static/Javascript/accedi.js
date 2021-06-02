@@ -13,13 +13,13 @@ function registrati(IDnascondi, flag) {
     let elems = document.getElementById(IDnascondi);
     let tmp, _desc;
 
-    if (parseInt(flag, 10) == 1) {
+    if (parseInt(flag, 10) === 1) {
         elems.classList.remove("fadeIn2");
         tmp = elems; //faccio questa assegnazione perché in questo modo alla  i-esima chiamata nextToInsert sarà l'elemento che è stato tolto alla i-1-esima chiamata
         elems.classList.remove("fadeInRightBig");
         elems.classList.add("fadeOutRightBig");
         _desc = "Pagina di registrazione per NotMiss";
-    } else if (parseInt(flag, 10) == 0) {
+    } else if (parseInt(flag, 10) === 0) {
 
         elems.classList.remove("fadeInLeftBig");
         tmp = elems; //faccio questa assegnazione perché in questo modo alla  i-esima chiamata nextToInsert sarà l'elemento che è stato tolto alla i-1-esima chiamata
@@ -36,10 +36,10 @@ function registrati(IDnascondi, flag) {
         elems.appendChild(nextToInsert);
         elems = document.getElementById(nextToInsert.id);
         //parseInt(flag, 10)
-        if ( parseInt(flag, 10) == 1 ) {
+        if ( parseInt(flag, 10) === 1 ) {
             elems.classList.remove("fadeOutLeftBig");
             elems.classList.add("fadeInLeftBig");
-        } else if (parseInt(flag, 10) == 0) {
+        } else if (parseInt(flag, 10) === 0) {
             elems.removeAttribute("display")
             elems.classList.add("fadeInRightBig");
         }
@@ -83,8 +83,11 @@ $("#_Accedi").click( function (){
 });
 
 
-$("#_Iscriviti").click(function (){
-     $.ajax({
+$("#formReg").submit(function (e){
+    e.preventDefault() //blocco il refresh sul submit del form
+    if (    $('#_regPassword').val() === $('#_repassword').val()    ){
+        //Vero, posso inviare dati al server
+        $.ajax({
             url: "http://localhost:5000/registrazione.py",
             type: "POST",
             data: {
@@ -92,8 +95,26 @@ $("#_Iscriviti").click(function (){
                 cognome: $("#_cognome").val(),
                 email: $("#_regEmail").val(),
                 password: $("#_regPassword").val(),
-                data: $("#_data").val()
+                data: $("#_data").val(),
+                sex: $("input:checked").val()
+            },
+            success: function ( result ){
+                let reg = parseInt(result, 10)
+                if (reg){
+                     window.location.replace("/accedi")
+                }
+                else{
+                    $("#_Error").innerHTML= '<p>Email già esistente. Se hai gia un account <a href="/accedi">effetua il Login</a>>'
+                    $("#_Error").removeClass("_ds-none")
+                }
             }
      });
-
+    }
+    else {
+        //Falso, mostro un msg di errore
+        $("#_Error").removeClass("_ds-none")
+    }
 });
+/*
+
+ */
