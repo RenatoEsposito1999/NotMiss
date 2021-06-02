@@ -76,7 +76,7 @@ $("#_Accedi").click( function (){
             window.location.replace("/")
         },
         error: function () {
-            document.write("Errore di richiestaaaaaaaaaaa")
+            document.write("Errore di richiesta")
         }
     });
 
@@ -100,21 +100,48 @@ $("#formReg").submit(function (e){
             },
             success: function ( result ){
                 let reg = parseInt(result, 10)
+                console.log(reg)
                 if (reg){
                      window.location.replace("/accedi")
                 }
                 else{
-                    $("#_Error").innerHTML= '<p>Email già esistente. Se hai gia un account <a href="/accedi">effetua il Login</a>>'
-                    $("#_Error").removeClass("_ds-none")
+                    $("#_Error").html('<p style="color: red; font-weight: bold">Email già esistente. Se hai gia un account effettua il <a href="/accedi" style="color: red; text-decoration: underline">Login</a>')
                 }
+            },
+            error: function (){
+                document.write("Errore di richiesta")
             }
      });
     }
     else {
         //Falso, mostro un msg di errore
-        $("#_Error").removeClass("_ds-none")
+        $("#_Error").html('<p style="color: red; font-weight: bold">Le password non sono uguali</p>')
     }
 });
-/*
 
- */
+
+
+$("#formLog").submit(function (e){
+    console.log("In function")
+    e.preventDefault()
+    $.ajax({
+       url: "http://localhost:5000/accedi.py",
+        type: "POST",
+        data: {
+           email: $("#_email").val(),
+           password:  $("#_password").val()
+        },
+        success: function (result){
+           log = parseInt(result,10)
+           if (log){
+               console.log("login fatto")
+           }
+           else {
+               console.log("Login fallito")
+           }
+        },
+        error: function (){
+           document.write("Errore di richiestaaaaaaaaaaa")
+        }
+    });
+})

@@ -1,5 +1,4 @@
 Minimo da fare:
-Registrazione
 Login
 Creazione e publ. evento
 Mostra profilo.
@@ -8,3 +7,9 @@ Per serializzare le query e quindi renderle jason vedi:
 https://stackoverflow.com/questions/23024356/serializing-mongodb-find-return-into-non-anonymous-json-array-using-pymongo
 potrebbe servire perchè potremmo dover fare delle cose con JQuery
 tipo sostituire delle cose nelle pagine etc.
+
+
+
+
+Eliminare le collezioni nella base di dati
+Inserirle con un id scelto da noi

@@ -39,7 +39,15 @@ def sw():
 
 @app.route('/accedi.py', methods=["POST"])
 def accedi_py():
-    return "Ok"
+    email = request.form["email"]
+    password = request.form["password"]
+    query = {"email": email, "password": password}
+    result = utenti.find(query).count()
+    print(result)
+    if result:
+        return "1"
+    else:
+        return "0"
 
 
 @app.route('/registrazione.py', methods=["POST"])
@@ -52,6 +60,7 @@ def registrazione_py():
     sex = request.form["sex"]
     query = {"email": email}
     result = utenti.find(query).count()
+#   se è già presente l'email allora ritorno 0
     if result:
         return "0"
     else:
