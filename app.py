@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, request, render_template, session, g
 from flask_cors import CORS
 from pymongo import MongoClient
 from functions import *
@@ -10,6 +10,7 @@ db = client['NotMissDB']
 utenti = db['utenti']
 db_id = 0
 app = Flask(__name__)
+#   app.secret_key = 'notmisskey'
 cors = CORS(app)
 
 
@@ -40,13 +41,15 @@ def sw():
 
 @app.route('/accedi.py', methods=["POST"])
 def accedi_py():
+    session.pop('user_id',None)
     email = request.form["email"]
     password = request.form["password"]
-    result = loggin(utenti, email, password)
-    print(type(result))
+    result = login(utenti, email, password)
     if result is not None:
         if result:
             print("loggin fatto")
+            query = utenti.find_one({"email": email})
+            session['user_id'] = query["_id"]
         else:
             return "passwordErrata"
     else:

@@ -122,7 +122,6 @@ $("#formLog").submit(function (e){
            else if (result === "email inesistente"){
                $("#_ErrorLogin").html('<p style="color: red; font-weight: bold">Email inesistente! Per creare un account clicca <span style="color: red; text-decoration: underline; cursor: pointer" onclick="registrati(\'login\',1)">qui</span></p>')
            }
-
         }
     });
 })

@@ -1,9 +1,8 @@
-def loggin(db, email, password):
+def login(db, email, password):
     i = {}
     query = {"email": email}
     result = db.find(query).count()
 #   Se non l'email esiste
-    print(result)
     if not result:
         return
     else:

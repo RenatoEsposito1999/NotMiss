@@ -9,7 +9,7 @@ potrebbe servire perchè potremmo dover fare delle cose con JQuery
 tipo sostituire delle cose nelle pagine etc.
 
 
-
-
-Eliminare le collezioni nella base di dati
-Inserirle con un id scelto da noi
+Da fare:
+Rendere l'email univoca.
+Capire la differenza tra g e session e applicarle al nostro caso
+Lingua
