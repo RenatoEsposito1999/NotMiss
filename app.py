@@ -1,6 +1,7 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
 from flask_cors import CORS
 from pymongo import MongoClient
+from functions import *
 #   Creo un instanza del client di mongodb
 client = MongoClient("mongodb://localhost:27017/")
 #   Creo il db / accedo al db
@@ -41,13 +42,16 @@ def sw():
 def accedi_py():
     email = request.form["email"]
     password = request.form["password"]
-    query = {"email": email, "password": password}
-    result = utenti.find(query).count()
-    print(result)
-    if result:
-        return "1"
+    result = loggin(utenti, email, password)
+    print(type(result))
+    if result is not None:
+        if result:
+            print("loggin fatto")
+        else:
+            return "passwordErrata"
     else:
-        return "0"
+        return "email inesistente"
+    return ""
 
 
 @app.route('/registrazione.py', methods=["POST"])
@@ -64,7 +68,9 @@ def registrazione_py():
     if result:
         return "0"
     else:
+        last_id = utenti.find().count()
         account = {
+            "_id": last_id+1,
             "nome": nome,
             "cognome": cognome,
             "email": email,

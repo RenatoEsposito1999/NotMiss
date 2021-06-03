@@ -1,16 +1,26 @@
 {% extends 'base2.html' %}
 {% block title %}
 <title>NotMiss: Accedi</title>
+<script src="../static/Javascript/sha512.js"></script>
 {% endblock %}
 {% block main %}
- <!-- Login -->
-<p id="result"></p>
+ <!-- Reg avvenuta con successo -->
+<div class="container mt-5 mb-5 col-12">
+  <div class="row">
+      <div id="_popup" class="col-8 offset-2 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center _ds-none " style="z-index: 100">
+        <h4> <img src="../static/IMG/Icons/successo.png" style="position: relative" width="10%" alt="Registrazione avvenuta con successo"> Registrazione effettuata con successo!</h4>
+        <p>Verrai reindirizzato alla pagina di Login</p>
+      </div>
+  </div>
+</div>
 
+<!-- Login -->
 <div class="container mt-5 mb-5 col-12" id="padre">
 <div class="row" id="padre_login">
     <div class="col-8 offset-2 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center _divAccedi fadeIn2" id="login">
       <h1 style="margin-top: 20px;" class="text-center text-black-50">Login</h1>
       <form id="formLog">
+        <div id="_ErrorLogin"></div>
         <label for="_email"></label>
         <input type="email" class="form-control" id="_email" placeholder="Inserisci la tua email" autocomplete="on" autofocus required/> <br />
         <label for="_password"></label>
@@ -19,7 +29,7 @@
         <button type="submit" class="btn btn btn-dark _m10 _border-radius" id="_Accedi">Accedi</button> <br />
         <hr/>
         <label for="_Registrazione"></label>
-        <button style="margin-bottom: 20px;" type="submit" class="btn btn-outline-dark _m10 _border-radius" id="_Registrazione">Crea un account</button>
+        <button style="margin-bottom: 20px;" type="button" class="btn btn-outline-dark _m10 _border-radius" id="_Registrazione">Crea un account</button>
       </form>
     </div>
     <!-- Fine login  -->
@@ -28,9 +38,7 @@
     <div class="col-8 offset-2 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center _divAccedi" id="registrazione">
       <h1 style="margin-top: 20px;" class="text-center text-black-50">Registrati</h1>
       <form id="formReg">
-          <div id="_Error" >
-
-          </div>
+        <div id="_Error"></div>
         <label for="_nome"></label>
         <input type="text" class="form-control form-inline" id="_nome" placeholder="Nome" autocomplete="on" autofocus required/> <br />
         <label for="_cognome"></label>
@@ -62,9 +70,8 @@
         <button type="submit" class="btn btn btn-dark _m10 _border-radius _mb5" id="_Iscriviti" style="width: 45%;">Iscriviti</button> <br />
         <hr />
         <label for="_Login"></label>
-        <button style="margin-bottom: 20px;" type="submit" class="btn btn-outline-dark _m10 _border-radius" id="_Login">Torna al login</button>
+        <button style="margin-bottom: 20px;" type="button" class="btn btn-outline-dark _m10 _border-radius" id="_Login">Torna al login</button>
       </form>
-
     </div>
     <!-- Fine registrazione -->
   </div>

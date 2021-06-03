@@ -26,6 +26,7 @@ let filesToCache = [
     'static/IMG/Icons/freccia.png',
     'static/IMG/Icons/threebar32.jpg',
     'static/IMG/Icons/threebar64.jpg',
+    'static/IMG/Icons/successo.png',
     'static/IMG/logo/logo.png',
     'static/IMG/logo/logo32.ico',
     'static/IMG/logo/logo64.ico',
