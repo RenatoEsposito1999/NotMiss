@@ -6,7 +6,6 @@ tipo sostituire delle cose nelle pagine etc.
 
 Da fare:
 Creazione e publ. evento
-Mostra profilo.
 Lingua
 Gestire gli errori in maniera personalizzata
 
