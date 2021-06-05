@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, session, url_for, redirect, g
+from flask import Flask, request, render_template, session, url_for, redirect
 from flask_cors import CORS
 from pymongo import MongoClient
 from functions import *
@@ -18,11 +18,6 @@ cors = CORS(app)
 @app.route('/')
 def index():
     return render_template('index.html')
-
-
-@app.route('/accedi', methods=["GET", "POST"])
-def accedi():
-    return render_template("accedi.html", result=-999)
 
 
 @app.route('/aboutus')
@@ -46,7 +41,7 @@ def logout_py():
     return redirect(url_for('index'))
 
 
-@app.route('/accedi.py', methods=["POST", "GET"])
+@app.route('/accedi', methods=["POST", "GET"])
 def accedi_py():
     if request.method == "POST":
         email = request.form["_email"]
@@ -57,6 +52,7 @@ def accedi_py():
                 query = utenti.find_one({"email": email})
                 session["_id"] = query['_id']
                 session["nome"] = query['nome']
+                session["cognome"] = query['cognome']
                 session["email"] = query['email']
                 return redirect(url_for('index'))
             else:
