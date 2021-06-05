@@ -63,10 +63,16 @@
         <div class="col-6 text-left _mt10 _BheaderSize">
             <img src="../static/IMG/Icons/buttonMenu.png" id="_bMenu" alt="menu" style="z-index: 100;" />
         </div>
-
+        {% if session['_id'] %}
+        <div class="col-6 text-right _mt10 _BheaderSize">
+            <a href="/logout">Log out</a>
+        </div>
+        {% else %}
         <div class="col-6 text-right _mt10 _BheaderSize">
             <a href="/accedi">Accedi</a>
         </div>
+        {% endif%}
+
     </div>
     <!-- Fine Row -->
 

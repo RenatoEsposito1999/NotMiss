@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, session, g, url_for, redirect
+from flask import Flask, request, render_template, session, url_for, redirect, g
 from flask_cors import CORS
 from pymongo import MongoClient
 from functions import *
@@ -11,7 +11,7 @@ db = client['NotMissDB']
 utenti = db['utenti']
 db_id = 0
 app = Flask(__name__)
-#   app.secret_key = 'notmisskey'
+app.secret_key = 'notmisskey'
 cors = CORS(app)
 
 
@@ -40,6 +40,12 @@ def sw():
     return app.send_static_file('sw.js')
 
 
+@app.route('/logout', methods=["POST", "Get"])
+def logout_py():
+    session.pop('_id', None)
+    return redirect(url_for('index'))
+
+
 @app.route('/accedi.py', methods=["POST", "GET"])
 def accedi_py():
     if request.method == "POST":
@@ -48,8 +54,10 @@ def accedi_py():
         result = login(utenti, email, password)
         if result is not None:
             if result:
-                print("login fatto")
                 query = utenti.find_one({"email": email})
+                session["_id"] = query['_id']
+                session["nome"] = query['nome']
+                session["email"] = query['email']
                 return redirect(url_for('index'))
             else:
                 return render_template("accedi.html", result=-2)
@@ -98,6 +106,11 @@ def registrazione_py():
 @app.route('/registred.py', methods=["POST", "GET"])
 def registred():
     return render_template('registred.html')
+
+
+@app.route('/profilo', methods=["GET", "POST"])
+def profilo():
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':

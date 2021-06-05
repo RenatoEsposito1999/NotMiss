@@ -3,6 +3,14 @@
 <title>NotMiss</title>
 {% endblock %}
 {% block main %}
+
+{% if session['_id'] %}
+<div class="container">
+    <p>{{session['_id']}} </p>
+    <p>{{session['nome']}} </p>
+    <p>{{session['email']}} </p>
+</div>
+{% else %}
 <div class="container">
     <p>Contenuto qui</p>
     <p>Contenuto qui</p>
@@ -39,6 +47,8 @@
 
     <!-- Fine CONTENUTO -->
 </div>
+{% endif %}
+
 {% endblock %}
 
 {% block localJS %}
