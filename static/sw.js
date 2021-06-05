@@ -1,17 +1,18 @@
 let cacheName = 'NotMiss_cache';
 let filesToCache = [
-   /* 'templates/index.html',
+    /*'templates/index.html',
     'templates/accedi.html',
     'templates/contatti.html',
     'templates/info.html',
-    'templates/noscript.html',
+    'templates/noscript.html', */
     'templates/base.html',
-    'templates/base2.html', */
+    'templates/base2.html',
     'static/Javascript/Global.js',
     'static/Javascript/accedi.js',
     'static/Javascript/index.js',
     'static/Javascript/contatti.js',
     'static/Javascript/info.js',
+    'static/Javascript/registred.js',
     'static/Javascript/jquery-3.6.0.min.js',
     'static/proposal_NotMiss_Esposito_Rubino.mp4',
     'static/main.js',

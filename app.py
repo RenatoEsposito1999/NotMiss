@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, session, url_for, redirect
+from flask import Flask, request, render_template, session, url_for, redirect, jsonify
 from flask_cors import CORS
 from pymongo import MongoClient
 from functions import *
@@ -9,7 +9,6 @@ client = MongoClient("mongodb://localhost:27017/")
 db = client['NotMissDB']
 #   Accedo ad una collezione / creo una collezione
 utenti = db['utenti']
-db_id = 0
 app = Flask(__name__)
 app.secret_key = 'notmisskey'
 cors = CORS(app)
@@ -38,6 +37,7 @@ def sw():
 @app.route('/logout', methods=["POST", "Get"])
 def logout_py():
     session.pop('_id', None)
+    _userID = None
     return redirect(url_for('index'))
 
 
@@ -52,8 +52,6 @@ def accedi_py():
                 query = utenti.find_one({"email": email})
                 session["_id"] = query['_id']
                 session["nome"] = query['nome']
-                session["cognome"] = query['cognome']
-                session["email"] = query['email']
                 return redirect(url_for('index'))
             else:
                 return render_template("accedi.html", result=-2)
@@ -106,8 +104,26 @@ def registred():
 
 @app.route('/profilo', methods=["GET", "POST"])
 def profilo():
-    return redirect(url_for('index'))
+    if request.method == "GET":
+        return render_template("profilo.html")
+    else:
+        query = utenti.find_one({"_id":  session['_id']})
+        nome = query['nome']
+        cognome = query['cognome']
+        email = query['email']
+        data = query['data']
+        sex = query['sex']
+        print(sex)
+        info = {
+            "nome": nome,
+            "cognome": cognome,
+            "email": email,
+            "data": data,
+            "sex": sex
+        }
+        return jsonify(info)
 
 
 if __name__ == '__main__':
+
     app.run()

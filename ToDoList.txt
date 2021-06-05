@@ -1,8 +1,3 @@
-Minimo da fare:
-Login
-Creazione e publ. evento
-Mostra profilo.
-
 Per serializzare le query e quindi renderle jason vedi:
 https://stackoverflow.com/questions/23024356/serializing-mongodb-find-return-into-non-anonymous-json-array-using-pymongo
 potrebbe servire perchè potremmo dover fare delle cose con JQuery
@@ -10,33 +5,10 @@ tipo sostituire delle cose nelle pagine etc.
 
 
 Da fare:
-Capire la differenza tra g e session e applicarle al nostro caso
+Creazione e publ. evento
+Mostra profilo.
 Lingua
+Gestire gli errori in maniera personalizzata
 
 
 
-
-
-
-
-
-
-$("#formLog").submit(function (e){
-    e.preventDefault()
-    $.ajax({
-       url: "http://localhost:5000/accedi.py",
-        type: "POST",
-        data: {
-           email: $("#_email").val(),
-           password: SHA512($("#_password").val())
-        },
-        success: function(result){
-           if (result === "passwordErrata"){
-               $("#_ErrorLogin").html('<p style="color: red; font-weight: bold">Le password errata</p>')
-           }
-           else if (result === "email inesistente"){
-               $("#_ErrorLogin").html('<p style="color: red; font-weight: bold">Email inesistente! Per creare un account clicca <span style="color: red; text-decoration: underline; cursor: pointer" onclick="registrati(\'login\',1)">qui</span></p>')
-           }
-        }
-    });
-})

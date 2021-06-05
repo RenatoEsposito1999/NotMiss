@@ -36,7 +36,7 @@
                <span id="linguaDefault">
                    <img id="_imgLingua" src="../static/IMG/Icons/bandieraitalia.png" alt="lingua italiana">
                </span>
-                <a href="/accedi" style="margin-left: 3%">Accedi</a>
+                <a href="/accedi" style="margin-left: 3%" id="_textAccedi">Accedi</a>
                 <img src="../static/IMG/Icons/closeButton.png" class="float-right" id="_closeSB" alt="chiudi" />
             </div>
         </div>
@@ -48,6 +48,8 @@
             <ul>
                 <li><span style="cursor: pointer" class="m3perc " id="_Lingua"><img src="../static/IMG/Icons/bandierainglese.png" alt="English Logo">English</span></li>
                 <hr>
+                <li><span class="m3perc"><a  class="text-dark font-weight-normal" href="/">Home</a></span></li>
+                <li><span class="m3perc"><a  class="text-dark font-weight-normal" href="/profilo">Profilo</a></span></li>
                 <li><span class="m3perc"><a  class="text-dark font-weight-normal" href="/aboutus">About NotMiss</a></span></li>
                 <li><span class="m3perc"><a  class="text-dark font-weight-normal" href="/contatti">Contattaci</a></span></li>
             </ul>
@@ -69,7 +71,7 @@
         </div>
         {% else %}
         <div class="col-6 text-right _mt10 _BheaderSize">
-            <a href="/accedi">Accedi</a>
+           <div id="change"><a href="/accedi">Accedi</a></div>
         </div>
         {% endif%}
 

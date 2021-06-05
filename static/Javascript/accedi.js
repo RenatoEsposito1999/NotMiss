@@ -47,9 +47,13 @@ function registrati(IDnascondi, flag) {
     }, 500);
 }
 
+function text_accedi_to_home(){
+    $('#change').html('<a href="/">Home</a>')
+}
 
 $(document).ready(function () {
     removeRegistrazione()
+    text_accedi_to_home()
 })
 
 
