@@ -10,6 +10,16 @@
     <div class="col-8 offset-2 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center _divAccedi fadeIn2" id="login">
       <h1 style="margin-top: 20px;" class="text-center text-black-50">Login</h1>
       <form id="formLog" action="/accedi.py" method="post">
+        {% if result == -1%}
+        <div id="_EmailError">
+          <p style="color: red; font-weight: bold">Email inesistente! Per creare un account clicca <span style="color: red; text-decoration: underline; cursor: pointer" id="textEmError" >qui</span></p>
+        </div>
+        {% endif %}
+        {% if result == -2%}
+        <div id="_PasswordLogError">
+          <p style="color: red; font-weight: bold">Password errata!</p>
+        </div>
+        {% endif %}
         <div id="_ErrorLogin"></div>
         <label for="_email"></label>
         <input type="email" name="_email" class="form-control" id="_email" placeholder="Inserisci la tua email" autocomplete="on" autofocus required/> <br />
@@ -79,7 +89,7 @@
 {% endblock %}
 {% block localJS %}
 <script src="../static/Javascript/accedi.js"></script>
-{% if result%}
+{% if result > 0  %}
 <script>
   //chiamo la funzione per far apparire il modulo di registrazione
    registrati('login',1)

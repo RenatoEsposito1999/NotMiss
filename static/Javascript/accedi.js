@@ -60,3 +60,8 @@ $("#_Registrazione").click(function (){
 $("#_Login").click(function (){
     registrati('registrazione',0)
 });
+
+
+$("#textEmError").click(function () {
+    registrati('login',1)
+})

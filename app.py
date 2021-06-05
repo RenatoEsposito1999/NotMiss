@@ -20,9 +20,9 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/accedi')
+@app.route('/accedi', methods=["GET", "POST"])
 def accedi():
-    return render_template("accedi.html")
+    return render_template("accedi.html", result=-999)
 
 
 @app.route('/aboutus')
@@ -44,18 +44,20 @@ def sw():
 def accedi_py():
     if request.method == "POST":
         email = request.form["_email"]
-        password = request.form["_password"]
+        password = crypt(request.form["_password"])
         result = login(utenti, email, password)
         if result is not None:
             if result:
-                print("loggin fatto")
+                print("login fatto")
                 query = utenti.find_one({"email": email})
+                return redirect(url_for('index'))
             else:
-                return "passwordErrata"
+                return render_template("accedi.html", result=-2)
         else:
-            return "email inesistente"
+            return render_template("accedi.html", result=-1)
+        # email inesistente
     else:
-        return render_template("accedi.html")
+        return render_template("accedi.html", result=-999)
 
 
 #   return != 0 if there is an error else return 0 (return in template)
