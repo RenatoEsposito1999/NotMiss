@@ -43,15 +43,13 @@ def sw():
 @app.route('/accedi.py', methods=["POST", "GET"])
 def accedi_py():
     if request.method == "POST":
-        session.pop('user_id', None)
-        email = request.form["email"]
-        password = request.form["password"]
+        email = request.form["_email"]
+        password = request.form["_password"]
         result = login(utenti, email, password)
         if result is not None:
             if result:
                 print("loggin fatto")
                 query = utenti.find_one({"email": email})
-                session['user_id'] = query["_id"]
             else:
                 return "passwordErrata"
         else:
@@ -70,8 +68,7 @@ def registrazione_py():
     re_password = crypt(request.form["_repassword"])
     data = request.form["_data"]
     sex = request.form["sesso"]
-    esito = checkPassowrd(password, re_password)
-    print(esito)
+    esito = check_password(password, re_password)
 #   password non uguali
     if not esito:
         return render_template('accedi.html', result=2)

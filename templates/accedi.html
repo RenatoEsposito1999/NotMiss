@@ -9,12 +9,12 @@
 <div class="row" id="padre_login">
     <div class="col-8 offset-2 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center _divAccedi fadeIn2" id="login">
       <h1 style="margin-top: 20px;" class="text-center text-black-50">Login</h1>
-      <form id="formLog">
+      <form id="formLog" action="/accedi.py" method="post">
         <div id="_ErrorLogin"></div>
         <label for="_email"></label>
-        <input type="email" class="form-control" id="_email" placeholder="Inserisci la tua email" autocomplete="on" autofocus required/> <br />
+        <input type="email" name="_email" class="form-control" id="_email" placeholder="Inserisci la tua email" autocomplete="on" autofocus required/> <br />
         <label for="_password"></label>
-        <input type="password" class="form-control" id="_password" placeholder="Inserisci la tua password" required/> <br />
+        <input type="password" name="_password" class="form-control" id="_password" placeholder="Inserisci la tua password" required/> <br />
         <label for="_Accedi"></label>
         <button type="submit" class="btn btn btn-dark _m10 _border-radius" id="_Accedi">Accedi</button> <br />
         <hr/>
@@ -34,7 +34,7 @@
           <p style="color: red; font-weight: bold">Email già esistente. Se hai gia un account effettua il <a href="/accedi" style="color: red; text-decoration: underline">Login</a>
         </div>
         {% endif %}
-        {% if result == 2%}
+        {% if result == 2 %}
         <div id="_ErrorPassword">
           <p style="color: red; font-weight: bold">Le password non sono uguali!</p>
         </div>
