@@ -1,7 +1,8 @@
-from flask import Flask, request, render_template, session, g
+from flask import Flask, request, render_template, session, g, url_for, redirect
 from flask_cors import CORS
 from pymongo import MongoClient
 from functions import *
+
 #   Creo un instanza del client di mongodb
 client = MongoClient("mongodb://localhost:27017/")
 #   Creo il db / accedo al db
@@ -39,54 +40,66 @@ def sw():
     return app.send_static_file('sw.js')
 
 
-@app.route('/accedi.py', methods=["POST"])
+@app.route('/accedi.py', methods=["POST", "GET"])
 def accedi_py():
-    session.pop('user_id',None)
-    email = request.form["email"]
-    password = request.form["password"]
-    result = login(utenti, email, password)
-    if result is not None:
-        if result:
-            print("loggin fatto")
-            query = utenti.find_one({"email": email})
-            session['user_id'] = query["_id"]
+    if request.method == "POST":
+        session.pop('user_id', None)
+        email = request.form["email"]
+        password = request.form["password"]
+        result = login(utenti, email, password)
+        if result is not None:
+            if result:
+                print("loggin fatto")
+                query = utenti.find_one({"email": email})
+                session['user_id'] = query["_id"]
+            else:
+                return "passwordErrata"
         else:
-            return "passwordErrata"
+            return "email inesistente"
     else:
-        return "email inesistente"
-    return ""
+        return render_template("accedi.html")
 
 
+#   return != 0 if there is an error else return 0 (return in template)
 @app.route('/registrazione.py', methods=["POST"])
 def registrazione_py():
-    nome = request.form["nome"]
-    cognome = request.form["cognome"]
-    email = request.form["email"]
-    password = request.form["password"]
-    data = request.form["data"]
-    sex = request.form["sex"]
-    query = {"email": email}
-    result = utenti.find(query).count()
-#   se è già presente l'email allora ritorno 0
-    if result:
-        return "0"
+    nome = request.form["_nome"]
+    cognome = request.form["_cognome"]
+    email = request.form["_regEmail"]
+    password = crypt(request.form["_regPassword"])
+    re_password = crypt(request.form["_repassword"])
+    data = request.form["_data"]
+    sex = request.form["sesso"]
+    esito = checkPassowrd(password, re_password)
+    print(esito)
+#   password non uguali
+    if not esito:
+        return render_template('accedi.html', result=2)
     else:
-        last_id = utenti.find().count()
-        account = {
-            "_id": last_id+1,
-            "nome": nome,
-            "cognome": cognome,
-            "email": email,
-            "password": password,
-            "data": data,
-            "sex": sex
-        }
-        utenti.insert_one(account)
-        return "1"
+        query = {"email": email}
+        result = utenti.find(query).count()
+#   se è già presente l'email allora ritorno la pagina con il messaggio di errore.
+        if result:
+            return render_template('accedi.html', result=1)
+        else:
+            last_id = utenti.find().count()
+            account = {
+                "_id": last_id+1,
+                "nome": nome,
+                "cognome": cognome,
+                "email": email,
+                "password": password,
+                "data": data,
+                "sex": sex
+            }
+            utenti.insert_one(account)
+            return redirect(url_for('registred'))
+
+
+@app.route('/registred.py', methods=["POST", "GET"])
+def registred():
+    return render_template('registred.html')
 
 
 if __name__ == '__main__':
     app.run()
-
-
-#   db.utenti.drop()

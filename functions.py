@@ -1,3 +1,5 @@
+import hashlib
+
 def login(db, email, password):
     i = {}
     query = {"email": email}
@@ -14,3 +16,16 @@ def login(db, email, password):
         else:
             return 0
         pass
+
+
+def checkPassowrd(p1, p2):
+    if p1 == p2:
+        return True
+    else:
+        return False
+
+
+def crypt(str):
+    hash_object = hashlib.sha256(str.encode())
+    hex_dig = hash_object.hexdigest()
+    return hex_dig

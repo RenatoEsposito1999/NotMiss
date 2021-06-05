@@ -1,0 +1,18 @@
+{% extends 'base2.html' %}
+{% block localJS %}
+<script src="../static/Javascript/registred.js"></script>
+{% endblock %}
+{% block title %}
+<title>NotMiss: Registrato!</title>
+{% endblock %}
+{% block main %}
+ <!-- Reg avvenuta con successo -->
+<div class="container mt-5 mb-5 col-12">
+  <div class="row">
+      <div id="_popup" class="col-8 offset-2 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center" style="z-index: 100">
+        <h4> <img src="../static/IMG/Icons/successo.png" style="position: relative" width="10%" alt="Registrazione avvenuta con successo"> Registrazione effettuata con successo!</h4>
+        <p>Verrai reindirizzato alla pagina di Login</p>
+      </div>
+  </div>
+</div>
+{% endblock %}

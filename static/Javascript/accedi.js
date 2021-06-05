@@ -49,9 +49,7 @@ function registrati(IDnascondi, flag) {
 
 
 $(document).ready(function () {
-
     removeRegistrazione()
-
 })
 
 
@@ -62,69 +60,3 @@ $("#_Registrazione").click(function (){
 $("#_Login").click(function (){
     registrati('registrazione',0)
 });
-
-
-$("#formReg").submit(function (e){
-    console.log(SHA512($("#_password").val()))
-    e.preventDefault() //blocco il refresh sul submit del form
-    if (    $('#_regPassword').val() === $('#_repassword').val()    ){
-        //Vero, posso inviare dati al server
-        $.ajax({
-            url: "http://localhost:5000/registrazione.py",
-            type: "POST",
-            data: {
-                nome:  $("#_nome").val(),
-                cognome: $("#_cognome").val(),
-                email: $("#_regEmail").val(),
-                password: SHA512($("#_regPassword").val()),
-                data: $("#_data").val(),
-                sex: $("input:checked").val()
-            },
-            success: function ( result ){
-                let reg = parseInt(result, 10)
-                if (reg){
-                    setTimeout(function (){
-                     window.location.replace("/accedi")
-                    }, 2000)
-                    $("#registrazione").addClass("_ds-none")
-                    $("#_popup").removeClass("_ds-none")
-                }
-                else{
-                    $("#_Error").html('<p style="color: red; font-weight: bold">Email già esistente. Se hai gia un account effettua il <a href="/accedi" style="color: red; text-decoration: underline">Login</a>')
-                }
-            },
-            error: function (){
-                document.write("Errore di richiesta")
-            }
-     });
-    }
-    else {
-        //Falso, mostro un msg di errore
-        $("#_Error").html('<p style="color: red; font-weight: bold">Le password non sono uguali</p>')
-    }
-});
-
-
-
-$("#formLog").submit(function (e){
-    e.preventDefault()
-    $.ajax({
-       url: "http://localhost:5000/accedi.py",
-        type: "POST",
-        data: {
-           email: $("#_email").val(),
-           password: SHA512($("#_password").val())
-        },
-        success: function(result){
-           if (result === "passwordErrata"){
-               $("#_ErrorLogin").html('<p style="color: red; font-weight: bold">Le password errata</p>')
-           }
-           else if (result === "email inesistente"){
-               $("#_ErrorLogin").html('<p style="color: red; font-weight: bold">Email inesistente! Per creare un account clicca <span style="color: red; text-decoration: underline; cursor: pointer" onclick="registrati(\'login\',1)">qui</span></p>')
-           }
-        }
-    });
-})
-
-
-

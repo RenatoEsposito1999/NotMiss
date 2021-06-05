@@ -8,9 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="PWA NotMiss per progetto TW6"/>
     <meta name="theme-color" content="white"/>
-    {% block title %}
-
-    {% endblock %}
     <link rel="manifest" href="../static/manifest.json">
     <script src="../static/main.js"></script>
     <link rel="icon" href="../static/IMG/logo/logo32.ico" />
@@ -21,10 +18,13 @@
     <link rel="stylesheet" href="../static/Style/mediaq.css" />
     <link rel="stylesheet" href="../static/Style/animation.css" />
     <script src="../static/Javascript/jquery-3.6.0.min.js"></script>
-
+    <script src="../static/Javascript/Global.js"></script>
     <noscript>
         <meta http-equiv="refresh" content="0; url=noscript.html" />
     </noscript>
+    {% block title %}
+
+    {% endblock %}
 </head>
 <body class="fadeIn" style="">
 <div id="coprente" class="">
@@ -120,13 +120,8 @@
   </div>
 </div>
 <!-- Fine Footer -->
-
-
-
-<script src="../static/Javascript/Global.js"></script>
 {% block localJS %}
 
 {% endblock %}
-
 </body>
 </html>

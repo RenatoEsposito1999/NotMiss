@@ -10,6 +10,33 @@ tipo sostituire delle cose nelle pagine etc.
 
 
 Da fare:
-Rendere l'email univoca.
 Capire la differenza tra g e session e applicarle al nostro caso
 Lingua
+
+
+
+
+
+
+
+
+
+$("#formLog").submit(function (e){
+    e.preventDefault()
+    $.ajax({
+       url: "http://localhost:5000/accedi.py",
+        type: "POST",
+        data: {
+           email: $("#_email").val(),
+           password: SHA512($("#_password").val())
+        },
+        success: function(result){
+           if (result === "passwordErrata"){
+               $("#_ErrorLogin").html('<p style="color: red; font-weight: bold">Le password errata</p>')
+           }
+           else if (result === "email inesistente"){
+               $("#_ErrorLogin").html('<p style="color: red; font-weight: bold">Email inesistente! Per creare un account clicca <span style="color: red; text-decoration: underline; cursor: pointer" onclick="registrati(\'login\',1)">qui</span></p>')
+           }
+        }
+    });
+})
