@@ -123,6 +123,13 @@ def profilo():
         }
         return jsonify(info)
 
+@app.route('/crea-evento', methods=['GET','POST'])
+def crea_evento():
+    if request.method == 'POST':
+        return render_template('crea-evento.html')
+    else:
+        return render_template('crea-evento.html')
+
 
 if __name__ == '__main__':
 
