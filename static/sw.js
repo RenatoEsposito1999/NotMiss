@@ -4,9 +4,9 @@ let filesToCache = [
     'templates/accedi.html',
     'templates/contatti.html',
     'templates/info.html',
-    'templates/noscript.html', */
+    'templates/noscript.html',
     'templates/base.html',
-    'templates/base2.html',
+    'templates/base2.html',*/
     'static/Javascript/Global.js',
     'static/Javascript/accedi.js',
     'static/Javascript/index.js',

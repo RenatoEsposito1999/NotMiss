@@ -14,6 +14,5 @@ window.onload = () => {
                 console.log('ServiceWorker registration failed: ', err);
             });
     }
-
 }
 
