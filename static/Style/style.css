@@ -60,6 +60,7 @@ li a, li a:hover, li a:visited{
 
 ._BheaderSize{
     font-size: 20px;
+    cursor: pointer;
 }
 
 ._li_info{
@@ -159,4 +160,20 @@ li a, li a:hover, li a:visited{
 #_divIframe{
     border: 1px solid grey;
     border-radius: 10px;
+}
+
+#_creaEvento{
+    color: black;
+}
+
+#_creaEvento:hover{
+    background-color: #dedede;
+    cursor: pointer;
+    border: 1px solid #dedede;
+    border-width: 3px;
+    border-radius: 30px;
+}
+
+._underline:hover{
+    text-decoration: underline;
 }

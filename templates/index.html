@@ -5,49 +5,33 @@
 {% block main %}
 
 {% if session['_id'] %}
-<div class="container">
-    <p>{{session['_id']}} </p>
-    <p>{{session['nome']}} </p>
-    <p>{{session['email']}} </p>
+<div class="container mb-2">
+    <div class="row">
+        <div class="col-4  offset-4 text-center text-left _mt10 _BheaderSize _funzionalita">
+            <a class="text-center" href="/crea-evento" id="_creaEvento" style="font-weight: normal"><img src="../static/IMG/Icons/plus.png" width="6%"> <span class="_underline" >Crea un evento</span></a>
+        </div>
+    </div>
 </div>
 {% else %}
 <div class="container">
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-    <p>Contenuto qui</p>
-
+    <p>Non hai accesso ai comandi.</p>
     <!-- Fine CONTENUTO -->
 </div>
 {% endif %}
+
+<div class="container">
+    <div class="row">
+        <div class="bg-info col-12" style="min-height: 100%">
+            BLOCCO 1 riga1
+        </div>
+    </div>
+    <div class="row">
+        <div class="bg-warning col-12" style="min-height: 100%">
+            BLOCCO 2 Riga 2
+        </div>
+    </div>
+
+</div>
 
 {% endblock %}
 
