@@ -10,6 +10,7 @@ db = client['NotMissDB']
 #   Accedo ad una collezione / creo una collezione
 utenti = db['utenti']
 eventi = db['eventi']
+contattaci = db['contattaci']
 app = Flask(__name__)
 app.secret_key = 'notmisskey'
 cors = CORS(app)
@@ -20,29 +21,44 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/home')
+def indexhome():
+    return render_template('index.html')
+
+
+@app.route('/index')
+def indexindex():
+    return render_template('index.html')
+
+
 @app.route('/aboutus')
+def aboutus():
+    return render_template("info.html")
+
+
+@app.route('/about')
 def about():
     return render_template("info.html")
 
 
-@app.route('/contatti')
+@app.route('/contatti', methods=["GET", "POST"])
 def contatti():
-    return render_template("contatti.html")
-
-
-@app.route('/no-script')
-def noscript():
-    return render_template("noscript.html")
-
-
-@app.errorhandler(404)
-def page_not_found(e):
-    return redirect('/')
-
-
-@app.route('/sw.js')
-def sw():
-    return app.send_static_file("sw.js")
+    if request.method == "GET":
+        return render_template("contatti.html")
+    else:
+        email = request.form["_email"]
+        oggetto = request.form["_oggetto"]
+        corpo = request.form["_corpo"]
+        #   password non uguali
+        last_id = contattaci.find().count()
+        messaggio = {
+            "_id": last_id + 1,
+            "email": email,
+            "oggetto": oggetto,
+            "corpo": corpo
+        }
+        contattaci.insert_one(messaggio)
+        return redirect(url_for('index'))
 
 
 @app.route('/logout', methods=["POST", "Get"])
@@ -83,19 +99,19 @@ def registrazione_py():
     data = request.form["_data"]
     sex = request.form["sesso"]
     esito = check_password(password, re_password)
-#   password non uguali
+    #   password non uguali
     if not esito:
         return render_template('accedi.html', result=2)
     else:
         query = {"email": email}
         result = utenti.find(query).count()
-#   se è già presente l'email allora ritorno la pagina con il messaggio di errore.
+        #   se è già presente l'email allora ritorno la pagina con il messaggio di errore.
         if result:
             return render_template('accedi.html', result=1)
         else:
             last_id = utenti.find().count()
             account = {
-                "_id": last_id+1,
+                "_id": last_id + 1,
                 "nome": nome,
                 "cognome": cognome,
                 "email": email,
@@ -109,7 +125,10 @@ def registrazione_py():
 
 @app.route('/registred.py', methods=["POST", "GET"])
 def registred():
-    return render_template('registred.html')
+    if request.method == "POST":
+        return render_template('registred.html')
+    else:
+        return redirect(url_for('index'))
 
 
 @app.route('/profilo', methods=["GET", "POST"])
@@ -117,7 +136,7 @@ def profilo():
     if request.method == "GET":
         return render_template("profilo.html")
     else:
-        query = utenti.find_one({"_id":  session['_id']})
+        query = utenti.find_one({"_id": session['_id']})
         nome = query['nome']
         cognome = query['cognome']
         email = query['email']
@@ -163,6 +182,54 @@ def crea_evento():
         return redirect(url_for('index'))
     else:
         return render_template('crea-evento.html')
+
+
+@app.route('/sw.js')
+def sw():
+    return app.send_static_file("sw.js")
+
+
+# ---------------------------------------- DA QUI IN POI GESTIONE DEGLI ERRORI E SW
+
+
+@app.route('/no-script')
+def noscript():
+    return render_template("noscript.html")
+
+
+@app.errorhandler(404)
+def http404(e):
+    return redirect('/')
+
+
+@app.errorhandler(400)
+def http400red(e):
+    return redirect('/400')
+
+
+@app.route('/400')
+def http400():
+    return render_template("400.html")
+
+
+@app.errorhandler(403)
+def http403red(e):
+    return redirect('/403')
+
+
+@app.route('/403')
+def http403():
+    return render_template("403.html")
+
+
+@app.errorhandler(500)
+def http500red(e):
+    return redirect('/500')
+
+
+@app.route('/500')
+def http500():
+    return render_template("500.html")
 
 
 if __name__ == '__main__':

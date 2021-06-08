@@ -8,16 +8,16 @@
     <!-- Login -->
     <div class="col-8 offset-2 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center _divAccedi fadeIn2" id="login">
       <h1 style="margin-top: 20px;" class="text-center text-black-50">Contattaci</h1>
-      <form>
+      <form id="_contattaci" action="/contatti" method="POST">
         <label for="_email"></label>
-        <input type="email" class="form-control" id="_email" placeholder="Inserisci la tua email" autocomplete="on" autofocus /> <br />
+        <input type="email" class="form-control" name="_email" id="_email" placeholder="Inserisci la tua email" autocomplete="on" autofocus /> <br />
         <label for="_oggetto"></label>
-        <input type="text" class="form-control" id="_oggetto" placeholder="Oggetto" /> <br />
+        <input type="text" class="form-control" name="_oggetto" id="_oggetto" placeholder="Oggetto" /> <br />
         <label for="_corpo"></label>
         <h4 class="text-center text-black-50">Messaggio</h4>
-        <textarea class="form-control" id="_corpo" placeholder="Descrivi il motivo per cui ci stai contattando (Max. 500 caratteri)" maxlength="500" rows="3"></textarea>
+        <textarea class="form-control" name="_corpo" id="_corpo" placeholder="Descrivi il motivo per cui ci stai contattando (Max. 500 caratteri)" maxlength="500" rows="3"></textarea>
         <label for="_invioEmail"></label>
-        <button type="button" class="btn btn btn-dark _m10 _border-radius" id="_invioEmail">Invia</button> <br/>
+        <button type="submit" class="btn btn btn-dark _m10 _border-radius" id="_invioEmail">Invia</button> <br/>
       </form>
     </div>
     <!-- Fine login  -->

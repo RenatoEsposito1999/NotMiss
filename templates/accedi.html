@@ -4,13 +4,14 @@
 {% endblock %}
 
 {% block main %}
-<!-- Login -->
+
 {% if session['_id'] %}
 <script>
   console.log("bho")
   window.location.replace("/")
 </script>
 {% endif %}
+<!-- Login -->
 <div class="container mt-5 mb-5 col-12" id="padre">
 <div class="row" id="padre_login">
     <div class="col-8 offset-2 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center _divAccedi fadeIn2" id="login">
@@ -92,13 +93,13 @@
     <!-- Fine registrazione -->
   </div>
 </div>
+
 {% endblock %}
 {% block localJS %}
 <script src="../static/Javascript/accedi.js"></script>
 {% if result > 0  %}
 <script>
-  //chiamo la funzione per far apparire il modulo di registrazione
-  registrati('login',1)
+  registrati('login',1)//chiamo la funzione per far apparire il modulo di registrazione
 </script>
 {% endif %}
 
