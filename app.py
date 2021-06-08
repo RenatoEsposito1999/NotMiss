@@ -9,6 +9,7 @@ client = MongoClient("mongodb://localhost:27017/")
 db = client['NotMissDB']
 #   Accedo ad una collezione / creo una collezione
 utenti = db['utenti']
+eventi = db['eventi']
 app = Flask(__name__)
 app.secret_key = 'notmisskey'
 cors = CORS(app)
@@ -47,7 +48,6 @@ def sw():
 @app.route('/logout', methods=["POST", "Get"])
 def logout_py():
     session.pop('_id', None)
-    _userID = None
     return redirect(url_for('index'))
 
 
@@ -136,7 +136,31 @@ def profilo():
 @app.route('/crea-evento', methods=['GET', 'POST'])
 def crea_evento():
     if request.method == 'POST':
-        return render_template('crea-evento.html')
+        nome = request.form['nome']
+        luogo = request.form['luogo']
+        dataI = request.form['dataI']
+        dataF = request.form['dataF']
+        tipologia = request.form['tipologia']
+        privacy = request.form['privacy']
+        quantita = request.form['quantita']
+        preferenze = request.form['preferenze']
+        descrizione = request.form['descrizione']
+        last_id = eventi.find().count()
+        info = {
+            '_id': last_id + 1,
+            'nome': nome,
+            'creatore': session['_id'],
+            'luogo': luogo,
+            'dataI': dataI,
+            'dataF': dataF,
+            'tipologia': tipologia,
+            'privacy': privacy,
+            'quantita': quantita,
+            'preferenze': preferenze,
+            'descrizione': descrizione
+        }
+        eventi.insert_one(info)
+        return redirect(url_for('index'))
     else:
         return render_template('crea-evento.html')
 

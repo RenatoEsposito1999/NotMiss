@@ -7,30 +7,48 @@
 {% if session['_id'] %}
 <div class="container mb-2">
     <div class="row">
-        <div class="col-4  offset-4 text-center text-left _mt10 _BheaderSize _funzionalita">
+        <div class="col-12  text-center text-left _mt10 _BheaderSize _funzionalita">
             <a class="text-center" href="/crea-evento" id="_creaEvento" style="font-weight: normal"><img src="../static/IMG/Icons/plus.png" width="6%"> <span class="_underline" >Crea il tuo un evento</span></a>
         </div>
     </div>
 </div>
-{% else %}
-<div class="container">
-    <p>Non hai accesso ai comandi.</p>
-    <!-- Fine CONTENUTO -->
+<div class="container mt-2 mt-3" id="_selettoreQuery">
+    <div class="row">
+        <div class="col-6  col-sm-6 offset-sm-0 col-md-3 offset-md-3 col-lg-2 offset-lg-4 text-center">
+            <p class="_querySelector _selected" id="_pub">Evento pubblico</p>
+        </div>
+         <div class="col-6  col-md-3 col-sm-6 col-lg-2  text-center">
+            <p class="_querySelector" id="_priv">Evento privato</p>
+        </div>
+    </div>
 </div>
+
+
+
+{% else %}
+<div class="container mb-2">
+    <div class="row">
+        <div class="col-12  text-center text-left _mt10 _BheaderSize _funzionalita">
+            <a class="text-center" href="/crea-evento" id="_creaEventoNoLog" style="font-weight: normal"><img src="../static/IMG/Icons/plus.png" width="6%"> <span class="_underline" >Crea il tuo un evento</span></a>
+        </div>
+    </div>
+</div>
+<div class="container mt-2 mt-3" id="">
+    <div class="row">
+        <div class="col-12 col-md-4 offset-md-4 text-center">
+            <p class="_querySelector _selected">Evento pubblico</p>
+        </div>
+    </div>
+</div>
+
 {% endif %}
 
-<div class="container">
+<div class="container mt-2 bg-warning">
     <div class="row">
-        <div class="bg-info col-12" style="min-height: 100%">
-            BLOCCO 1 riga1
+        <div class="col-12">
+            <p>QUI VA L'I-ESIMO+1 EVENTO</p>
         </div>
     </div>
-    <div class="row">
-        <div class="bg-warning col-12" style="min-height: 100%">
-            BLOCCO 2 Riga 2
-        </div>
-    </div>
-
 </div>
 
 {% endblock %}
