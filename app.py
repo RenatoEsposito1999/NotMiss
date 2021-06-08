@@ -29,9 +29,19 @@ def contatti():
     return render_template("contatti.html")
 
 
+@app.route('/no-script')
+def noscript():
+    return render_template("noscript.html")
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return redirect('/')
+
+
 @app.route('/sw.js')
 def sw():
-    return app.send_static_file('sw.js')
+    return app.send_static_file("sw.js")
 
 
 @app.route('/logout', methods=["POST", "Get"])
@@ -123,7 +133,8 @@ def profilo():
         }
         return jsonify(info)
 
-@app.route('/crea-evento', methods=['GET','POST'])
+
+@app.route('/crea-evento', methods=['GET', 'POST'])
 def crea_evento():
     if request.method == 'POST':
         return render_template('crea-evento.html')
@@ -132,5 +143,4 @@ def crea_evento():
 
 
 if __name__ == '__main__':
-
     app.run()
