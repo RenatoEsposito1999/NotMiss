@@ -1,12 +1,12 @@
 let cacheName = 'NotMiss_cache';
 let filesToCache = [
-    /*'templates/index.html',
+    'templates/index.html',
     'templates/accedi.html',
     'templates/contatti.html',
     'templates/info.html',
     'templates/noscript.html',
     'templates/base.html',
-    'templates/base2.html',*/
+    'templates/base2.html',
     'static/Javascript/Global.js',
     'static/Javascript/accedi.js',
     'static/Javascript/index.js',

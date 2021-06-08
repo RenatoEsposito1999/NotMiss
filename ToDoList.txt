@@ -9,5 +9,3 @@ Creazione e publ. evento
 Lingua
 Gestire gli errori in maniera personalizzata
 
-
-

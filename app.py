@@ -123,7 +123,6 @@ def profilo():
         email = query['email']
         data = query['data']
         sex = query['sex']
-        print(sex)
         info = {
             "nome": nome,
             "cognome": cognome,

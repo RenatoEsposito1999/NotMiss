@@ -1,3 +1,4 @@
+
 {% extends 'base2.html' %}
 {% block title %}
 <title>NotMiss: crea evento</title>
@@ -7,37 +8,48 @@
 {% if session['_id'] %}
 <div class="container mt-5">
   <div class="row">
-     <div class="col-8 offset-2 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center _divAccedi" id="registrazione">
-      <h1 style="margin-top: 20px;" class="text-center text-black-50">Crea il tuo evento</h1>
+     <div class="col-8 offset-2 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-8 offset-lg-2 text-center _divAccedi _divCreaEvento " id="registrazione">
+      <h1 style="margin-top: 1rem;" class="text-center text-black-50">Crea il tuo evento</h1>
       <form id="formReg" action="/registrazione.py" method="POST">
-        <label for="_nomeevento" class="text-black-50 font-weight-bold">Nome eveneto</label>
-        <input type="text" name="_nomeevento" class="form-control form-inline" id="_nomeevento" placeholder="Nome evento" autocomplete="on" autofocus required/> <br />
+
+        <label for="_nomeevento" class="text-black-50 font-weight-bold">Nome evento</label>
+        <input type="text" name="nome" class="form-control form-inline" id="_nomeevento" placeholder="Nome evento" autocomplete="on" autofocus required/> <br />
+
+        <label for="_luogoevento" class="text-black-50 font-weight-bold">Luogo evento (opzionale)</label>
+        <input type="text" name="luogo" class="form-control form-inline" id="_luogoevento" placeholder="Inserisci qui il luogo del tuo evento"/> <br />
+
         <label for="_dataInizio" class="text-black-50 font-weight-bold">Data inizio</label>
-        <input type="datetime-local" class="form-control form-inline" name="_dataInizio" id="_dataInizio" autocomplete="on" required/> <br />
-        <label for="_dataFine" class="text-black-50 font-weight-bold">Data fine</label>
-        <input type="datetime-local" class="form-control form-inline" name="_dataFine" id="_dataFine"  autocomplete="on" required/> <br />
-        <label for="_tipologia" class="text-black-50 font-weight-bold">Tipologia</label>
-        <select class="custom-select" id="_tipologia">
-            <option value="altro">Altro</option>
-            <option value="cinema_teatro">Cinema e teatro</option>
-            <option value="gaming">Gaming</option>
-            <option value="sport">Sport e salute</option>
-            <option value="ristorazione">Ristorazione</option>
-            <option value="intrattenimento">Intrattenimento</option>
+        <input type="datetime-local" class="form-control form-inline"  name="dataI" id="_dataInizio" style="margin-bottom: 0.5rem" autocomplete="on" required/>
+
+        <label for="_dataFine" class="text-black-50 font-weight-bold" style="margin-top: 1rem">Data fine</label>
+        <input type="datetime-local" class="form-control form-inline"  name="dataF" id="_dataFine" autocomplete="on" style="margin-bottom: 0.5rem" required/> <br>
+
+        <label for="_tipologia" class="text-black-50 font-weight-bold" style="margin-bottom: 0.5rem">Tipologia</label>
+        <select class="custom-select" id="_tipologia" style="margin-bottom: 1rem">
+            <option name="tipologia" value="altro">Altro</option>
+            <option name="tipologia" value="cinema_teatro">Cinema e teatro</option>
+            <option name="tipologia" value="gaming">Gaming</option>
+            <option name="tipologia" value="sport">Sport e salute</option>
+            <option name="tipologia" value="ristorazione">Ristorazione</option>
+            <option name="tipologia" value="intrattenimento">Intrattenimento</option>
         </select><br>
-          <label for="quantity" class="text-black-50 font-weight-bold _mt10">Privacy evento:</label> <br>
+          <label for="quantity" class="text-black-50 font-weight-bold _mt10" style="margin-bottom: 0.5rem">Privacy evento</label> <br>
           <div class="form-check form-check-inline _mb5">
-          <input class="form-check-input" name="_privacy" type="radio" id="_pubblico" value="Pubblico" checked/>
+          <input class="form-check-input" name="privacy" type="radio" id="_pubblico" value="Pubblico" checked/>
           <label class="form-check-label" for="_pubblico">Pubblico</label>
         </div>
-        <div class="form-check form-check-inline ">
-          <input class="form-check-input" name="_privacy" type="radio" id="_privato" value="Privato"/>
-          <label class="form-check-label" for="_privato">Privato</label>
+        <div class="form-check form-check-inline " style="margin-bottom: 0.5rem">
+          <input class="form-check-input" name="privacy" type="radio" id="_privato" value="Privato"/>
+          <label class="form-check-label" for="_privato" >Privato</label>
         </div> <br/>
-          <label for="quantity" class="text-black-50 font-weight-bold">Max partecipanti:</label>
-          <input type="number" id="quantity" name="quantity" min="1" max="500">
-          <textarea class="form-control _mb5" id="_preferenza" placeholder="Descrivi, se presenti, le tue preferenze (Max. 500 caratteri)" maxlength="500" rows="3"></textarea>
-          <textarea class="form-control _mb5" id="_corpo" placeholder="Descrivi il tuo evento (Max. 500 caratteri)" maxlength="500" rows="3" required></textarea>
+
+
+          <label for="quantity" class="text-black-50 font-weight-bold" style="margin-bottom: 0.5rem">Max partecipanti</label> <br>
+          <input type="number" id="quantity" name="quantita" min="1" max="500" style="margin-bottom: 1rem" required> <br>
+          <label for="_preferenza" class="text-black-50 font-weight-bold" style="margin-top:  1rem">Preferenze (opzionale)</label> <br>
+          <textarea class="form-control _mb5 _mt10" id="_preferenza" name="preferenze" placeholder="Descrivi, se presenti, le tue preferenze (Max. 500 caratteri)" maxlength="500" rows="3" style="margin-bottom: 0.5rem"></textarea>
+          <label for="_corpo" class="text-black-50 font-weight-bold" style="margin-top: 1rem">Descrizione</label> <br>
+          <textarea class="form-control _mb5 _mt10" id="_corpo" name="descrizione"  placeholder="Descrivi il tuo evento (Max. 500 caratteri)" maxlength="500" rows="3" required></textarea>
         <label for="_crea"></label>
         <button type="submit" class="btn btn btn-dark _m10 _border-radius _mb5" id="_crea" style="width: 45%;">Crea il tuo evento</button> <br />
       </form>
@@ -62,22 +74,10 @@
 </script>
 {% endif %}
 
-<div class="container">
-    <div class="row">
-        <div class="bg-info col-12" style="min-height: 100%">
-            BLOCCO 1 riga1
-        </div>
-    </div>
-    <div class="row">
-        <div class="bg-warning col-12" style="min-height: 100%">
-            BLOCCO 2 Riga 2
-        </div>
-    </div>
-
-</div>
 
 {% endblock %}
 
 {% block localJS %}
 <script src="../static/Javascript/index.js"></script>
 {% endblock %}
+
