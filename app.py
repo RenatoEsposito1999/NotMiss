@@ -57,6 +57,7 @@ def contatti():
             "oggetto": oggetto,
             "corpo": corpo
         }
+        print("Nuovo messaggio:", messaggio)
         contattaci.insert_one(messaggio)
         return redirect(url_for('index'))
 

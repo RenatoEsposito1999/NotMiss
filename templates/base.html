@@ -5,24 +5,35 @@
     <meta name="keywords" content="PWA,html5,CSS,Python,flask,JQuery,tecnologie web,TW6,Bootstrap" />
     <meta name="author" content="Renato Esposito 0124001881" />
     <meta name="author" content="Luca Rubino 0124001934" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="PWA NotMiss per progetto TW6"/>
     <meta name="theme-color" content="white"/>
-    <link rel="manifest" href="../static/manifest.json">
-    <script src="../static/main.js"></script>
-    <link rel="icon" href="../static/IMG/logo/logo64.ico" sizes="64x64"/>
-    <link rel="apple-touch-icon" href="../static/IMG/logo/logo512.png">
-    <link rel="stylesheet" href="../static/Style/bootstrap.css" />
 
-    <!--  File containing our CSS rules -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="manifest" href="../static/manifest.json">
+
+    <!--  favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/IMG/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/IMG/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/IMG/favicons/favicon-16x16.png">
+    <link rel="mask-icon" href="../static/IMG/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="../static/IMG/favicons/favicon.ico">
+
+
+    <!--  File CSS -->
+    <link rel="stylesheet" href="../static/Style/bootstrap.css" />
     <link rel="stylesheet" href="../static/Style/style.css" />
     <link rel="stylesheet" href="../static/Style/mediaq.css" />
     <link rel="stylesheet" href="../static/Style/animation.css" />
+
+    <!--  File JS -->
+    <script src="../static/main.js"></script>
     <script src="../static/Javascript/jquery-3.6.0.min.js"></script>
     <script src="../static/Javascript/Global.js"></script>
     <noscript>
           <meta http-equiv="refresh" content="0; url=/no-script" />
     </noscript>
+
     {% block title %}
 
     {% endblock %}
@@ -82,7 +93,7 @@
     <!-- LOGO -->
     <div class="row">
         <div class="text-center col-12 mb-2">
-            <a href="/"><img class="" src="../static/IMG/logo/logoNotMiss128.png" alt="NotMiss Logo" id="_logo" /> </a>
+            <a href="/"><img class="" src="../static/IMG/logo/logo256x256.png" width="94px" height="94px" alt="NotMiss Logo" id="_logo" /> </a>
         </div>
     </div>
     <!-- Fine Logo -->

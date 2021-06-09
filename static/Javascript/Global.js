@@ -15,7 +15,7 @@ function reSizeFooter() {
 }
 
 
-
+/*
 function reSizeLogo() {
 
     if (window.screen.width < 426) {
@@ -23,7 +23,7 @@ function reSizeLogo() {
         elems.src = "static/IMG/logo/logo128.png";
     }
 }
-
+*/
 
 
 function open(){
@@ -80,7 +80,7 @@ function cambiaLingua(){
 
 $(document).ready(function () {
 
-    reSizeLogo();
+    // reSizeLogo();
     reSizeFooter();
 
     //Open side menu
