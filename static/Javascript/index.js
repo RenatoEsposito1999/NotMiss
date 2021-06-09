@@ -13,7 +13,7 @@ function resizeTextArea() {
     }
 
 }
-
+test
 
 //ele1 è l'elemento a cui aggiungere la classe
 //ele2 è l'elemento a cui eliminare la classe.
