@@ -64,11 +64,11 @@ function cambiaLingua(){
 
 
     if( substr == bandieraENpath){ //ENG --> ITA
-        lingua.innerHTML = '<img src="../static/IMG/Icons/bandierainglese.png" alt="English Logo">English'
+        lingua.innerHTML = '<img src="../static/IMG/Icons/bandierainglese.png" width="32px" height="32px" alt="English Logo">English'
         bandiera.src ="../static/IMG/Icons/bandieraitalia.png"
     }
     else{
-        lingua.innerHTML = '<img src="../static/IMG/Icons/bandieraitalia.png" alt="Logo Italiano">Italiano'
+        lingua.innerHTML = '<img src="../static/IMG/Icons/bandieraitalia.png" width="32px" height="32px"  alt="Logo Italiano">Italiano'
         bandiera.src ="../static/IMG/Icons/bandierainglese.png"
     }
 
