@@ -204,6 +204,7 @@ li a, li a:hover, li a:visited{
     resize: none;
 }
 
+
 /* width */
 ::-webkit-scrollbar {
   width: 13px;
