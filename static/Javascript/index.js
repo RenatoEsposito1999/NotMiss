@@ -1,3 +1,19 @@
+function resizeTextArea() {
+    if (window.screen.width < 768 && window.screen.width > 328 ){
+        $(".text-area").attr("cols", "10")
+    }
+    else if (window.screen.width <= 328){
+        $(".text-area").attr("cols", "5")
+    }
+    else if (window.screen.width > 768 && window.screen.width < 1024){
+        $(".text-area").attr("cols", "25")
+    }
+    else if (window.screen.width > 1024){
+        $(".text-area").attr("cols", "40")
+    }
+
+}
+
 
 //ele1 è l'elemento a cui aggiungere la classe
 //ele2 è l'elemento a cui eliminare la classe.
@@ -39,7 +55,7 @@ function loadEventi(){
 
 $(document).ready(function (){
     loadEventi();
-
+    resizeTextArea();
     $("#mostraAltro").click(function () {
     $("#_divInfo").removeClass("_ds-none")
     $("#_divInfo").addClass("d-block")

@@ -74,15 +74,21 @@
 <!-- Header -->
 <div class="container bg-dark col-12 fadeIn">
     <div class="row ">
-        <div class="col-6 text-left _mt10 _BheaderSize">
+        <div class="col-4 text-left _mt10 _BheaderSize">
             <img src="../static/IMG/Icons/buttonMenu128x128.png" width="32px" height="20px" id="_bMenu" alt="menu" style="z-index: 100;" />
         </div>
+        <!-- LOGO -->
+        <div class="text-center col-4 mb-2">
+            <a href="/"><img class="" src="../static/IMG/logo/logo256x256.png" width="94px" height="94px" alt="NotMiss Logo" id="_logo" /> </a>
+        </div>
+
+    <!-- Fine Logo -->
         {% if session['_id'] %}
-        <div class="col-6 text-right _mt10 _BheaderSize">
+        <div class="col-4 text-right _mt10 _BheaderSize">
             <a href="/profilo">{{ session['nome']}}</a> <a href="/logout" style="font-size:15px; font-weight: normal;">(Log out)</a>
         </div>
         {% else %}
-        <div class="col-6 text-right _mt10 _BheaderSize">
+        <div class="col-4 text-right _mt10 _BheaderSize">
            <div id="change"><a href="/accedi">Accedi</a></div>
         </div>
         {% endif%}
@@ -90,13 +96,6 @@
     </div>
     <!-- Fine Row -->
 
-    <!-- LOGO -->
-    <div class="row">
-        <div class="text-center col-12 mb-2">
-            <a href="/"><img class="" src="../static/IMG/logo/logo256x256.png" width="94px" height="94px" alt="NotMiss Logo" id="_logo" /> </a>
-        </div>
-    </div>
-    <!-- Fine Logo -->
 </div>
 
 <!-- Fine header -->
