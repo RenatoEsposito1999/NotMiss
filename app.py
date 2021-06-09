@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, session, url_for, redirect, jsonify
+from flask import Flask, request, render_template, session, url_for, redirect, jsonify, json
 from flask_cors import CORS
 from pymongo import MongoClient
 from functions import *
@@ -65,6 +65,8 @@ def contatti():
 @app.route('/logout', methods=["POST", "Get"])
 def logout_py():
     session.pop('_id', None)
+    session.pop('nome', None)
+    session.pop('cognome', None)
     return redirect(url_for('index'))
 
 
@@ -79,6 +81,7 @@ def accedi_py():
                 query = utenti.find_one({"email": email})
                 session["_id"] = query['_id']
                 session["nome"] = query['nome']
+                session["cognome"] = query['cognome']
                 return redirect(url_for('index'))
             else:
                 return render_template("accedi.html", result=-2)
@@ -118,10 +121,11 @@ def registrazione_py():
                 "email": email,
                 "password": password,
                 "data": data,
-                "sex": sex
+                "sex": sex,
+                "EvCreati": 0,
             }
             utenti.insert_one(account)
-            return redirect(url_for('registred'))
+            return redirect(url_for('registred'),  code=307)
 
 
 @app.route('/registred.py', methods=["POST", "GET"])
@@ -143,12 +147,14 @@ def profilo():
         email = query['email']
         data = query['data']
         sex = query['sex']
+        numEv = query['EvCreati']
         info = {
             "nome": nome,
             "cognome": cognome,
             "email": email,
             "data": data,
-            "sex": sex
+            "sex": sex,
+            "EvCreati": numEv,
         }
         return jsonify(info)
 
@@ -169,7 +175,9 @@ def crea_evento():
         info = {
             '_id': last_id + 1,
             'nome': nome,
-            'creatore': session['_id'],
+            'idCreatore': session['_id'],
+            'nomeCreatore': session['nome'],
+            'cognomeCreatore': session['cognome'],
             'luogo': luogo,
             'dataI': dataI,
             'dataF': dataF,
@@ -180,9 +188,21 @@ def crea_evento():
             'descrizione': descrizione
         }
         eventi.insert_one(info)
+        nEvCreati = utenti.find_one({'_id': session['_id']})
+        query = {"_id": session['_id']}
+        values = {"$set": {'EvCreati': nEvCreati['EvCreati'] + 1}}
+        utenti.update_one(query, values)
         return redirect(url_for('index'))
     else:
         return render_template('crea-evento.html')
+
+
+@app.route('/loadEventi', methods=['POST'])
+def loadEventi():
+    if request.method == 'POST':
+        cursor = eventi.find()
+        list_result = list(cursor)
+        return jsonify(list_result)
 
 
 @app.route('/sw.js')
@@ -190,7 +210,7 @@ def sw():
     return app.send_static_file("sw.js")
 
 
-# ---------------------------------------- DA QUI IN POI GESTIONE DEGLI ERRORI E SW
+# ---------------------------------------- DA QUI IN POI GESTIONE DEGLI ERRORI
 
 
 @app.route('/no-script')

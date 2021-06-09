@@ -190,3 +190,15 @@ li a, li a:hover, li a:visited{
     border-width: 3px;
     border-radius: 30px;
 }
+
+
+.postContainer{
+    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px 0 rgba(26, 26, 26, 0.4), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+._noresize{
+    resize: none;
+}

@@ -3,152 +3,119 @@
 <title>NotMiss</title>
 {% endblock %}
 {% block main %}
-
-{% if session['_id'] %}
 <div class="container mb-2">
     <div class="row">
         <div class="col-12  text-center text-left _mt10 _BheaderSize _funzionalita">
-            <a class="text-center" href="/crea-evento" id="_creaEvento" style="font-weight: normal"><img src="../static/IMG/Icons/plus.png" width="6%"> <span class="_underline" >Crea il tuo un evento</span></a>
+            <a class="text-center" href="/crea-evento" id="_creaEventoNoLog" style="font-weight: normal"><img src="../static/IMG/Icons/plusicon128x128.png" alt=" plus icon" width="16px" height="16px"> <span class="_underline" >Crea il tuo un evento</span></a>
         </div>
     </div>
 </div>
-<div class="container mt-2 mt-3" id="_selettoreQuery">
+
+<div class="container mt-2 mt-3" >
     <div class="row">
         <div class="col-6  col-sm-6 offset-sm-0 col-md-3 offset-md-3 col-lg-2 offset-lg-4 text-center">
             <p class="_querySelector _selected" id="_pub">Evento pubblico</p>
         </div>
+
+{% if session['_id'] %}
          <div class="col-6  col-md-3 col-sm-6 col-lg-2  text-center">
             <p class="_querySelector" id="_priv">Evento privato</p>
-        </div>
-    </div>
-</div>
-
-
-
+         </div>
 {% else %}
-<div class="container mb-2">
-    <div class="row">
-        <div class="col-12  text-center text-left _mt10 _BheaderSize _funzionalita">
-            <a class="text-center" href="/crea-evento" id="_creaEventoNoLog" style="font-weight: normal"><img src="../static/IMG/Icons/plusicon128x128.png" width="16px" height="16px"> <span class="_underline" >Crea il tuo un evento</span></a>
+         <div class="col-6  col-md-3 col-sm-6 col-lg-2  text-center">
+            <p class="_querySelector" id="_loginrequired">Evento privato</p>
         </div>
-    </div>
-</div>
-<div class="container mt-2 mt-3" id="">
-    <div class="row">
-        <div class="col-12 col-md-4 offset-md-4 text-center">
-            <p class="_querySelector _selected">Evento pubblico</p>
-        </div>
-    </div>
-</div>
-
 {% endif %}
-
-<div class="container mt-2 bg-warning">
-    <div class="row">
-        <div class="col-12">
-            <p>QUI VA L'I-ESIMO+1 EVENTO</p>
-        </div>
-    </div>
-</div>
-<div class="container mt-2 bg-warning">
-    <div class="row">
-        <div class="col-12">
-            <p>QUI VA L'I-ESIMO+1 EVENTO</p>
-        </div>
-    </div>
-</div>
-<div class="container mt-2 bg-warning">
-    <div class="row">
-        <div class="col-12">
-            <p>QUI VA L'I-ESIMO+1 EVENTO</p>
-        </div>
-    </div>
-</div>
-<div class="container mt-2 bg-warning">
-    <div class="row">
-        <div class="col-12">
-            <p>QUI VA L'I-ESIMO+1 EVENTO</p>
-        </div>
-    </div>
-</div>
-<div class="container mt-2 bg-warning">
-    <div class="row">
-        <div class="col-12">
-            <p>QUI VA L'I-ESIMO+1 EVENTO</p>
-        </div>
-    </div>
-</div>
-<div class="container mt-2 bg-warning">
-    <div class="row">
-        <div class="col-12">
-            <p>QUI VA L'I-ESIMO+1 EVENTO</p>
-        </div>
-    </div>
-</div>
-<div class="container mt-2 bg-warning">
-    <div class="row">
-        <div class="col-12">
-            <p>QUI VA L'I-ESIMO+1 EVENTO</p>
-        </div>
-    </div>
-</div>
-<div class="container mt-2 bg-warning">
-    <div class="row">
-        <div class="col-12">
-            <p>QUI VA L'I-ESIMO+1 EVENTO</p>
-        </div>
-    </div>
-</div>
-<div class="container mt-2 bg-warning">
-    <div class="row">
-        <div class="col-12">
-            <p>QUI VA L'I-ESIMO+1 EVENTO</p>
-        </div>
-    </div>
-</div>
-<div class="container mt-2 bg-warning">
-    <div class="row">
-        <div class="col-12">
-            <p>QUI VA L'I-ESIMO+1 EVENTO</p>
-        </div>
-    </div>
-</div>
-<div class="container mt-2 bg-warning">
-    <div class="row">
-        <div class="col-12">
-            <p>QUI VA L'I-ESIMO+1 EVENTO</p>
-        </div>
-    </div>
-</div>
-<div class="container mt-2 bg-warning">
-    <div class="row">
-        <div class="col-12">
-            <p>QUI VA L'I-ESIMO+1 EVENTO</p>
-        </div>
-    </div>
-</div>
-<div class="container mt-2 bg-warning">
-    <div class="row">
-        <div class="col-12">
-            <p>QUI VA L'I-ESIMO+1 EVENTO</p>
-        </div>
-    </div>
-</div>
-<div class="container mt-2 bg-warning">
-    <div class="row">
-        <div class="col-12">
-            <p>QUI VA L'I-ESIMO+1 EVENTO</p>
-        </div>
-    </div>
-</div>
-<div class="container mt-2 bg-warning">
-    <div class="row">
-        <div class="col-12">
-            <p>QUI VA L'I-ESIMO+1 EVENTO</p>
-        </div>
     </div>
 </div>
 
+
+
+<!-- Inizio post -->
+
+<!-- Inizio info post -->
+<div id="copri" class="">
+        <div class="container _ds-none center p-5" id="_divInfo" style="margin-top: 12%">
+            <div class="postContainer">
+
+                <div class="row bg-dark" style="border-radius: 10px">
+                    <div class="col-6 offset-3 text-center text-white">
+                        <h3 > <span id="nomeEvento2">Nome evento</span></h3>
+                    </div>
+                    <div class="col-2 offset-1 text-right">
+                        <img src="../static/IMG/Icons/plusicon128x128.png" width="24px" height="24px"  id="_close2" alt="chiudi" />
+                    </div>
+                </div>
+
+                    <div class="row text-center">
+                        <div class="col-6"><p>Mappa</p></div>
+                        <div class="col-6"><p id='maxPartecipanti'>Max Partecipanti:</p></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <p  class="text-center">Inizio: 111111-11-11T11:22 </p>
+                        </div>
+                        <div class="col-6">
+                            <p  class="text-center">Fine: 111111-11-11T11:22 </p>
+                        </div>
+                    </div>
+
+                    <div class="row text-center">
+                        <div class="col-6">
+                            <label for="preferenze" class="font-weight-bold">Preferenze</label> <br>
+                            <textarea id="preferenze" class="ml-2 _noresize" disabled rows="8"></textarea>
+                        </div>
+                        <div class="col-6">
+                            <label for="descrizione2" class="font-weight-bold">Descrizione</label> <br>
+                            <textarea id="descrizione2" class="ml-2 _noresize" disabled rows="8" ></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12" style="color: dodgerblue; font-weight: normal">
+                            <p style="text-align: right"><img src="../static/IMG/Icons/plusicon128x128.png" alt="Partecipa" width="32px" height="32px"></p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+</div>
+<!-- Fine info post -->
+
+
+<div class="container mt-2 mb-5">
+    <div class="postContainer">
+
+        <div class="row bg-dark" style="border-radius: 10px">
+            <div class="col-12 text-center text-white">
+                <h3 id='nomeEvento'> <span>Nome evento</span></h3>
+            </div>
+        </div>
+
+            <div class="row text-center">
+                <div class="col-4"><p id='nomeCreatore' class="ml-2">Proprietario</p></div>
+                <div class="col-4"><p id="luogo">Luogo:</p></div>
+                <div class="col-4"><p>Tipologia</p></div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-2">
+                    <p style="text-align: center"><img id="mostraAltro" src="../static/IMG/Icons/info.jpg" width="48px" height="32px" alt="info"></p>
+                </div>
+                <div class="col-8 text-center">
+                    <p id='DataI' class="text-center">Inizio: 111111-11-11T11:22 </p>
+                </div>
+                <div class="col-2 " style="color: dodgerblue; font-weight: normal">
+                    <p style="text-align: center"><img src="../static/IMG/Icons/plusicon128x128.png" alt="Partecipa" width="32px" height="32px"></p>
+                </div>
+            </div>
+
+
+    </div>
+</div>
+<!-- fine post -->
 
 
 {% endblock %}
