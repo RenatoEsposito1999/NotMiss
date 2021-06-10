@@ -228,6 +228,7 @@ li a, li a:hover, li a:visited{
 }
 
 ._divInfo{
+    z-index: 35;
     margin: 0;
     position: absolute;
     top: 50%;
