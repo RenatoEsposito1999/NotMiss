@@ -200,7 +200,8 @@ def crea_evento():
 @app.route('/loadEventi', methods=['POST'])
 def loadEventi():
     if request.method == 'POST':
-        cursor = eventi.find()
+        query = {"privacy": "Pubblico"}
+        cursor = eventi.find(query)
         list_result = list(cursor)
         return jsonify(list_result)
 
