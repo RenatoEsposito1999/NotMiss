@@ -50,34 +50,34 @@ function loadEventi(){
     })
 }
 
-
+function close2() {
+    $("#_divInfo").addClass("_ds-none")
+    $("#_divInfo").removeClass("d-block")
+    $("#copri").removeClass("hide")
+}
 
 
 $(document).ready(function (){
     loadEventi();
     resizeTextArea();
+    $("#_close2").click(close2)
+    $('#_pub').click(loadEventi)
+    $('#_priv').click(loadEventi)
+
     $("#mostraAltro").click(function () {
     $("#_divInfo").removeClass("_ds-none")
     $("#_divInfo").addClass("d-block")
     $("#copri").addClass("hide")
-})
+    })
 
-
-    $("#_close2").click(function () {
-        $("#_divInfo").addClass("_ds-none")
-        $("#_divInfo").removeClass("d-block")
-        $("#copri").removeClass("hide")
+    $(document).click(function (e){
+        if(e.target.id === 'copri')
+            close2()
     })
 
 
 })
 
 
-$('#_pub').click(function (){
-    loadEventi()
-})
 
-$('#_priv').click(function (){
-    loadEventi()
-})
 

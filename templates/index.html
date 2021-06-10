@@ -17,15 +17,15 @@
             <p class="_querySelector _selected" id="_pub">Evento pubblico</p>
         </div>
 
-{% if session['_id'] %}
+        {% if session['_id'] %}
          <div class="col-6  col-md-3 col-sm-6 col-lg-2  text-center">
             <p class="_querySelector" id="_priv">Evento privato</p>
          </div>
-{% else %}
+        {% else %}
          <div class="col-6  col-md-3 col-sm-6 col-lg-2  text-center">
             <p class="_querySelector" id="_loginrequired">Evento privato</p>
         </div>
-{% endif %}
+        {% endif %}
     </div>
 </div>
 
@@ -74,7 +74,9 @@
 
                     <div class="row">
                         <div class="col-12" style="color: dodgerblue; font-weight: normal">
-                            <p style="text-align: right"><img src="../static/IMG/Icons/plusicon128x128.png" alt="Partecipa" width="32px" height="32px"></p>
+                            <p style="text-align: right">
+                            <img src="../static/IMG/Icons/plusicon128x128.png" alt="Partecipa" width="32px" height="32px">
+                            </p>
                         </div>
                     </div>
             </div>
@@ -102,13 +104,25 @@
 
             <div class="row">
                 <div class="col-2">
-                    <p style="text-align: center"><img id="mostraAltro" src="../static/IMG/Icons/info.jpg" width="48px" height="32px" alt="info"></p>
+                    <p style="text-align: center">
+                        {% if session['_id']%}
+                        <img id="mostraAltro" src="../static/IMG/Icons/info.jpg" width="48px" height="32px" alt="info">
+                        {% else %}
+                        <a href="/accedi"><img src="../static/IMG/Icons/info.jpg" width="48px" height="32px" alt="info"></a>
+                        {% endif %}
+                    </p>
                 </div>
                 <div class="col-8 text-center">
                     <p id='DataI' class="text-center">Inizio: 111111-11-11T11:22 </p>
                 </div>
                 <div class="col-2 " style="color: dodgerblue; font-weight: normal">
-                    <p style="text-align: center"><img src="../static/IMG/Icons/plusicon128x128.png" alt="Partecipa" width="32px" height="32px"></p>
+                    <p style="text-align: center">
+                        {% if session['_id']%}
+                        <img src="../static/IMG/Icons/plusicon128x128.png" alt="Partecipa" width="32px" height="32px">
+                        {% else %}
+                        <a href="/accedi"><img src="../static/IMG/Icons/plusicon128x128.png" alt="Partecipa" width="32px" height="32px"></a>
+                        {% endif %}
+                    </p>
                 </div>
             </div>
 

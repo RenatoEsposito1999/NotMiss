@@ -89,6 +89,11 @@ $(document).ready(function () {
 //Close side menu
     $("#_closeSB").click(close);
 
+    $(document).click(function (e){
+        if(e.target.id === 'coprente')
+            close()
+    })
+
 
     $("#_Lingua").click(cambiaLingua);
 
