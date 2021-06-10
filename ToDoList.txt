@@ -12,3 +12,29 @@ Volendo friendlist
 
 
 La query per gli eveneti di default va fatto per le privacy pubbliche
+
+
+
+
+cognomeCreatore: "Esposito"
+dataF: "111111-11-11T11:23"
+dataI: "111111-11-11T11:11"
+descrizione: "223333333333333333333"
+idCreatore: 1
+luogo: "33333333333333"
+nome: "Mangiamo la pizza"
+nomeCreatore: "Renato"
+preferenze: "222222222"
+privacy: "Pubblico"
+quantita: "11"
+tipologia: "gaming"
+_id: 1
+
+dataI
+
+
+$("#_id").attr('id', obj['_id'])
+                $(".nome").attr('class', obj['nome']).text(obj['nome'])
+                $(".luogo").attr('class', obj['luogo']).text(obj['luogo'])
+                $("#maxPartecipanti").attr('id', obj['quantita']).text(obj['quantita'])
+                $("#maxPartecipanti").attr('id', obj['quantita']).text(obj['quantita'])

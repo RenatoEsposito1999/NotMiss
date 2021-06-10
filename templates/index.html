@@ -32,106 +32,12 @@
 <!-- Div che copre -->
 <div id="copri" class=""></div>
 
-<!-- Inizio post -->
-<!-- Inizio info post -->
-
-        <div class="container _ds-none  _divInfo" id="_divInfo">
-            <div class="postContainer">
-
-                <div class="row bg-dark" style="border-radius: 10px">
-                    <div class="col-6 offset-3 text-center text-white">
-                        <h3 > <span id="nomeEvento2">Nome evento</span></h3>
-                    </div>
-                    <div class="col-2 offset-1 text-right">
-                        <img src="../static/IMG/Icons/CloseButton128x128.png" width="24px" height="24px"  id="_close2" alt="chiudi" />
-                    </div>
-                </div>
-
-                    <div class="row text-center">
-                        <div class="col-6"><p>Mappa</p></div>
-                        <div class="col-6"><p id='maxPartecipanti'>Max Partecipanti:</p></div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-6">
-                            <p  class="text-center">Inizio: 111111-11-11T11:22 </p>
-                        </div>
-                        <div class="col-6">
-                            <p  class="text-center">Fine: 111111-11-11T11:22 </p>
-                        </div>
-                    </div>
-
-                    <div class="row text-center">
-                        <div class="col-6">
-                            <label for="preferenze" class="font-weight-bold">Preferenze</label> <br>
-                            <textarea id="preferenze" class="ml-2  text-area _noresize" disabled rows="8"></textarea>
-                        </div>
-                        <div class="col-6">
-                            <label for="descrizione2" class="font-weight-bold">Descrizione</label> <br>
-                            <textarea id="descrizione2" class=" text-area ml-2 _noresize" disabled rows="8"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12" style="color: dodgerblue; font-weight: normal">
-                            <p style="text-align: right">
-                            <img src="../static/IMG/Icons/addButton256x256.png" alt="Partecipa" width="32px" height="32px">
-                            </p>
-                        </div>
-                    </div>
-            </div>
-        </div>
-
-<!-- Fine info post -->
+<!-- Qui append delle info dettagliate dell'evento selezionato -->
+<div id="infocontents"></div>
 
 
-<div class="container mt-2 mb-5">
-    <div class="postContainer">
-
-        <div class="row bg-dark" style="border-radius: 10px">
-            <div class="col-12 text-center text-white">
-                <h3 id='nomeEvento'> <span>Nome evento</span></h3>
-            </div>
-        </div>
-
-            <div class="row text-center">
-                <div class="col-4"><p id='nomeCreatore' class="ml-2">Proprietario</p></div>
-                <div class="col-4"><p id="luogo">Luogo:</p></div>
-                <div class="col-4"><p>Tipologia</p></div>
-            </div>
-
-
-
-            <div class="row">
-                <div class="col-2">
-                    <p style="text-align: center">
-                        {% if session['_id']%}
-                        <img id="mostraAltro" src="../static/IMG/Icons/buttonInfo256x256.png" width="32px" height="32px" alt="info">
-                        {% else %}
-                        <a href="/accedi"><img src="../static/IMG/Icons/buttonInfo256x256.png" width="32px" height="32px" alt="info"></a>
-                        {% endif %}
-                    </p>
-                </div>
-                <div class="col-8 text-center">
-                    <p id='DataI' class="text-center">Inizio: 111111-11-11T11:22 </p>
-                </div>
-                <div class="col-2 " style="color: dodgerblue; font-weight: normal">
-                    <p style="text-align: center">
-                        {% if session['_id']%}
-                        <img src="../static/IMG/Icons/addButton256x256.png" alt="Partecipa" width="32px" height="32px">
-                        {% else %}
-                        <a href="/accedi"><img src="../static/IMG/Icons/addButton256x256.png" alt="Partecipa" width="32px" height="32px"></a>
-                        {% endif %}
-                    </p>
-                </div>
-            </div>
-
-
-    </div>
-</div>
-<!-- fine post -->
-
-
+<!-- Qui append delle info generali degli eventi -->
+<div id="contents"></div>
 {% endblock %}
 
 {% block localJS %}
