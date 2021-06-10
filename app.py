@@ -206,7 +206,7 @@ def loadEventi():
 
 
 @app.route('/sw.js')
-def sw():
+def serviceWorker():
     return app.send_static_file("sw.js")
 
 
