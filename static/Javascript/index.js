@@ -1,4 +1,4 @@
-let array = new Array() //array contenete gli id dei documenti.
+let array = [] //array contenete gli id dei documenti.
 let queryResult
 function resizeTextArea() {
     if (window.screen.width < 768 && window.screen.width > 328 ){
@@ -45,7 +45,7 @@ function loadEventi(){
             queryResult = result
             for (let i = 0; i < result.length; i++) {
                let obj = result[i]
-                let newDiv = '<!-- Inizio Post --> <div class="container mt-2 mb-5"> <div class="postContainer"> <div class="row bg-dark" style="border-radius: 10px"> <div class="col-12 text-center text-white"> <h3> <span class="nome"></span></h3> </div> </div> <div class="row text-center"> <div class="col-4"><p class=\'nomeCreatore\' class="ml-2"></p></div> <div class="col-4"><p class="luogo"></p></div> <div class="col-4"><p class="tipologia"></p></div> </div> <div class="row"> <div class="col-2"> <p style="text-align: center"> <img class="_id mostraAltro" src="../static/IMG/Icons/buttonInfo256x256.png" width="32px" height="32px" alt="info"> </p> </div> <div class="col-8 text-center"> <p class="dataI text-center"></p> </div> <div class="col-2 " style="color: dodgerblue; font-weight: normal"> <p style="text-align: center"> <img src="../static/IMG/Icons/addButton256x256.png" alt="Partecipa" width="32px" height="32px"> </p> </div> </div> </div> </div> <!-- fine post -->'
+                let newDiv = '<!-- Inizio Post --> <div class="container mt-2 mb-5"> <div class="postContainer"> <div class="row bg-dark" style="border-radius: 10px"> <div class="col-12 text-center text-white"> <h3> <span class="nome"></span></h3> </div> </div> <div class="row text-center"> <div class="col-4"><p class=" nomeCreatore ml-2"></p></div> <div class="col-4"><p class="luogo"></p></div> <div class="col-4"><p class="tipologia"></p></div> </div> <div class="row"> <div class="col-2"> <p style="text-align: center"> <img class="_id mostraAltro" src="../static/IMG/Icons/buttonInfo256x256.png" width="32px" height="32px" alt="info"> </p> </div> <div class="col-8 text-center"> <p class="dataI text-center"></p> </div> <div class="col-2 " style="color: dodgerblue; font-weight: normal"> <p style="text-align: center"> <img src="../static/IMG/Icons/addButton256x256.png" alt="Partecipa" width="32px" height="32px"> </p> </div> </div> </div> </div> <!-- fine post -->'
                 $("#contents").append(newDiv)
                 $("._id").attr('class', "_"+obj['_id'])
                 array.push("_" + obj['_id'])
@@ -54,9 +54,7 @@ function loadEventi(){
                 $(".nomeCreatore").attr('class', obj['nomeCreatore']).text(obj['nomeCreatore'] + " " + obj['cognomeCreatore'])
                 $(".tipologia").attr('class', obj['tipologia']).text("Tipologia: " + obj['tipologia'])
                 $(".dataI").attr('class', obj['dataI']).text(obj['dataI'])
-                $(".dataF").attr('class', obj['dataF']).text(obj['dataF'])
-                $(".preferenze").attr('class', obj['preferenze']).text(obj['preferenze'])
-                $(".descrizione").attr('class', obj['descrizione']).text(obj['descrizione'])
+
             }
         }
     })
@@ -83,12 +81,15 @@ function newDivInfo(indice) {
         obj = queryResult[i]
         if (obj['_id'] == indice){
             //trovato
-            let newDiv = '<!-- Inizio info post --> <div class="container _divInfo" id="_divInfo"> <div class="postContainer"> <div class="row bg-dark" style="border-radius: 10px"> <div class="col-6 offset-3 text-center text-white"> <h3 > <span class="nome">Nome evento</span></h3> </div> <div class="col-2 offset-1 text-right"> <img src="../static/IMG/Icons/CloseButton128x128.png" width="24px" height="24px" id="_close2" alt="chiudi" style="margin: 5px" /> </div> </div> <div class="row text-center"> <div class="col-6"><p class="luogo">Mappa</p></div> <div class="col-6"><p class="quantita">Max Partecipanti:</p></div> </div> <div class="row"> <div class="col-6"> <p class="text-center dataI">Inizio: 111111-11-11T11:22 </p> </div> <div class="col-6"> <p class="text-center dataF">Fine: 111111-11-11T11:22 </p> </div> </div> <div class="row text-center"> <div class="col-6"> <label for="preferenze" class="font-weight-bold">Preferenze</label> <br> <textarea class="preferenze ml-2 text-area _noresize" disabled rows="8"></textarea> </div> <div class="col-6"> <label for="descrizione2" class="font-weight-bold">Descrizione</label> <br> <textarea class="descrizione text-area ml-2 _noresize" disabled rows="8"></textarea> </div> </div> <div class="row"> <div class="col-12" style="color: dodgerblue; font-weight: normal"> <p style="text-align: right"> <img src="../static/IMG/Icons/addButton256x256.png" alt="Partecipa" width="32px" height="32px" style="margin: 5px"> </p> </div> </div> </div> </div> <!-- Fine info post --> '
+            let newDiv = '<!-- Inizio info post --> <div class="container _divInfo" id="_divInfo"> <div class="postContainer"> <div class="row bg-dark" style="border-radius: 10px"> <div class="col-6 offset-3 text-center text-white"> <h3 > <span class="nome"></span></h3> </div> <div class="col-2 offset-1 text-right"> <img src="../static/IMG/Icons/CloseButton128x128.png" width="24px" height="24px" id="_close2" alt="chiudi" style="margin: 5px" /> </div> </div> <div class="row text-center"> <div class="col-6"><p class="luogo">Mappa</p></div> <div class="col-6"><p class="quantita">Max Partecipanti:</p></div> </div> <div class="row"> <div class="col-6 text-center"> <p class="text-center dataI">Inizio: 111111-11-11T11:22 </p> </div> <div class="col-6 text-center"> <p class="text-center dataF">Fine: 111111-11-11T11:22 </p> </div> </div> <div class="row text-center"> <div class="col-6"> <label for="preferenze" class="font-weight-bold">Preferenze</label> <br> <textarea class="preferenze ml-2 text-area _noresize" disabled rows="8"></textarea> </div> <div class="col-6"> <label for="descrizione2" class="font-weight-bold">Descrizione</label> <br> <textarea class="descrizione text-area ml-2 _noresize" disabled rows="8"></textarea> </div> </div> <div class="row"> <div class="col-12" style="color: dodgerblue; font-weight: normal"> <p style="text-align: right"> <img src="../static/IMG/Icons/addButton256x256.png" alt="Partecipa" width="32px" height="32px" style="margin: 5px"> </p> </div> </div> </div> </div> <!-- Fine info post --> '
             $("#infocontents").append(newDiv)
-            $("#nome").attr("class", obj['nome']).text(obj['nome'])
+            $(".nome").attr("class", obj['nome']).text(obj['nome'])
             $(".luogo").attr('class', obj['luogo']).text(obj['luogo'])
             $(".quantita").attr('class', obj['quantita']).text("Numero partecipanti max: " + obj['quantita'])
-
+            $(".dataI").attr('class', obj['dataI']).text(obj['dataI'])
+            $(".dataF").attr('class', obj['dataF']).text(obj['dataF'])
+            $(".preferenze").attr('class', obj['preferenze']).val(obj['preferenze'])
+            $(".descrizione").attr('class', obj['descrizione']).val(obj['descrizione'])
         }
     }
     open2()
@@ -119,6 +120,9 @@ $(document).ready(function (){
         }
     })
 
+    $("#_close2").click(close2)
+
+
     $(document).click(function (e){
         if(e.target.id === 'copri')
             close2()
@@ -127,4 +131,3 @@ $(document).ready(function (){
 
 })
 
-$("#_close2").click(close2)
