@@ -1,5 +1,5 @@
 let array = [] //array contenete gli id dei documenti.
-let queryResult
+let queryResult //
 let sessionID
 let lat //latitudine del luogo dell'evento
 let lon //longitudine del luogo dell'evento
@@ -141,9 +141,18 @@ function addParticipant(indice) {
                 idEvento: indice,
                 idUtente: sessionID
             },
-            success: function () {
-                window.location.replace('/profilo')
+            success: function (result){
+               if (result ==='1'){
+                    window.location.replace('/added')
+               }
+               else if(result === '0'){
+                   alert("Sei già stato inserito in questo evento")
+               }
+               else{
+                   alert("È stato raggiunto il massimo numero di partecipanti.")
+               }
             }
+
         })
     }
 }
@@ -166,6 +175,7 @@ $(document).ready(function (){
 
     //cerco la classe dell'elemento cliccato nell'array che contiene tutti gli id dei post, se lo trovo allora apro il div con maggiori info, inserendo tutti i dettagli gia contenuti in obj.
     $(document).click(function (e){
+
         let indice
         let classList = e.target.className
         for (let i = array.length - 1; i >= 0 ; i--) {
@@ -173,8 +183,13 @@ $(document).ready(function (){
                 //ho trovato l'elemento cliccato
                 indice = array[i]
                 //inserisco le informazioni nel div info (escludo il carattere di pos 0 che è il _)
-                newDivInfo(indice.charAt(1))
+                if ($(e.target).attr('src') === '../static/IMG/Icons/addButton256x256.png'){
                 addParticipant(indice.charAt(1))
+                }
+                else {
+                newDivInfo(indice.charAt(1))
+                }
+
             }
         }
     })

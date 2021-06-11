@@ -2,11 +2,9 @@
 {% block title %}
 <title>NotMiss: pagina personale</title>
 {% endblock %}
-
 {% block main %}
 {% if session['_id'] %}
 <script>
-    console.log("ciao")
     $.ajax({
         url: '/profilo',
         method: 'POST',
@@ -17,8 +15,25 @@
         $("#DatadiNascita").text(info['data'])
         $("#Sesso").text(info['sex'])
         $("#evCreati").text(info['EvCreati'])
+            if (info['numEV'] > 0 ){
+                obj = info['EV']
+                let i = 0
+                tmp = obj[i]
+                while (typeof tmp != 'undefined'){
+                    let newDiv = '<div class="container mt-5 mb-5 col-12 text-center"> <div class="row"> <div class="col-12 text-center"> <p><span id="_id"></span><span class="nome"></span> di <span class=\'nomeCreatore\'></span> <span class="cognomeCreatore"></span></p> </div> </div> </div>'
+                    $('#append').append(newDiv)
+                    $("#id").attr("_id",tmp['_id'])
+                    $(".nome").attr("class",tmp['nome']).text(tmp['nome'])
+                    $(".nomeCreatore").attr("class",tmp['nomeCreatore']).text(tmp['nomeCreatore'])
+                    $(".cognomeCreatore").attr("class",tmp['cognomeCreatore']).text(tmp['cognomeCreatore'])
+                    $('.riepilogo').removeClass('_ds-none')
+                    i = i + 1
+                    tmp = obj[i]
+                }
+            }
         }
     })
+
 </script>
 <div class="container mt-5 mb-5 col-12" id="padre">
     <div class="row" id="padre_login">
@@ -30,9 +45,19 @@
           <div><strong>Data di nascita:</strong> <span id="DatadiNascita"></span></div>
           <div><strong>Sesso:</strong> <span id="Sesso"></span></div>
           <div class="_mb5"><strong>Numero di eventi creati:</strong> <span id="evCreati"></span></div>
+
         </div>
     </div>
 </div>
+
+
+<div class="riepilogo _ds-none col-8 offset-2 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-left _divAccedi fadeIn2">
+  <h1 style="margin-top: 20px;" class="text-center text-black-50">Riepilogo eventi</h1>
+    <div id="append"></div>
+</div>
+
+
+
 
 {% else %}
 <div class="container mt-5 mb-5 col-12">

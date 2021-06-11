@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, session, url_for, redirect, jsonify, json
+from flask import Flask, request, render_template, session, url_for, redirect, jsonify
 from flask_cors import CORS
 from pymongo import MongoClient
 from functions import *
@@ -157,6 +157,14 @@ def profilo():
         data = query['data']
         sex = query['sex']
         numEv = query['EvCreati']
+        num = 0
+        EV = {}
+        cursor = eventi.find()
+        for item in cursor:
+            if session['_id'] in item['partecipanti']:
+                EV[num] = item
+                num = num + 1
+
         info = {
             "nome": nome,
             "cognome": cognome,
@@ -164,6 +172,8 @@ def profilo():
             "data": data,
             "sex": sex,
             "EvCreati": numEv,
+            'numEV': num,
+            'EV': EV,
         }
         return jsonify(info)
 
@@ -183,6 +193,7 @@ def crea_evento():
         descrizione = request.form['descrizione']
         last_id = eventi.find().count()
         partecipanti = [session['_id']]
+        quantita = int(quantita) + 1
         info = {
             '_id': last_id + 1,
             'nome': nome,
@@ -195,7 +206,7 @@ def crea_evento():
             'lon': lon,
             'tipologia': tipologia,
             'privacy': privacy,
-            'quantita': quantita,
+            'quantita': quantita + 1,
             'preferenze': preferenze,
             'descrizione': descrizione,
             'partecipanti': partecipanti
@@ -229,16 +240,27 @@ def partecipa():
         id_ev = int(request.form.get("idEvento"))
         id_ut = int(request.form.get("idUtente"))
         query = {"_id": id_ev}
-        #newvalues = { "$set": { "partecipanti": partecipanti } }
-        #eventi.update_one(query, newvalues)
         EV = eventi.find_one(query)
-        EV['partecipanti'].insert(0, 10)
-        return "c"
+        newList = EV['partecipanti'].copy()
+        if id_ut in newList:
+            return '0'
+        elif len(newList) >= int(EV['quantita']):
+            return '-1'
+        else:
+            newList.insert(0, id_ut)
+            newvalues = {"$set": {"partecipanti": newList}}
+            eventi.update_one(query, newvalues)
+            return '1'
 
 @app.route('/getsession', methods=["POST"])
 def getsession():
     result = {"_id": session["_id"]}
     return jsonify(result)
+
+
+@app.route('/added')
+def added():
+    return render_template('added.html')
 
 
 @app.route('/sw.js')
@@ -291,5 +313,4 @@ def http500():
 
 if __name__ == '__main__':
     app.run()
-
 

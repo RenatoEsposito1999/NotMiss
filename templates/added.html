@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>NotMiss: aggiunto</title>
+
+{% endblock %}
+{% block main %}
+<div class="container mt-5 mb-5 col-12">
+  <div class="row">
+      <div id="_popup" class="col-8 offset-2 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center" style="z-index: 100">
+        <h4><img src="../static/IMG/Icons/successo.png" style="position: relative" width="10%" alt="Prenotazione avvenuta con successo"> Prenotazione effettuata con successo!</h4>
+        <script>
+          setTimeout(function (){
+            window.location.replace('/profilo')
+          },3000)
+        </script>
+      </div>
+  </div>
+</div>
+
+</div>
+{% endblock %}
