@@ -2,6 +2,12 @@
 {% extends 'base2.html' %}
 {% block title %}
 <title>NotMiss: crea evento</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
 {% endblock %}
 {% block main %}
 
@@ -15,8 +21,6 @@
         <label for="_nomeevento" class="text-black-50 font-weight-bold">Nome evento</label>
         <input type="text" name="nome" class="form-control form-inline" id="_nomeevento" placeholder="Nome evento" autocomplete="on" autofocus required/> <br />
 
-        <label for="_luogoevento" class="text-black-50 font-weight-bold">Luogo evento (opzionale)</label>
-        <input type="text" name="luogo" class="form-control form-inline" id="_luogoevento" placeholder="Inserisci qui il luogo del tuo evento"/> <br />
 
         <label for="_dataInizio" class="text-black-50 font-weight-bold">Data inizio</label>
         <input type="datetime-local" class="form-control form-inline"  name="dataI" id="_dataInizio" style="margin-bottom: 0.5rem" autocomplete="on" required/>
@@ -33,6 +37,23 @@
             <option  value="ristorazione">Ristorazione</option>
             <option  value="intrattenimento">Intrattenimento</option>
         </select><br>
+
+          <input type="checkbox" name="mappa" id="mappa"  value="mappa" style="margin-top: 1rem; margin-right: 0.5rem" checked><label for="mappa" class="text-black-50 font-weight-bold">Inserisci il luogo</label> <br>
+          <div id="sezioneMappa">
+              <label for="addr" class="text-black-50 font-weight-bold _mt10" style="margin-bottom: 0.5rem">Inserisci indirizzo (o seleziona sulla mappa)</label> <br>
+              <div id="search">
+
+                <input type="text" name="addr" value="" id="addr" class="form-control form-inline"  placeholder="Indirizzo" /> <br />
+                <button type="button" onclick="addr_search();">Ricerca</button>
+                <div id="results"><br><div class="address" title="Show Location and Coordinates" onclick="chooseAddr(40.8359336, 14.2487826);return false;">Napoli, Campania, Italia</div><div class="address" title="Show Location and Coordinates" onclick="chooseAddr(40.865913930801774, 14.270436479376116);return false;">Municipalità 3, Napoli, Campania, 80141, Italia</div></div>
+                </div>
+              <!-- MAPPA-->
+              <div id="mapID">
+
+                </div>
+          </div>
+          <input type="text" name="lat" id="lat" value="" class="_ds-none">
+          <input type="text" name="lon" id="lon" value="" class="_ds-none">
           <label for="quantity" class="text-black-50 font-weight-bold _mt10" style="margin-bottom: 0.5rem">Privacy evento</label> <br>
           <div class="form-check form-check-inline _mb5">
           <input class="form-check-input" name="privacy" type="radio" id="_pubblico" value="Pubblico" checked/>
@@ -51,7 +72,7 @@
           <label for="_corpo" class="text-black-50 font-weight-bold" style="margin-top: 1rem">Descrizione</label> <br>
           <textarea class="form-control _mb5 _mt10" id="_corpo" name="descrizione"  placeholder="Descrivi il tuo evento (Max. 500 caratteri)" maxlength="500" rows="3" required></textarea>
         <label for="_crea"></label>
-        <button type="submit" class="btn btn btn-dark _m10 _border-radius _mb5" id="_crea" style="width: 45%;">Crea il tuo evento</button> <br />
+        <button type="submit" class="btn btn btn-dark _m10 _border-radius _mb5" id="_crea" style="width: 45%;">Crea</button> <br />
       </form>
     </div>
   </div>
@@ -78,6 +99,6 @@
 {% endblock %}
 
 {% block localJS %}
-<script src="../static/Javascript/index.js"></script>
+<script src="../static/Javascript/crea-evento.js"></script>
 {% endblock %}
 

@@ -177,6 +177,8 @@ def crea_evento():
         dataF = request.form['dataF']
         tipologia = request.form['tipologia']
         privacy = request.form['privacy']
+        lat = request.form['lat']
+        lon = request.form['lon']
         quantita = request.form['quantita']
         preferenze = request.form['preferenze']
         descrizione = request.form['descrizione']
@@ -190,6 +192,8 @@ def crea_evento():
             'luogo': luogo,
             'dataI': dataI,
             'dataF': dataF,
+            'lat': lat,
+            'lon': lon,
             'tipologia': tipologia,
             'privacy': privacy,
             'quantita': quantita,
@@ -218,7 +222,7 @@ def loadEventi():
 
 @app.route('/getsession', methods=["POST"])
 def getsession():
-    result = { "_id": session["_id"]}
+    result = {"_id": session["_id"]}
     return jsonify(result)
 
 

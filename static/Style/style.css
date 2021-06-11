@@ -241,3 +241,15 @@ li a, li a:hover, li a:visited{
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+
+#mapID{
+    height: 300px;
+}
+
+.address{
+    color: dodgerblue;
+}
+.address:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
