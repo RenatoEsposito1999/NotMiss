@@ -3,6 +3,8 @@ let queryResult
 let sessionID
 let lat //latitudine del luogo dell'evento
 let lon //longitudine del luogo dell'evento
+
+
 function resizeTextArea() {
     if (window.screen.width < 768 && window.screen.width > 328 ){
         $(".text-area").attr("cols", "10")
@@ -111,6 +113,9 @@ function getSession() {
 }
 
 function openMap(lat,lon){
+    if (lat === '0' && lon === '0'){
+    $("#map").addClass('_ds-none')
+    }
  let mymap = L.map('map').setView([lat,lon],16)
  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
