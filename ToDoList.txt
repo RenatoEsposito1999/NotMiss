@@ -3,12 +3,4 @@ https://stackoverflow.com/questions/23024356/serializing-mongodb-find-return-int
 potrebbe servire perchè potremmo dover fare delle cose con JQuery
 tipo sostituire delle cose nelle pagine etc.
 
-
-Da fare:
-Far mostrare anche gli eventi privati (stessa logica ma con query diversa)
-Partecipa evento, creiamo una lista.
-Aggiungere mappa leaflet
-Volendo Lingua
-Volendo friendlist
-
-
+SOSTIUIRE LINGUA INGLESE CON LOCALITA: MIALOCALITÀ

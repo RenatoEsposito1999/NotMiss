@@ -182,6 +182,7 @@ def crea_evento():
         preferenze = request.form['preferenze']
         descrizione = request.form['descrizione']
         last_id = eventi.find().count()
+        partecipanti = [session['_id']]
         info = {
             '_id': last_id + 1,
             'nome': nome,
@@ -196,7 +197,8 @@ def crea_evento():
             'privacy': privacy,
             'quantita': quantita,
             'preferenze': preferenze,
-            'descrizione': descrizione
+            'descrizione': descrizione,
+            'partecipanti': partecipanti
         }
         eventi.insert_one(info)
         nEvCreati = utenti.find_one({'_id': session['_id']})
@@ -210,13 +212,28 @@ def crea_evento():
 
 @app.route('/loadEventi', methods=['POST'])
 def loadEventi():
+    privacy = request.form.get('privacy')
     if request.method == 'POST':
-        query = {"privacy": "Pubblico"}
-        cursor = eventi.find(query)
-        list_result = list(cursor)
-        return jsonify(list_result)
+        if privacy == 'Pubblico':
+            query = {"privacy": "Pubblico"}
+        else:
+            query = {"privacy": "Privato"}
+    cursor = eventi.find(query)
+    list_result = list(cursor)
+    return jsonify(list_result)
 
 
+@app.route('/partecipa', methods=['POST'])
+def partecipa():
+    if request.method == 'POST':
+        id_ev = int(request.form.get("idEvento"))
+        id_ut = int(request.form.get("idUtente"))
+        query = {"_id": id_ev}
+        #newvalues = { "$set": { "partecipanti": partecipanti } }
+        #eventi.update_one(query, newvalues)
+        EV = eventi.find_one(query)
+        EV['partecipanti'].insert(0, 10)
+        return "c"
 
 @app.route('/getsession', methods=["POST"])
 def getsession():
@@ -227,7 +244,6 @@ def getsession():
 @app.route('/sw.js')
 def serviceWorker():
     return app.send_static_file("sw.js")
-
 
 
 # ---------------------------------------- DA QUI IN POI GESTIONE DEGLI ERRORI
@@ -275,3 +291,5 @@ def http500():
 
 if __name__ == '__main__':
     app.run()
+
+
