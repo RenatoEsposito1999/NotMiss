@@ -1,8 +1,17 @@
 {% extends 'base2.html' %}
 {% block title %}
 <title>NotMiss: Contatti</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 {% endblock %}
 {% block main %}
+
+
 <div class="container mt-5 mb-5 col-12" id="padre">
   <div class="row" id="padre_login">
     <!-- Login -->
@@ -23,6 +32,24 @@
     <!-- Fine login  -->
   </div>
 </div>
+ <!-- map --> <div id="mapid" style="height: 280px"></div>
+<script>
+  $(document).ready(function(){
+        let mymap = L.map('mapid').setView([40.856725, 14.284556], 18);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(mymap);
+      let marker = L.marker([40.856725, 14.284556], {draggable:false}).addTo(mymap).on("dragend",function (e){
+            marker.on("click", function (e) {
+                let range = L.circle(e.latlng,100).addTo(mymap)
+            })
+
+        });
+    //let marker = L.marker([40.856725, 14.284556]).addTo(mymap);
+            let popup= marker.bindPopup("<b>NotMiss</b><br>Siamo qui!").openPopup();
+            popup.openPopup();
+        });
+</script>
 
 {% endblock %}
 
