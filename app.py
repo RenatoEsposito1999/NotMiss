@@ -15,6 +15,15 @@ app = Flask(__name__)
 app.secret_key = 'notmisskey'
 cors = CORS(app)
 
+#utenti.drop()
+#eventi.drop()
+
+
+
+
+@app.route('/leaflet')
+def leaflet():
+    return render_template('leaflet_test.html')
 
 @app.route('/')
 def index():
@@ -204,6 +213,13 @@ def loadEventi():
         cursor = eventi.find(query)
         list_result = list(cursor)
         return jsonify(list_result)
+
+
+
+@app.route('/getsession', methods=["POST"])
+def getsession():
+    result = { "_id": session["_id"]}
+    return jsonify(result)
 
 
 @app.route('/sw.js')
