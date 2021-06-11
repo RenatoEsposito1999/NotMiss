@@ -37,9 +37,10 @@
             <option  value="ristorazione">Ristorazione</option>
             <option  value="intrattenimento">Intrattenimento</option>
         </select><br>
-
           <input type="checkbox" name="mappa" id="mappa"  value="mappa" style="margin-top: 1rem; margin-right: 0.5rem" checked><label for="mappa" class="text-black-50 font-weight-bold">Inserisci il luogo</label> <br>
+        <!-- MAPPA -->
           <div id="sezioneMappa">
+
               <label for="addr" class="text-black-50 font-weight-bold _mt10" style="margin-bottom: 0.5rem">Inserisci indirizzo (o seleziona sulla mappa)</label> <br>
               <div id="search">
 
@@ -47,11 +48,12 @@
                 <button type="button" onclick="addr_search();">Ricerca</button>
                 <div id="results"><br><div class="address" title="Show Location and Coordinates" onclick="chooseAddr(40.8359336, 14.2487826);return false;">Napoli, Campania, Italia</div><div class="address" title="Show Location and Coordinates" onclick="chooseAddr(40.865913930801774, 14.270436479376116);return false;">Municipalità 3, Napoli, Campania, 80141, Italia</div></div>
                 </div>
-              <!-- MAPPA-->
+
               <div id="mapID">
 
                 </div>
           </div>
+
           <input type="text" name="lat" id="lat" value="" class="_ds-none">
           <input type="text" name="lon" id="lon" value="" class="_ds-none">
           <label for="quantity" class="text-black-50 font-weight-bold _mt10" style="margin-bottom: 0.5rem">Privacy evento</label> <br>

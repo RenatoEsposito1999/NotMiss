@@ -242,7 +242,7 @@ li a, li a:hover, li a:visited{
     transform: translate(-50%, -50%);
 }
 
-#mapID{
+#mapID,#map{
     height: 300px;
 }
 

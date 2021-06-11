@@ -46,9 +46,9 @@ function loadEventi(){
         type:'POST',
         success: function (result){
             queryResult = result
-            for (let i = 0; i < result.length; i++) {
+            for (let i = result.length - 1; i >= 0 ; i--) {
                let obj = result[i]
-                let newDiv = '<!-- Inizio Post --> <div class="container mt-2 mb-5"> <div class="postContainer col-12"> <div class="row bg-dark" style="border-radius: 5px 5px 0px 0px"> <div class="col-12 text-center text-white"> <h3> <span class="nome"></span></h3> </div> </div> <div class="row text-center"> <div class="col-4"><p class=" nomeCreatore ml-2"></p></div> <div class="col-4"><p class="luogo"></p></div> <div class="col-4"><p class="tipologia"></p></div> </div> <div class="row"> <div class="col-2"> <p style="text-align: center"> <img class="_id mostraAltro" src="../static/IMG/Icons/buttonInfo256x256.png" width="32px" height="32px" alt="info" style="cursor: pointer" > </p> </div> <div class="col-8 text-center"> <p class="dataI text-center"></p> </div> <div class="col-2 " style="color: dodgerblue; font-weight: normal"> <p style="text-align: center"> <img src="../static/IMG/Icons/addButton256x256.png" alt="Partecipa" width="32px" height="32px" style="cursor: pointer" class="addButton"> </p> </div> </div> </div> </div> <!-- fine post -->'
+                let newDiv = '<!-- Inizio Post --> <div class="container mt-2 mb-5"> <div class="postContainer col-12"> <div class="row bg-dark" style="border-radius: 5px 5px 0px 0px"> <div class="col-12 text-center text-white"> <h3> <span class="nome"></span></h3> </div> </div> <div class="row text-center"> <div class="col-4"><p class=" nomeCreatore ml-2"></p></div> <div class="col-4"></div> <div class="col-4"><p class="tipologia"></p></div> </div> <div class="row"></div> <div class="row"> <div class="col-2"> <p style="text-align: center"> <img class="_id mostraAltro" src="../static/IMG/Icons/buttonInfo256x256.png" width="32px" height="32px" alt="info" style="cursor: pointer" > </p> </div> <div class="col-8 text-center"> <p class="dataI text-center"></p> </div> <div class="col-2 " style="color: dodgerblue; font-weight: normal"> <p style="text-align: center"> <img src="../static/IMG/Icons/addButton256x256.png" alt="Partecipa" width="32px" height="32px" style="cursor: pointer" class="addButton"> </p> </div> </div> </div> </div> <!-- fine post -->'
                 $("#contents").append(newDiv)
                 $("._id").attr('class', "_"+obj['_id'])
                 array.push("_" + obj['_id'])
@@ -84,7 +84,7 @@ function newDivInfo(indice) {
         obj = queryResult[i]
         if (obj['_id'] == indice){
             //trovato
-            let newDiv = '<!-- Inizio info post --> <div class="container _divInfo" id="_divInfo"> <div class="postContainer col-12"> <div class="row bg-dark" style="border-radius: 5px 5px 0px 0px"> <div class="col-6 offset-3 text-center text-white"> <h3 > <span class="nome"></span></h3> </div> <div class="col-2 offset-1 text-right"> <img src="../static/IMG/Icons/CloseButton128x128.png" width="24px" height="24px"  id="_close2" alt="chiudi" style="margin: 5px" /> </div> </div> <div class="row text-center"> <div class="col-6"><p class="luogo">Mappa</p></div> <div class="col-6"><p class="quantita">Max Partecipanti:</p></div> </div> <div class="row"> <div class="col-6 text-center"> <p class="text-center dataI">Inizio: 111111-11-11T11:22 </p> </div> <div class="col-6 text-center"> <p class="text-center dataF">Fine: 111111-11-11T11:22 </p> </div> </div> <div class="row text-center"> <div class="col-6"> <label for="preferenze" class="font-weight-bold">Preferenze</label> <br> <textarea class="preferenze ml-2 text-area _noresize" disabled rows="8"></textarea> </div> <div class="col-6"> <label for="descrizione2" class="font-weight-bold">Descrizione</label> <br> <textarea class="descrizione text-area ml-2 _noresize" disabled rows="8"></textarea> </div> </div> <div class="row"> <div class="col-12" style="color: dodgerblue; font-weight: normal"> <p style="text-align: right"> <img src="../static/IMG/Icons/addButton256x256.png" alt="Partecipa" width="32px" height="32px" style="margin: 5px; cursor: pointer" class="addButton"> </p> </div> </div> </div> </div> <!-- Fine info post --> '
+    let newDiv = '<!-- Inizio info post --> <div class="container _divInfo" id="_divInfo"> <div class="postContainer col-12"> <div class="row bg-dark" style="border-radius: 5px 5px 0px 0px;"> <div class="col-6 offset-3 text-center text-white"> <h3><span class="nome"></span></h3> </div> <div class="col-2 offset-1 text-right"><img src="../static/IMG/Icons/CloseButton128x128.png" width="24px" height="24px" id="_close2" alt="chiudi" style="margin: 5px;" /></div> </div> <div class="row text-center">  <div class="col-12 text-center"><p class="quantita">Max Partecipanti:</p></div> </div> <div class="row"> <div class="col-6 text-center"><p class="text-center dataI">Inizio: 111111-11-11T11:22</p></div> <div class="col-6 text-center"><p class="text-center dataF">Fine: 111111-11-11T11:22</p></div> </div> <div class="row text-center"> <div class="col-6"> <label for="preferenze" class="font-weight-bold">Preferenze</label> <br /> <textarea class="preferenze ml-2 text-area _noresize" disabled rows="8"></textarea> </div> <div class="col-6"> <label for="descrizione2" class="font-weight-bold">Descrizione</label> <br /> <textarea class="descrizione text-area ml-2 _noresize" disabled rows="8"></textarea> </div> </div> <div id="map"></div> <div class="row"> <div class="col-12"> <p style="text-align: right;"><img src="../static/IMG/Icons/addButton256x256.png" alt="Partecipa" width="32px" height="32px" style="margin: 5px; cursor: pointer;" class="addButton" /></p> </div> </div> </div> </div> <!-- Fine info post --> '
             $("#infocontents").append(newDiv)
             $(".nome").attr("class", obj['nome']).text(obj['nome'])
             $(".luogo").attr('class', obj['luogo']).text(obj['luogo'])
@@ -93,6 +93,7 @@ function newDivInfo(indice) {
             $(".dataF").attr('class', obj['dataF']).text(obj['dataF'])
             $(".preferenze").attr('class', obj['preferenze']).val(obj['preferenze'])
             $(".descrizione").attr('class', obj['descrizione']).val(obj['descrizione'])
+            openMap(obj['lat'],obj['lon'])
         }
     }
     open2()
@@ -109,7 +110,13 @@ function getSession() {
 
 }
 
-
+function openMap(lat,lon){
+ let mymap = L.map('map').setView([lat,lon],16)
+ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+ attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+ }).addTo(mymap);
+ L.marker([lat, lon], {draggable:false}).addTo(mymap)
+}
 
 $(document).ready(function (){
     loadEventi();
@@ -119,7 +126,10 @@ $(document).ready(function (){
         $("#contents").removeChild()
         loadEventi()
     })
-    $('#_priv').click(loadEventi)
+    $('#_priv').click(function (){
+        $("#contents").removeChild()
+        loadEventi()
+    })
 
     $(".mostraAltro").click(open2)
 
@@ -127,12 +137,13 @@ $(document).ready(function (){
     $(document).click(function (e){
         let indice
         let classList = e.target.className
-        for (let i = 0; i < array.length; i++) {
+        for (let i = array.length - 1; i >= 0 ; i--) {
             if (classList.indexOf(array[i]) != -1){
                 //ho trovato l'elemento cliccato
                 indice = array[i]
                 //inserisco le informazioni nel div info (escludo il carattere di pos 0 che è il _)
                 newDivInfo(indice.charAt(1))
+                //openMap(indice.charAt(1))
             }
         }
     })
@@ -146,6 +157,21 @@ $(document).ready(function (){
                 window.location.replace('/accedi')
             }
         }
+       /* if (e.target.id ==='luogo') {
+            console.log(e.target.id)
+            let indice
+            let classList = e.target.className
+            for (let i = array.length - 1; i >= 0 ; i--) {
+                if (classList.indexOf(array[i]) != -1){
+                    console.log("nell if")
+                //ho trovato l'elemento cliccato
+                indice = array[i]
+                //inserisco le informazioni nel div info (escludo il carattere di pos 0 che è il _)
+                openMap(indice.charAt(1))
+                }
+            }
+        } */
+
     })
 
 

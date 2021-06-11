@@ -172,7 +172,6 @@ def profilo():
 def crea_evento():
     if request.method == 'POST':
         nome = request.form['nome']
-        luogo = request.form['luogo']
         dataI = request.form['dataI']
         dataF = request.form['dataF']
         tipologia = request.form['tipologia']
@@ -189,7 +188,6 @@ def crea_evento():
             'idCreatore': session['_id'],
             'nomeCreatore': session['nome'],
             'cognomeCreatore': session['cognome'],
-            'luogo': luogo,
             'dataI': dataI,
             'dataF': dataF,
             'lat': lat,
