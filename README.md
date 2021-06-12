@@ -27,7 +27,7 @@ NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato E
   static/IMG/favicons/safari-pinned-tab.svg
   <br><br>
   
-  <h2> ~How to set up?</h2>
+  <h2> ~How to set up NotMiss?</h2>
   <ol> 
     <li> Create virtual environment folder(by terminal): <code>python3 -m venv venv</code></li>
     <!-- <li> if you don't have pip, install pip: <code> sudo apt install python3-pip </code> -->
@@ -43,7 +43,7 @@ NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato E
   </ol>
     <br>
     </ol> 
-      <h2> ~How to run?</h2>
+      <h2> ~How to run NotMiss?</h2>
   <ol> 
     <li> run mongoDB(the instructions depend on your OS). </li>
     <li> In the project folder there is the "NotMissDB" folder. if you want to have a ready NotMissDB, then execute the procedure "how to import the testing db?" </li>
@@ -60,7 +60,7 @@ NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato E
     <li> (If you need to export NotMissDB for some reason, command is here: <code> sudo mongodump --host localhost --port 27017 --db NotMissDB</code>)</li>
   </ol>
   <br>
-        <h2> ~How to use?</h2>
+        <h2> ~How to useNotMiss?</h2>
   <ol> 
    <li> <code> $ flask run</code> and <code> $ flask run -h 0.0.0.0</code> commands return the IP address and port to connect to access the PWA.</li>
     <li> From the main interface you can access the login / registration page. </li>
