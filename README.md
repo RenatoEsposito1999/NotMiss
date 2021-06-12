@@ -8,10 +8,6 @@ NotMiss is a <strong><a href=""https://en.wikipedia.org/wiki/Progressive_web_app
 
 ◉ The idea is to offer a platform for the management and organization of events.
 
-◉ Currently some social networks offer the functionality of creating events, but it is in fact a basic secondary functionality.
-
-◉ We also want to respect the privacy of those who use NotMiss by giving users the possibility of not necessarily sharing personal information on the platform (this is not currently possible with social networks).
-
 ◉ NotMiss aims to be a PWA entirely dedicated to the concept of a 360 ° event.
 
 <h3><i>Functionality</i></h3>
