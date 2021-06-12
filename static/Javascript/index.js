@@ -77,7 +77,6 @@ function open2() {
 function newDivInfo(indice) {
     //devo cercare in obj l'indice che ha come id indice (che mi passa la funzione), quando lo trovo ho trovato l'obj che contiene le info dettagliate dell'evento creato
     let obj; let x = 0
-    console.log("QR" + queryResult.length)
     for (let i = 0; i < queryResult.length; i++) {
         obj = queryResult[i];
         if (obj["_id"] == indice) { //trovato
@@ -109,11 +108,10 @@ function newDivInfo(indice) {
                 .attr("class", obj["descrizione"])
                 .val(obj["descrizione"]);
 
-            console.log("x=",x)
             mapp = openMap(obj["lat"], obj["lon"]);
             break
         }
-        console.log("BOH")
+
     }
     open2();
 }
@@ -185,7 +183,6 @@ $(document).ready(function () {
 
     //cerco la classe dell'elemento cliccato nell'array che contiene tutti gli id dei post, se lo trovo allora apro il div con maggiori info, inserendo tutti i dettagli gia contenuti in obj.
     $(document).click(function (e) {
-
         if(e.target.id==="_priv"){
             querySelector("#_priv", "#_pub");
         }
@@ -204,10 +201,11 @@ $(document).ready(function () {
                 //inserisco le informazioni nel div info (escludo il carattere di pos 0 che è il _)
                 if ($(e.target).attr("src") === "../static/IMG/Icons/AddButton.png") {
                     addParticipant(indice.charAt(1));
+                    break
                 } else if($(e.target).attr("src") === "../static/IMG/Icons/ButtonInfo.png") {
                     nclick = nclick + 1
-                    console.log("Sono nell'esle brutto perché ho cliccato n volte: " + nclick)
                     newDivInfo(indice.charAt(1));
+                    break
                 }
             }
         }
