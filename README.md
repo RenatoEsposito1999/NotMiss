@@ -19,9 +19,28 @@ NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato E
 <h4>The NotMiss PWA offers the possibily:</h4>
 
 ◉ to create events with extensive customization.
+  
+◉ to make the events private in a bulletin board visible to all NotMiss users.
 
-◉ to create a friendList with which you can share your private events.
-
-◉ to make the events public in a bulletin board visible to all NotMiss users.
-
-◉ to review the creator of an event, so that other users can evaluate its reliability.
+◉ to make the events public in a bulletin board visible to all.
+  <br>
+  
+  
+  
+  <h2> How to set up </h2>
+  <ol> 
+    <li> Create virtual environment folder (by terminal): <code>python3 -m venv venv</code></li>
+    <!-- <li> if you don't have pip, install pip: <code> sudo apt install python3-pip </code> -->
+    <li> activate the corresponding environment: <code> . venv/bin/activate</code>
+    <li> Go to project folder and install requirements by requirements.txt file: <code> pip install -r  requirements.txt </code> 
+    <li> Now configure the python interpreter from your ide. </li>
+    <li> If you don't have mongoDB, follow <a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/"> this guide</a> to install it.</li>
+    <br>
+    </ol> 
+      <h2> How to use</h2>
+  <ol> 
+    <li> The flask command is installed by Flask, not your application; it must be told where to find your application in order to use it. The FLASK_APP environment variable is used to specify how to load the application: <code> $ export FLASK_APP=hello</code></li>
+    <li> Run flask: <code> $ flask run</code> </li>
+    <li> Now configure the python interpreter from your ide. </li>
+    <li> run mongodb (it depends by your OS). </li>
+     
