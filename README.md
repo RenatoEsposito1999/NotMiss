@@ -62,7 +62,7 @@ NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato E
   <br>
         <h2> ~How to use?</h2>
   <ol> 
-   <li> the <code> $ flask run</code> command returns the IP address and port to connect to to access the PWA.</li>
+   <li> <code> $ flask run</code> and <code> $ flask run -h 0.0.0.0</code> commands return the IP address and port to connect to access the PWA.</li>
     <li> From the main interface you can access the login / registration page. </li>
   <li> Once you have registered and logged in, you will be redirected to the main page where you can create your own events, attend other users' events and view event information.</li>
      </ol>
