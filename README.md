@@ -37,10 +37,16 @@ NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato E
     <li> If you don't have mongoDB, follow <a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/"> this guide</a> to install it.</li>
     <br>
     </ol> 
-      <h2> ~How to use?</h2>
+      <h2> ~How to run?</h2>
   <ol> 
-    <li> The flask command is installed by Flask, not your application; it must be told where to find your application in order to use it. The FLASK_APP environment variable is used to specify how to load the application: <code> $ export FLASK_APP=app</code></li>
+    <li> The flask command is installed by Flask, not your application; it must be told where to find your application in order to use it.<br> The FLASK_APP environment variable is used to specify how to load the application, so: <code> $ export FLASK_APP=app</code></li>
     <li> Run flask: <code> $ flask run</code> </li>
     <li> Now configure the python interpreter from your IDE. </li>
     <li> run mongoDB(the instructions depend on your OS). </li>
+  </ol>
+  <br>
+        <h2> ~How to use?</h2>
+  <ol> 
+    <li> ... </li>
+     
      
