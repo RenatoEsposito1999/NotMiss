@@ -3,7 +3,7 @@ let queryResult; //
 let sessionID;
 let lat; //latitudine del luogo dell'evento
 let lon; //longitudine del luogo dell'evento
-
+let nclick = 0
 function resizeTextArea() {
     if (window.screen.width < 768 && window.screen.width > 328) {
         $(".text-area").attr("cols", "10");
@@ -85,10 +85,11 @@ function open2() {
 function newDivInfo(indice) {
     //devo cercare in obj l'indice che ha come id indice (che mi passa la funzione), quando lo trovo ho trovato l'obj che contiene le info dettagliate dell'evento creato
     let obj; let x = 0
+    console.log("QR" + queryResult.length)
     for (let i = 0; i < queryResult.length; i++) {
         obj = queryResult[i];
         if (obj["_id"] == indice) { //trovato
-            x=x +1
+            x= x +1
             let newDiv = '<!-- Inizio info post --> <div class="container _divInfo" id="_divInfo"> <div class="postContainer col-12"> <div class="row bg-dark" style="border-radius: 5px 5px 0px 0px;"> <div class="col-6 offset-3 text-center text-white"> <h2><span class="nome" style="font-size: "></span></h2> </div> <div class="col-2 offset-1 text-right"><img src="../static/IMG/Icons/CloseButton128x128.png" width="24px" height="24px" id="_close2" alt="chiudi" style="margin: 5px;" /></div> </div> <div class="row text-center">  <div class="col-12 text-center"><p class="quantita">Max Partecipanti:</p></div> </div> <div class="row"> <div class="col-6 text-center"><p class="text-center dataI">Inizio: 111111-11-11T11:22</p></div> <div class="col-6 text-center"><p class="text-center dataF">Fine: 111111-11-11T11:22</p></div> </div> <div class="row text-center"> <div class="col"> <label for="preferenze" class="font-weight-bold">Preferenze</label> <br /> <textarea class="preferenze ml-2 text-area _noresize" disabled rows="8" style="resize: none"></textarea> </div> <div class="col "> <label for="descrizione2" class="font-weight-bold">Descrizione</label> <br /> <textarea class="descrizione text-area ml-2 _noresize" disabled rows="8" style="resize: none"></textarea> </div> </div> <div id="map"></div> <div class="row"> <div class="col-12"> <p style="text-align: right;"><img src="../static/IMG/Icons/AddButton.png" alt="Partecipa" width="32px" height="32px" style="margin: 5px; cursor: pointer;" class="_id" /></p> </div> </div> </div> </div> <!-- Fine info post --> '
             $("#infocontents").append(newDiv);
             $("._id").attr("class", "_" + obj["_id"]);
@@ -116,9 +117,9 @@ function newDivInfo(indice) {
                 .attr("class", obj["descrizione"])
                 .val(obj["descrizione"]);
 
-
             console.log("x=",x)
             mapp = openMap(obj["lat"], obj["lon"]);
+            break
         }
         console.log("BOH")
     }
@@ -136,7 +137,6 @@ function getSession() {
 }
 
 function openMap(lat, lon) {
-
     if (lat === "0" && lon === "0") {
         $("#map").addClass("_ds-none");
     }
@@ -179,19 +179,21 @@ $(document).ready(function () {
     getSession();
     $("#_pub").click(function () {
         $("#contents").empty();
+        $("#infocontents").empty();
         loadEventi("Pubblico");
-        $("#contents").empty();
     });
+
     $("#_priv").click(function () {
         $("#contents").empty();
+        $("#infocontents").empty();
         loadEventi("Privato");
-        $("#contents").empty();
     });
 
     $(".mostraAltro").click(open2);
 
     //cerco la classe dell'elemento cliccato nell'array che contiene tutti gli id dei post, se lo trovo allora apro il div con maggiori info, inserendo tutti i dettagli gia contenuti in obj.
     $(document).click(function (e) {
+        if (e.target.id === "copri" || e.target.id === "_close2") close2();
         let indice;
         let classList = e.target.className;
         for (let i = array.length - 1; i >= 0; i--) {
@@ -201,14 +203,13 @@ $(document).ready(function () {
                 //inserisco le informazioni nel div info (escludo il carattere di pos 0 che è il _)
                 if ($(e.target).attr("src") === "../static/IMG/Icons/AddButton.png") {
                     addParticipant(indice.charAt(1));
-                } else  {
+                } else if($(e.target).attr("src") === "../static/IMG/Icons/ButtonInfo.png") {
+                    nclick = nclick + 1
+                    console.log("Sono nell'esle brutto perché ho clicclato numero: " + nclick)
                     newDivInfo(indice.charAt(1));
                 }
             }
         }
     });
 
-    $(document).click(function (e) {
-        if (e.target.id === "copri" || e.target.id === "_close2") close2();
-    });
 });
