@@ -1,6 +1,6 @@
 <h1><img align="left" width="32" height="32" src="../main/static/IMG/favicons/safari-pinned-tab.svg" >NotMiss</h1>
 <img align="left" src="../main/static/IMG/logo/logo256x256.png" width="164" height="164"> <h3>~What is NotMiss?</h3>
-NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato Esposito</b> and <b>Luca Rubino</b>. 
+NotMiss is a <strong><a href=""https://en.wikipedia.org/wiki/Progressive_web_application> PWA(Progressive Web App)</a></strong> conceived by <b>Renato Esposito</b> and <b>Luca Rubino</b>. 
 <br>It is a project of <a href="https://www.uniparthenope.it/ugov/degreecourse/43358"><i><b>Web Technologies</i>(TW6)</b></a> (course of the <b><i><a href="https://www.uniparthenope.it/">Parthenope University of Naples</a></i></strong>).
   
 <br><br>
