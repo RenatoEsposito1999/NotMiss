@@ -191,7 +191,7 @@ $(document).ready(function () {
                 //ho trovato l'elemento cliccato
                 indice = array[i];
                 //inserisco le informazioni nel div info (escludo il carattere di pos 0 che è il _)
-                if ($(e.target).attr("src") === "../static/IMG/Icons/addButton.png") {
+                if ($(e.target).attr("src") === "../static/IMG/Icons/AddButton.png") {
                     addParticipant(indice.charAt(1));
                 } else  {
                     newDivInfo(indice.charAt(1));
