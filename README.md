@@ -59,5 +59,9 @@ NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato E
      </ol>
      </br>
      </br>
-     <h3><img align="left" width="16" height="10" src="../main/static/IMG/dot.png">  Google Drive link of the project presentation slides:</h3> coming soon.. 
+     <h2> Google Drive link of the project presentation slides:</h2> 
+     <ul> 
+    <li>  coming soon..  </li>
+     </ul>
+    
     
