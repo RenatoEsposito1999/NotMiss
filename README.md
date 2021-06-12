@@ -27,7 +27,7 @@ NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato E
   static/IMG/favicons/safari-pinned-tab.svg
   <br><br>
   
-  <h2><img align="left" width="16" height="16" src="../main/static/IMG/dot.png"> ~How to set up?</h2>
+  <h2> ~How to set up?</h2>
   <ol> 
     <li> Create virtual environment folder(by terminal): <code>python3 -m venv venv</code></li>
     <!-- <li> if you don't have pip, install pip: <code> sudo apt install python3-pip </code> -->
