@@ -33,7 +33,7 @@ NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato E
     <!-- <li> if you don't have pip, install pip: <code> sudo apt install python3-pip </code> -->
     <li> activate the corresponding environment: <code> . venv/bin/activate</code>
     <li> Go to project folder and install requirements by requirements.txt file: <code> pip install -r  requirements.txt </code> 
-    <li> Now configure the python interpreter from your ide. </li>
+    <li> Now configure the python interpreter in your ide. </li>
     <li> If you don't have mongoDB, follow <a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/"> this guide</a> to install it.</li>
     <br>
     </ol> 
