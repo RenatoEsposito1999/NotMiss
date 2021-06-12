@@ -24,7 +24,6 @@ NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato E
 
 ◉ to make the events public in a bulletin board visible to all.
   <br>
-  static/IMG/favicons/safari-pinned-tab.svg
   <br><br>
   
   <h2> ~How to set up NotMiss?</h2>
