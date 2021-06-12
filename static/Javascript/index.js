@@ -3,7 +3,6 @@ let queryResult; //
 let sessionID;
 let lat; //latitudine del luogo dell'evento
 let lon; //longitudine del luogo dell'evento
-let nclick = 0
 function resizeTextArea() {
     if (window.screen.width < 768 && window.screen.width > 328) {
         $(".text-area").attr("cols", "10");
@@ -203,7 +202,6 @@ $(document).ready(function () {
                     addParticipant(indice.charAt(1));
                     break
                 } else if($(e.target).attr("src") === "../static/IMG/Icons/ButtonInfo.png") {
-                    nclick = nclick + 1
                     newDivInfo(indice.charAt(1));
                     break
                 }
