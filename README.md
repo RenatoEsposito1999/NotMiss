@@ -41,7 +41,7 @@ NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato E
   <ol> 
     <li> run mongoDB(the instructions depend on your OS). </li>
     <li> The flask command is installed by Flask, not your application; it must be told where to find your application in order to use it. The FLASK_APP environment variable is used to specify how to load the application <br> so export your FLASK_APP environment variable <code> $ export FLASK_APP=app</code></li>
-    <li> Run flask: <code> $ flask run</code> (you can use command <code> flask run -h 0.0.0.0 </code> to make NotMiss accessible to everyone).</li>
+    <li> Run flask: <code> $ flask run</code> (you can use command <code> flask run -h 0.0.0.0</code> to make NotMiss accessible to everyone).</li>
    
   </ol>
   <br>
