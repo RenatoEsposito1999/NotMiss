@@ -74,6 +74,7 @@ function addr_search() {
     xmlhttp.send();
 }
 
+
 $(document).ready(function () {
     addr_search();
     loadMap();
