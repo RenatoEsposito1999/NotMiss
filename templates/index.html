@@ -1,34 +1,30 @@
-{% extends 'base.html' %}
-{% block title %}
+{% extends 'base.html' %} {% block title %}
 <title>NotMiss</title>
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-          crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-            crossorigin=""></script>
-{% endblock %}
-{% block main %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+{% endblock %} {% block main %}
 <div class="container mb-2">
     <div class="row">
-        <div class="col-12  text-center text-left _mt10 _BheaderSize _funzionalita">
-            <a class="text-center" href="/crea-evento" id="_creaEventoNoLog" style="font-weight: normal"><img src="../static/IMG/Icons/plusicon128x128.png" alt=" plus icon" width="16px" height="16px"> <span class="_underline" >Crea il tuo un evento</span></a>
+        <div class="col-12 text-center text-left _mt10 _BheaderSize _funzionalita">
+            <a class="text-center" href="/crea-evento" id="_creaEventoNoLog" style="font-weight: normal;">
+                <img src="../static/IMG/Icons/plusicon128x128.png" alt=" plus icon" width="16px" height="16px" /> <span class="_underline">Crea un evento</span>
+            </a>
         </div>
     </div>
 </div>
 
-<div class="container mt-2 mt-3" >
+<div class="container mt-2 mt-3">
     <div class="row">
-        <div class="col-6  col-sm-6 offset-sm-0 col-md-3 offset-md-3 col-lg-2 offset-lg-4 text-center">
+        <div class="col-6 col-sm-6 offset-sm-0 col-md-3 offset-md-3 col-lg-2 offset-lg-4 text-center">
             <p class="_querySelector _selected" id="_pub">Evento pubblico</p>
         </div>
 
         {% if session['_id'] %}
-         <div class="col-6  col-md-3 col-sm-6 col-lg-2  text-center">
+        <div class="col-6 col-md-3 col-sm-6 col-lg-2 text-center">
             <p class="_querySelector" id="_priv">Evento privato</p>
-         </div>
+        </div>
         {% else %}
-         <div class="col-6  col-md-3 col-sm-6 col-lg-2  text-center">
+        <div class="col-6 col-md-3 col-sm-6 col-lg-2 text-center">
             <p class="_querySelector" id="_loginrequired">Evento privato</p>
         </div>
         {% endif %}
@@ -41,11 +37,8 @@
 <!-- Qui append delle info dettagliate dell'evento selezionato -->
 <div id="infocontents"></div>
 
-
 <!-- Qui append delle info generali degli eventi -->
 <div id="contents"></div>
-{% endblock %}
-
-{% block localJS %}
+{% endblock %} {% block localJS %}
 <script src="../static/Javascript/index.js"></script>
 {% endblock %}

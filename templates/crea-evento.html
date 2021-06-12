@@ -1,106 +1,92 @@
-
-{% extends 'base2.html' %}
-{% block title %}
+{% extends 'base2.html' %} {% block title %}
 <title>NotMiss: crea evento</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-          crossorigin=""/>
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-            crossorigin=""></script>
-{% endblock %}
-{% block main %}
-
-{% if session['_id'] %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+{% endblock %} {% block main %} {% if session['_id'] %}
 <div class="container mt-5">
-  <div class="row">
-     <div class="col-8 offset-2 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-8 offset-lg-2 text-center _divAccedi _divCreaEvento " id="registrazione">
-      <h1 style="margin-top: 1rem;" class="text-center text-black-50">Crea il tuo evento</h1>
-      <form id="formCreaEvento" action="/crea-evento" method="POST">
+    <div class="row">
+        <div class="col-8 offset-2 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-8 offset-lg-2 text-center _divAccedi _divCreaEvento" id="registrazione">
+            <h1 style="margin-top: 1rem;" class="text-center text-black-50">Crea il tuo evento</h1>
+            <form id="formCreaEvento" action="/crea-evento" method="POST">
+                <label for="_nomeevento" class="text-black-50 font-weight-bold">Nome evento</label>
+                <input type="text" name="nome" class="form-control form-inline" id="_nomeevento" placeholder="Nome evento" autocomplete="on" autofocus required /> <br />
 
-        <label for="_nomeevento" class="text-black-50 font-weight-bold">Nome evento</label>
-        <input type="text" name="nome" class="form-control form-inline" id="_nomeevento" placeholder="Nome evento" autocomplete="on" autofocus required/> <br />
+                <label for="_dataInizio" class="text-black-50 font-weight-bold">Data inizio</label>
+                <input type="datetime-local" class="form-control form-inline" name="dataI" id="_dataInizio" style="margin-bottom: 0.5rem;" autocomplete="on" required />
 
+                <label for="_dataFine" class="text-black-50 font-weight-bold" style="margin-top: 1rem;">Data fine</label>
+                <input type="datetime-local" class="form-control form-inline" name="dataF" id="_dataFine" autocomplete="on" style="margin-bottom: 0.5rem;" required /> <br />
 
-        <label for="_dataInizio" class="text-black-50 font-weight-bold">Data inizio</label>
-        <input type="datetime-local" class="form-control form-inline"  name="dataI" id="_dataInizio" style="margin-bottom: 0.5rem" autocomplete="on" required/>
+                <label for="_tipologia" class="text-black-50 font-weight-bold" style="margin-bottom: 0.5rem;">Tipologia</label>
+                <select class="custom-select" id="_tipologia" name="tipologia" style="margin-bottom: 1rem;">
+                    <option value="altro">Altro</option>
+                    <option value="cinema e teatro">Cinema e teatro</option>
+                    <option value="gaming">Gaming</option>
+                    <option value="sport">Sport e salute</option>
+                    <option value="ristorazione">Ristorazione</option>
+                    <option value="intrattenimento">Intrattenimento</option>
+                </select>
+                <br />
+                <input type="checkbox" name="mappa" id="mappa" value="mappa" style="margin-top: 1rem; margin-right: 0.5rem;" checked /><label for="mappa" class="text-black-50 font-weight-bold">Inserisci il luogo</label> <br />
+                <!-- MAPPA -->
+                <div id="sezioneMappa">
+                    <label for="addr" class="text-black-50 font-weight-bold _mt10" style="margin-bottom: 0.5rem;">Inserisci indirizzo (o seleziona sulla mappa)</label> <br />
+                    <div id="search">
+                        <input type="text" name="addr" value="" id="addr" class="form-control form-inline" placeholder="Indirizzo" /> <br />
+                        <button type="button" class="btn-dark _border-radius" onclick="addr_search();">Ricerca</button>
+                        <div id="results">
+                            <br />
+                            <div class="address" title="Show Location and Coordinates" onclick="chooseAddr(40.8359336, 14.2487826);return false;">Napoli, Campania, Italia</div>
+                            <div class="address" title="Show Location and Coordinates" onclick="chooseAddr(40.865913930801774, 14.270436479376116);return false;">Municipalità 3, Napoli, Campania, 80141, Italia</div>
+                        </div>
+                    </div>
 
-        <label for="_dataFine" class="text-black-50 font-weight-bold" style="margin-top: 1rem">Data fine</label>
-        <input type="datetime-local" class="form-control form-inline"  name="dataF" id="_dataFine" autocomplete="on" style="margin-bottom: 0.5rem" required/> <br>
-
-        <label for="_tipologia" class="text-black-50 font-weight-bold" style="margin-bottom: 0.5rem">Tipologia</label>
-        <select class="custom-select" id="_tipologia" name="tipologia" style="margin-bottom: 1rem">
-            <option  value="altro">Altro</option>
-            <option  value="cinema e teatro">Cinema e teatro</option>
-            <option  value="gaming">Gaming</option>
-            <option  value="sport">Sport e salute</option>
-            <option  value="ristorazione">Ristorazione</option>
-            <option  value="intrattenimento">Intrattenimento</option>
-        </select><br>
-          <input type="checkbox" name="mappa" id="mappa"  value="mappa" style="margin-top: 1rem; margin-right: 0.5rem" checked><label for="mappa" class="text-black-50 font-weight-bold">Inserisci il luogo</label> <br>
-        <!-- MAPPA -->
-          <div id="sezioneMappa">
-
-              <label for="addr" class="text-black-50 font-weight-bold _mt10" style="margin-bottom: 0.5rem">Inserisci indirizzo (o seleziona sulla mappa)</label> <br>
-              <div id="search">
-
-                <input type="text" name="addr" value="" id="addr" class="form-control form-inline"  placeholder="Indirizzo" /> <br />
-                <button type="button" class="btn-dark _border-radius " onclick="addr_search();">Ricerca</button>
-                <div id="results"><br><div class="address" title="Show Location and Coordinates" onclick="chooseAddr(40.8359336, 14.2487826);return false;">Napoli, Campania, Italia</div><div class="address" title="Show Location and Coordinates" onclick="chooseAddr(40.865913930801774, 14.270436479376116);return false;">Municipalità 3, Napoli, Campania, 80141, Italia</div></div>
+                    <div id="mapID"></div>
                 </div>
 
-              <div id="mapID">
-
+                <input type="text" name="lat" id="lat" value="" class="_ds-none" />
+                <input type="text" name="lon" id="lon" value="" class="_ds-none" />
+                <label for="quantity" class="text-black-50 font-weight-bold _mt10" style="margin-bottom: 0.5rem;">Privacy evento</label> <br />
+                <div class="form-check form-check-inline _mb5">
+                    <input class="form-check-input" name="privacy" type="radio" id="_pubblico" value="Pubblico" checked />
+                    <label class="form-check-label" for="_pubblico">Pubblico</label>
                 </div>
-          </div>
+                <div class="form-check form-check-inline" style="margin-bottom: 0.5rem;">
+                    <input class="form-check-input" name="privacy" type="radio" id="_privato" value="Privato" />
+                    <label class="form-check-label" for="_privato">Privato</label>
+                </div>
+                <br />
 
-          <input type="text" name="lat" id="lat" value="" class="_ds-none">
-          <input type="text" name="lon" id="lon" value="" class="_ds-none">
-          <label for="quantity" class="text-black-50 font-weight-bold _mt10" style="margin-bottom: 0.5rem">Privacy evento</label> <br>
-          <div class="form-check form-check-inline _mb5">
-          <input class="form-check-input" name="privacy" type="radio" id="_pubblico" value="Pubblico" checked/>
-          <label class="form-check-label" for="_pubblico">Pubblico</label>
+                <label for="quantity" class="text-black-50 font-weight-bold" style="margin-bottom: 0.5rem;">Max partecipanti</label> <br />
+                <input type="number" id="quantity" name="quantita" min="1" max="500" style="margin-bottom: 1rem;" required /> <br />
+                <label for="_preferenza" class="text-black-50 font-weight-bold" style="margin-top: 1rem;">Preferenze (opzionale)</label> <br />
+                <textarea class="form-control _mb5 _mt10" id="_preferenza" name="preferenze" placeholder="Descrivi, se presenti, le tue preferenze (Max. 500 caratteri)" maxlength="500" rows="3" style="margin-bottom: 0.5rem;"></textarea>
+                <label for="_corpo" class="text-black-50 font-weight-bold" style="margin-top: 1rem;">Descrizione</label> <br />
+                <textarea class="form-control _mb5 _mt10" id="_corpo" name="descrizione" placeholder="Descrivi il tuo evento (Max. 500 caratteri)" maxlength="500" rows="3" required></textarea>
+                <label for="_crea"></label>
+                <button type="submit" class="btn btn btn-dark _m10 _border-radius _mb5" id="_crea" style="width: 45%;">Crea</button> <br />
+            </form>
         </div>
-        <div class="form-check form-check-inline " style="margin-bottom: 0.5rem">
-          <input class="form-check-input" name="privacy" type="radio" id="_privato" value="Privato"/>
-          <label class="form-check-label" for="_privato" >Privato</label>
-        </div> <br/>
-
-
-          <label for="quantity" class="text-black-50 font-weight-bold" style="margin-bottom: 0.5rem">Max partecipanti</label> <br>
-          <input type="number" id="quantity" name="quantita" min="1" max="500" style="margin-bottom: 1rem" required> <br>
-          <label for="_preferenza" class="text-black-50 font-weight-bold" style="margin-top:  1rem">Preferenze (opzionale)</label> <br>
-          <textarea class="form-control _mb5 _mt10" id="_preferenza" name="preferenze" placeholder="Descrivi, se presenti, le tue preferenze (Max. 500 caratteri)" maxlength="500" rows="3" style="margin-bottom: 0.5rem"></textarea>
-          <label for="_corpo" class="text-black-50 font-weight-bold" style="margin-top: 1rem">Descrizione</label> <br>
-          <textarea class="form-control _mb5 _mt10" id="_corpo" name="descrizione"  placeholder="Descrivi il tuo evento (Max. 500 caratteri)" maxlength="500" rows="3" required></textarea>
-        <label for="_crea"></label>
-        <button type="submit" class="btn btn btn-dark _m10 _border-radius _mb5" id="_crea" style="width: 45%;">Crea</button> <br />
-      </form>
     </div>
-  </div>
 </div>
 {% else %}
 
 <div class="container mt-5 mb-5 col-12">
-  <div class="row">
-      <div class="col-8 offset-2 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center" style="z-index: 100">
-        <h4> Devi prima effettuare l'accesso! <br> Stai per essere indirizzato alla pagina di Login</h4>
-      </div>
-  </div>
+    <div class="row">
+        <div class="col-8 offset-2 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center" style="z-index: 100;">
+            <h4>
+                Devi prima effettuare l'accesso! <br />
+                Stai per essere indirizzato alla pagina di Login
+            </h4>
+        </div>
+    </div>
 </div>
 
-
 <script>
-  setTimeout(function (){
-    window.location.replace("/accedi")
-  },3000)
+    setTimeout(function () {
+        window.location.replace("/accedi");
+    }, 3000);
 </script>
-{% endif %}
-
-
-{% endblock %}
-
-{% block localJS %}
+{% endif %} {% endblock %} {% block localJS %}
 <script src="../static/Javascript/crea-evento.js"></script>
 {% endblock %}
-

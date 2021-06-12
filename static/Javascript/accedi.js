@@ -4,11 +4,9 @@ function removeRegistrazione() {
     tmp.remove();
 }
 
-
 // 1 == elimino il form login per fare spazio alla registrazione
 // 0 == elimino il form registrazione per fare spazio al login
 function registrati(IDnascondi, flag) {
-
     //Cambia anche l'elemento content di meta
     let elems = document.getElementById(IDnascondi);
     let tmp, _desc;
@@ -20,7 +18,6 @@ function registrati(IDnascondi, flag) {
         elems.classList.add("fadeOutRightBig");
         _desc = "Pagina di registrazione per NotMiss";
     } else if (parseInt(flag, 10) === 0) {
-
         elems.classList.remove("fadeInLeftBig");
         tmp = elems; //faccio questa assegnazione perché in questo modo alla  i-esima chiamata nextToInsert sarà l'elemento che è stato tolto alla i-1-esima chiamata
         elems.classList.add("fadeOutLeftBig");
@@ -36,36 +33,34 @@ function registrati(IDnascondi, flag) {
         elems.appendChild(nextToInsert);
         elems = document.getElementById(nextToInsert.id);
         //parseInt(flag, 10)
-        if ( parseInt(flag, 10) === 1 ) {
+        if (parseInt(flag, 10) === 1) {
             elems.classList.remove("fadeOutLeftBig");
             elems.classList.add("fadeInLeftBig");
         } else if (parseInt(flag, 10) === 0) {
-            elems.removeAttribute("display")
+            elems.removeAttribute("display");
             elems.classList.add("fadeInRightBig");
         }
         nextToInsert = tmp;
     }, 500);
 }
 
-function text_accedi_to_home(){
-    $('#change').html('<a href="/">Home</a>')
+function text_accedi_to_home() {
+    $("#change").html('<a href="/">Home</a>');
 }
 
 $(document).ready(function () {
-    removeRegistrazione()
-    text_accedi_to_home()
-})
-
-
-$("#_Registrazione").click(function (){
-    registrati('login',1)
+    removeRegistrazione();
+    text_accedi_to_home();
 });
 
-$("#_Login").click(function (){
-    registrati('registrazione',0)
+$("#_Registrazione").click(function () {
+    registrati("login", 1);
 });
 
+$("#_Login").click(function () {
+    registrati("registrazione", 0);
+});
 
 $("#textEmError").click(function () {
-    registrati('login',1)
-})
+    registrati("login", 1);
+});

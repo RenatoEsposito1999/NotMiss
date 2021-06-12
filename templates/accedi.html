@@ -1,108 +1,97 @@
-{% extends 'base2.html' %}
-{% block title %}
+{% extends 'base2.html' %} {% block title %}
 <title>NotMiss: Accedi</title>
-{% endblock %}
-
-{% block main %}
-
-{% if session['_id'] %}
+{% endblock %} {% block main %} {% if session['_id'] %}
 <script>
-  console.log("bho")
-  window.location.replace("/")
+    console.log("bho");
+    window.location.replace("/");
 </script>
 {% endif %}
 <!-- Login -->
 <div class="container mt-5 mb-5 col-12" id="padre">
-<div class="row" id="padre_login">
-    <div class="col-8 offset-2 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center _divAccedi fadeIn2" id="login">
-      <h1 style="margin-top: 20px;" class="text-center text-black-50">Login</h1>
-      <form id="formLog" action="/accedi" method="post">
-        {% if result == -1%}
-        <div id="_EmailError">
-          <p style="color: red; font-weight: bold">Email inesistente! Per creare un account clicca <span style="color: red; text-decoration: underline; cursor: pointer" id="textEmError" >qui</span></p>
+    <div class="row" id="padre_login">
+        <div class="col-8 offset-2 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center _divAccedi fadeIn2" id="login">
+            <h1 style="margin-top: 20px;" class="text-center text-black-50">Login</h1>
+            <form id="formLog" action="/accedi" method="post">
+                {% if result == -1%}
+                <div id="_EmailError">
+                    <p style="color: red; font-weight: bold;">Email inesistente! Per creare un account clicca <span style="color: red; text-decoration: underline; cursor: pointer;" id="textEmError">qui</span></p>
+                </div>
+                {% endif %} {% if result == -2%}
+                <div id="_PasswordLogError">
+                    <p style="color: red; font-weight: bold;">Password errata!</p>
+                </div>
+                {% endif %}
+                <div id="_ErrorLogin"></div>
+                <label for="_email"></label>
+                <input type="email" name="_email" class="form-control" id="_email" placeholder="Inserisci la tua email" autocomplete="on" autofocus required /> <br />
+                <label for="_password"></label>
+                <input type="password" name="_password" class="form-control" id="_password" placeholder="Inserisci la tua password" required /> <br />
+                <label for="_Accedi"></label>
+                <button type="submit" class="btn btn btn-dark _m10 _border-radius" id="_Accedi">Accedi</button> <br />
+                <hr />
+                <label for="_Registrazione"></label>
+                <button style="margin-bottom: 20px;" type="button" class="btn btn-outline-dark _m10 _border-radius" id="_Registrazione">Crea un account</button>
+            </form>
         </div>
-        {% endif %}
-        {% if result == -2%}
-        <div id="_PasswordLogError">
-          <p style="color: red; font-weight: bold">Password errata!</p>
-        </div>
-        {% endif %}
-        <div id="_ErrorLogin"></div>
-        <label for="_email"></label>
-        <input type="email" name="_email" class="form-control" id="_email" placeholder="Inserisci la tua email" autocomplete="on" autofocus required/> <br />
-        <label for="_password"></label>
-        <input type="password" name="_password" class="form-control" id="_password" placeholder="Inserisci la tua password" required/> <br />
-        <label for="_Accedi"></label>
-        <button type="submit" class="btn btn btn-dark _m10 _border-radius" id="_Accedi">Accedi</button> <br />
-        <hr/>
-        <label for="_Registrazione"></label>
-        <button style="margin-bottom: 20px;" type="button" class="btn btn-outline-dark _m10 _border-radius" id="_Registrazione">Crea un account</button>
-      </form>
-    </div>
 
-    <!-- Fine login  -->
+        <!-- Fine login  -->
 
-    <!-- Registrazione -->
-    <div class="col-8 offset-2 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center _divAccedi" id="registrazione">
-      <h1 style="margin-top: 20px;" class="text-center text-black-50">Registrati</h1>
-      <form id="formReg" action="/registrazione.py" method="POST">
-        {% if result == 1%}
-        <div id="_Error">
-          <p style="color: red; font-weight: bold">Email già esistente. Se hai gia un account effettua il <a href="/accedi" style="color: red; text-decoration: underline">Login</a>
+        <!-- Registrazione -->
+        <div class="col-8 offset-2 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center _divAccedi" id="registrazione">
+            <h1 style="margin-top: 20px;" class="text-center text-black-50">Registrati</h1>
+            <form id="formReg" action="/registrazione.py" method="POST">
+                {% if result == 1%}
+                <div id="_Error">
+                    <p style="color: red; font-weight: bold;">Email già esistente. Se hai gia un account effettua il <a href="/accedi" style="color: red; text-decoration: underline;">Login</a></p>
+                </div>
+
+                {% endif %} {% if result == 2 %}
+                <div id="_ErrorPassword">
+                    <p style="color: red; font-weight: bold;">Le password non sono uguali!</p>
+                </div>
+                {% endif %}
+                <label for="_nome"></label>
+                <input type="text" name="_nome" class="form-control form-inline" id="_nome" placeholder="Nome" autocomplete="on" autofocus required /> <br />
+                <label for="_cognome"></label>
+                <input type="text" class="form-control form-inline" name="_cognome" id="_cognome" placeholder="Cognome" autocomplete="on" required /> <br />
+                <label for="_regEmail"></label>
+                <input type="email" name="_regEmail" class="form-control" id="_regEmail" placeholder="Email" autocomplete="on" required /> <br />
+                <label for="_regPassword"></label>
+                <input type="password" name="_regPassword" class="form-control" id="_regPassword" placeholder="Password" required /> <br />
+                <label for="_repassword"></label>
+                <input type="password" class="form-control _mb5" name="_repassword" id="_repassword" placeholder="Ripeti password" required />
+                <p class="text-black-50">Data di nascita:</p>
+                <label for="_data"></label>
+                <input type="date" name="_data" id="_data" class="_mb5" required />
+                <p class="text-black-50">Sesso:</p>
+                <div class="form-check form-check-inline _mb5">
+                    <input class="form-check-input" name="sesso" type="radio" id="M" value="M" checked />
+                    <label class="form-check-label" for="M">M</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" name="sesso" type="radio" id="F" value="F" />
+                    <label class="form-check-label" for="F">F</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" name="sesso" type="radio" id="A" value="A" />
+                    <label class="form-check-label" for="A">Altro</label>
+                </div>
+                <br />
+                <label for="_Iscriviti"></label>
+                <button type="submit" class="btn btn btn-dark _m10 _border-radius _mb5" id="_Iscriviti" style="width: 45%;">Iscriviti</button> <br />
+                <hr />
+                <label for="_Login"></label>
+                <button style="margin-bottom: 20px;" type="button" class="btn btn-outline-dark _m10 _border-radius" id="_Login">Torna al login</button>
+            </form>
         </div>
-        {% endif %}
-        {% if result == 2 %}
-        <div id="_ErrorPassword">
-          <p style="color: red; font-weight: bold">Le password non sono uguali!</p>
-        </div>
-        {% endif %}
-        <label for="_nome"></label>
-        <input type="text" name="_nome" class="form-control form-inline" id="_nome" placeholder="Nome" autocomplete="on" autofocus required/> <br />
-        <label for="_cognome"></label>
-        <input type="text" class="form-control form-inline" name="_cognome" id="_cognome" placeholder="Cognome" autocomplete="on" required/> <br />
-        <label for="_regEmail"></label>
-        <input type="email" name="_regEmail" class="form-control" id="_regEmail" placeholder="Email" autocomplete="on" required/> <br />
-        <label for="_regPassword"></label>
-        <input type="password" name="_regPassword" class="form-control" id="_regPassword" placeholder="Password" required/> <br />
-        <label for="_repassword"></label>
-        <input type="password" class="form-control _mb5" name="_repassword" id="_repassword" placeholder="Ripeti password" required/>
-        <p class="text-black-50">Data di nascita:</p>
-        <label for="_data"></label>
-        <input type="date" name="_data" id="_data" class="_mb5" required/>
-        <p class="text-black-50">Sesso:</p>
-        <div class="form-check form-check-inline _mb5">
-          <input class="form-check-input" name="sesso" type="radio" id="M" value="M" checked/>
-          <label class="form-check-label" for="M">M</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" name="sesso" type="radio" id="F" value="F" />
-          <label class="form-check-label" for="F">F</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" name="sesso" type="radio" id="A" value="A" />
-          <label class="form-check-label" for="A">Altro</label>
-        </div>
-        <br/>
-        <label for="_Iscriviti"></label>
-        <button type="submit" class="btn btn btn-dark _m10 _border-radius _mb5" id="_Iscriviti" style="width: 45%;">Iscriviti</button> <br />
-        <hr />
-        <label for="_Login"></label>
-        <button style="margin-bottom: 20px;" type="button" class="btn btn-outline-dark _m10 _border-radius" id="_Login">Torna al login</button>
-      </form>
+        <!-- Fine registrazione -->
     </div>
-    <!-- Fine registrazione -->
-  </div>
 </div>
 
-{% endblock %}
-{% block localJS %}
+{% endblock %} {% block localJS %}
 <script src="../static/Javascript/accedi.js"></script>
-{% if result > 0  %}
+{% if result > 0 %}
 <script>
-  registrati('login',1)//chiamo la funzione per far apparire il modulo di registrazione
+    registrati("login", 1); //chiamo la funzione per far apparire il modulo di registrazione
 </script>
-{% endif %}
-
-{% endblock %}
-
-
+{% endif %} {% endblock %}

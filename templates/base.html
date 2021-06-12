@@ -1,148 +1,146 @@
 <!DOCTYPE html>
 <html lang="It">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="keywords" content="PWA,html5,CSS,Python,flask,JQuery,tecnologie web,TW6,Bootstrap" />
-    <meta name="author" content="Renato Esposito 0124001881" />
-    <meta name="author" content="Luca Rubino 0124001934" />
-    <meta name="description" content="PWA NotMiss per progetto TW6"/>
-    <meta name="theme-color" content="white"/>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="keywords" content="PWA,html5,CSS,Python,flask,JQuery,tecnologie web,TW6,Bootstrap" />
+        <meta name="author" content="Renato Esposito 0124001881" />
+        <meta name="author" content="Luca Rubino 0124001934" />
+        <meta name="description" content="PWA NotMiss per progetto TW6" />
+        <meta name="theme-color" content="white" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="manifest" href="../static/manifest.json">
+        <link rel="manifest" href="../static/manifest.json" />
 
-    <!--  favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="../static/IMG/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../static/IMG/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../static/IMG/favicons/favicon-16x16.png">
-    <link rel="mask-icon" href="../static/IMG/favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="../static/IMG/favicons/favicon.ico">
+        <!--  favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="../static/IMG/favicons/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="../static/IMG/favicons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="../static/IMG/favicons/favicon-16x16.png" />
+        <link rel="mask-icon" href="../static/IMG/favicons/safari-pinned-tab.svg" color="#5bbad5" />
+        <link rel="shortcut icon" href="../static/IMG/favicons/favicon.ico" />
 
+        <!--  File CSS -->
+        <link rel="stylesheet" href="../static/Style/bootstrap.css" />
+        <link rel="stylesheet" href="../static/Style/style.css" />
+        <link rel="stylesheet" href="../static/Style/mediaq.css" />
+        <link rel="stylesheet" href="../static/Style/animation.css" />
 
-    <!--  File CSS -->
-    <link rel="stylesheet" href="../static/Style/bootstrap.css" />
-    <link rel="stylesheet" href="../static/Style/style.css" />
-    <link rel="stylesheet" href="../static/Style/mediaq.css" />
-    <link rel="stylesheet" href="../static/Style/animation.css" />
+        <!--  File JS -->
+        <script src="../static/main.js"></script>
+        <script src="../static/Javascript/jquery-3.6.0.min.js"></script>
+        <script src="../static/Javascript/Global.js"></script>
+        <noscript>
+            <meta http-equiv="refresh" content="0; url=/no-script" />
+        </noscript>
 
-    <!--  File JS -->
-    <script src="../static/main.js"></script>
-    <script src="../static/Javascript/jquery-3.6.0.min.js"></script>
-    <script src="../static/Javascript/Global.js"></script>
-    <noscript>
-          <meta http-equiv="refresh" content="0; url=/no-script" />
-    </noscript>
+        {% block title %} {% endblock %}
+    </head>
+    <body class="fadeIn" style="">
+        <div id="coprente" class="">
+            <!--  Side Menu -->
+            <div class="_sidebar" style="display: none;" id="_sidebar">
+                <!-- Header side menu -->
+                <div class="bg-dark p-1">
+                    <div class="m3perc">
+                        <span id="linguaDefault">
+                            <img id="_imgLingua" src="../static/IMG/Icons/bandieraitalia.png" width="32px" height="32px" alt="lingua italiana" />
+                        </span>
+                        <a href="/accedi" style="margin-left: 3%;" id="_textAccedi">Accedi</a>
+                        <img src="../static/IMG/Icons/CloseButton128x128.png" width="24px" height="24px" class="float-right" id="_closeSB" alt="chiudi" />
+                    </div>
+                </div>
+                <!--  FIne Header side menu -->
 
-    {% block title %}
+                <!-- Conutenuto side menu -->
+                <div class="_elementiMenu text-left">
+                    <ul>
+                        <li>
+                            <span style="cursor: pointer;" class="m3perc" id="_Lingua"><img src="../static/IMG/Icons/bandierainglese.png" width="32px" height="32px" alt="English Logo" />English</span>
+                        </li>
+                        <li>
+                            <span class="m3perc"><a class="text-dark font-weight-normal" id="localita" href="/"></a></span>
+                        </li>
+                        <hr />
+                        <li>
+                            <span class="m3perc"><a class="text-dark font-weight-normal" href="/">Home</a></span>
+                        </li>
+                        <li>
+                            <span class="m3perc"><a class="text-dark font-weight-normal" href="/profilo">Profilo</a></span>
+                        </li>
+                        <li>
+                            <span class="m3perc"><a class="text-dark font-weight-normal" href="/aboutus">About NotMiss</a></span>
+                        </li>
+                        <li>
+                            <span class="m3perc"><a class="text-dark font-weight-normal" href="/contatti">Contattaci</a></span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- FIne contenuto side menu -->
+            </div>
+            <!-- Fine Side Menu -->
+        </div>
 
-    {% endblock %}
-</head>
-<body class="fadeIn" style="">
-<div id="coprente" class="">
-    <!--  Side Menu -->
-    <div class="_sidebar" style="display: none;" id="_sidebar">
-        <!-- Header side menu -->
-        <div class="bg-dark p-1">
-            <div class="m3perc">
-               <span id="linguaDefault">
-                   <img id="_imgLingua" src="../static/IMG/Icons/bandieraitalia.png" width="32px" height="32px"  alt="lingua italiana">
-               </span>
-                <a href="/accedi" style="margin-left: 3%" id="_textAccedi">Accedi</a>
-                <img src="../static/IMG/Icons/CloseButton128x128.png" width="24px" height="24px" class="float-right" id="_closeSB" alt="chiudi" />
+        <!-- Header -->
+        <div class="container bg-dark col-12 fadeIn">
+            <div class="row">
+                <div class="col-4 text-left _mt10 _BheaderSize">
+                    <img src="../static/IMG/Icons/buttonMenu128x128.png" width="32px" height="20px" id="_bMenu" alt="menu" style="z-index: 100;" />
+                </div>
+                <!-- LOGO -->
+                <div class="text-center col-4 mb-2">
+                    <a href="/"><img class="" src="../static/IMG/logo/logo256x256.png" width="104px" height="104px" alt="NotMiss Logo" id="_logo" /> </a>
+                </div>
+
+                <!-- Fine Logo -->
+                {% if session['_id'] %}
+                <div class="col-4 text-right _mt10 _BheaderSize"><a href="/profilo">{{ session['nome']}}</a> <a href="/logout" style="font-size: 15px; font-weight: normal;">(Log out)</a></div>
+                {% else %}
+                <div class="col-4 text-right _mt10 _BheaderSize">
+                    <div id="change"><a href="/accedi">Accedi</a></div>
+                </div>
+                {% endif%}
+            </div>
+            <!-- Fine Row -->
+        </div>
+
+        <!-- Fine header -->
+
+        <!-- CONTENUTO -->
+
+        {% block main %} {% endblock %}
+
+        <!-- Footer -->
+        <div class="container _footer col-12 bg-dark align-items-center mt-0">
+            <div class="row">
+                <div class="col-6 col-lg-4 offset-lg-2">
+                    <!-- _li_info attualmente non prevede regole CSS -->
+                    <ul class="_li_info">
+                        <li class="_list-title" id="RenatoE">Renato Esposito</li>
+                        <li class="_reSizeFooter">Studente - <a href="https://www.uniparthenope.it/">Università degli Studi di Napoli Parthenope</a></li>
+                        <li class="_reSizeFooter">Matricola: 0124001881</li>
+                        <li><a href="mailto:renato.esposito001@studenti.uniparthenope.it">Contatto mail</a></li>
+                        <li><a href="https://github.com/RenatoEsposito1999" target="_blank">GitHub</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-4">
+                    <ul class="_li_info">
+                        <li class="_list-title" id="LucaR">Luca Rubino</li>
+                        <li class="_reSizeFooter">Studente - <a href="https://www.uniparthenope.it/"> Università degli Studi di Napoli Parthenope</a></li>
+                        <li class="_reSizeFooter">Matricola: 0124001934</li>
+                        <li><a href="mailto:luca.rubino001@studenti.uniparthenope.it">Contatto mail</a></li>
+                        <li><a href="https://github.com/luruu" target="_blank">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-center text-white font-weight-bold mt-1 mb-1">
+                    Copyright 2021 © NotMiss TW6
+                </div>
             </div>
         </div>
-        <!--  FIne Header side menu -->
-
-
-        <!-- Conutenuto side menu -->
-        <div class="_elementiMenu text-left">
-            <ul>
-                <li><span style="cursor: pointer" class="m3perc " id="_Lingua"><img src="../static/IMG/Icons/bandierainglese.png" width="32px" height="32px" alt="English Logo">English</span></li>
-                <hr>
-                <li><span class="m3perc"><a  class="text-dark font-weight-normal" href="/">Home</a></span></li>
-                <li><span class="m3perc"><a  class="text-dark font-weight-normal" href="/profilo">Profilo</a></span></li>
-                <li><span class="m3perc"><a  class="text-dark font-weight-normal" href="/aboutus">About NotMiss</a></span></li>
-                <li><span class="m3perc"><a  class="text-dark font-weight-normal" href="/contatti">Contattaci</a></span></li>
-            </ul>
-        </div>
-        <!-- FIne contenuto side menu -->
-    </div>
-    <!-- Fine Side Menu -->
-</div>
-
-<!-- Header -->
-<div class="container bg-dark col-12 fadeIn">
-    <div class="row ">
-        <div class="col-4 text-left _mt10 _BheaderSize">
-            <img src="../static/IMG/Icons/buttonMenu128x128.png" width="32px" height="20px" id="_bMenu" alt="menu" style="z-index: 100;" />
-        </div>
-        <!-- LOGO -->
-        <div class="text-center col-4 mb-2">
-            <a href="/"><img class="" src="../static/IMG/logo/logo256x256.png" width="104px" height="104px" alt="NotMiss Logo" id="_logo" /> </a>
-        </div>
-
-    <!-- Fine Logo -->
-        {% if session['_id'] %}
-        <div class="col-4 text-right _mt10 _BheaderSize">
-            <a href="/profilo">{{ session['nome']}}</a> <a href="/logout" style="font-size:15px; font-weight: normal;">(Log out)</a>
-        </div>
-        {% else %}
-        <div class="col-4 text-right _mt10 _BheaderSize">
-           <div id="change"><a href="/accedi">Accedi</a></div>
-        </div>
-        {% endif%}
-
-    </div>
-    <!-- Fine Row -->
-
-</div>
-
-<!-- Fine header -->
-
-<!-- CONTENUTO -->
-
-
-{% block main %}
-
-{% endblock %}
-
-
-<!-- Footer -->
-<div class="container _footer col-12 bg-dark align-items-center mt-0">
-    <div class="row">
-        <div class="col-6 col-lg-4 offset-lg-2">
-            <!-- _li_info attualmente non prevede regole CSS -->
-            <ul class="_li_info">
-                <li class="_list-title" id="RenatoE">Renato Esposito</li>
-                <li class="_reSizeFooter">Studente - <a href="https://www.uniparthenope.it/">Università degli Studi di Napoli Parthenope</a></li>
-                <li class="_reSizeFooter">Matricola: 0124001881</li>
-                <li><a href="mailto:renato.esposito001@studenti.uniparthenope.it">Contatto mail</a></li>
-                <li><a href="https://github.com/RenatoEsposito1999" target="_blank">GitHub</a></li>
-            </ul>
-        </div>
-
-        <div class="col-6 col-lg-4">
-            <ul class="_li_info">
-                <li class="_list-title" id="LucaR">Luca Rubino</li>
-                <li class="_reSizeFooter">Studente - <a href="https://www.uniparthenope.it/"> Università degli Studi di Napoli Parthenope</a></li>
-                <li class="_reSizeFooter">Matricola: 0124001934</li>
-                <li><a href="mailto:luca.rubino001@studenti.uniparthenope.it">Contatto mail</a></li>
-                <li><a href="https://github.com/luruu" target="_blank">GitHub</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12 text-center text-white font-weight-bold mt-1 mb-1">
-            Copyright 2021 © NotMiss TW6
-        </div>
-    </div>
-</div>
-<!-- Fine Footer -->
-{% block localJS %}
-
-{% endblock %}
-
-</body>
+        <!-- Fine Footer -->
+        {% block localJS %} {% endblock %}
+    </body>
 </html>
