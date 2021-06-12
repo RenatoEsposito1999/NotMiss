@@ -86,6 +86,12 @@
     }
 }
 
+@media (width: 425px) and (height: 767px) {
+   ._divInfo{
+        top: 70%;
+    }
+}
+
 
 
 
