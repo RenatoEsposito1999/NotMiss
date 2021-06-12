@@ -37,7 +37,7 @@ NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato E
     <li> If you don't have mongoDB, follow <a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/"> this guide</a> to install it.</li>
     <br>
     </ol> 
-      <h2><img align="left" width="16" height="16" src="../main/static/IMG/dot.png">  ~How to run?</h2>
+      <h2> ~How to run?</h2>
   <ol> 
     <li> run mongoDB(the instructions depend on your OS). </li>
     <li> N.B: The flask command is installed by Flask, not your application; it must be told where to find your application in order to use it. The FLASK_APP environment variable is used to specify how to load the application so export your FLASK_APP environment variable: <code> $ export FLASK_APP=app</code></li>
@@ -45,7 +45,7 @@ NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato E
     <li> If you want if you already want a populated database, you can follow the procedure <i>"how to import the testing db"</i>
   </ol>
   <br>
-    <h2><img align="left" width="16" height="16" src="../main/static/IMG/dot.png"> ~how to import the testing db?</h2>
+    <h2> ~how to import the testing db?</h2>
     <ol> 
     <li>.</li>
     <li>. </li>
@@ -53,13 +53,11 @@ NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato E
     <li> Now you can test NotMiss</i>
   </ol>
   <br>
-        <h2><img align="left" width="16" height="16" src="../main/static/IMG/dot.png"> ~How to use?</h2>
+        <h2> ~How to use?</h2>
   <ol> 
     <li> ... </li>
      </ol>
      </br>
      </br>
-     <h2><img align="left" width="16" height="16" src="../main/static/IMG/dot.png">  Google Drive link of the project presentation slides:</h2>
-     <ul>
-     <li> coming soon.. </li>
-    </ol>
+     <h3><img align="left" width="16" height="10" src="../main/static/IMG/dot.png">  Google Drive link of the project presentation slides:</h3> coming soon.. 
+    
