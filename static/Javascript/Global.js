@@ -91,4 +91,15 @@ $(document).ready(function () {
     });
 
     $("#_Lingua").click(cambiaLingua);
+
+    $('#linguaDefault').click(function (){
+        alert('Traduzioni da inserire')
+    })
+
+    $('#_Lingua').click(function (){
+        alert('Traduzioni da inserire')
+    })
+
+
 });
+
