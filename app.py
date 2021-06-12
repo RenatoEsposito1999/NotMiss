@@ -15,15 +15,14 @@ app = Flask(__name__)
 app.secret_key = 'notmisskey'
 cors = CORS(app)
 
-#utenti.drop()
-#eventi.drop()
+
+#db.utenti.drop()
+#db.eventi.drop()
 
 
 
 
-@app.route('/leaflet')
-def leaflet():
-    return render_template('leaflet_test.html')
+
 
 @app.route('/')
 def index():

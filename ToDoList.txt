@@ -1,6 +1,0 @@
-Per serializzare le query e quindi renderle jason vedi:
-https://stackoverflow.com/questions/23024356/serializing-mongodb-find-return-into-non-anonymous-json-array-using-pymongo
-potrebbe servire perchè potremmo dover fare delle cose con JQuery
-tipo sostituire delle cose nelle pagine etc.
-
-SOSTIUIRE LINGUA INGLESE CON LOCALITA: MIALOCALITÀ

@@ -53,7 +53,7 @@ function loadEventi(privacy){
             queryResult = result
             for (let i = result.length - 1; i >= 0 ; i--) {
                let obj = result[i]
-                let newDiv = '<!-- Inizio Post --> <div class="container mt-2 mb-5"> <div class="postContainer col-12"> <div class="row bg-dark" style="border-radius: 5px 5px 0px 0px"> <div class="col-12 text-center text-white"> <h2> <span class="nome"></span></h2> </div> </div> <div class="row text-center"> <div class="col-4"><p class=" nomeCreatore ml-2"></p></div> <div class="col-4"></div> <div class="col-4"><p class="tipologia"></p></div> </div> <div class="row"></div> <div class="row"> <div class="col-2"> <p style="text-align: center"> <img class="_id mostraAltro" src="../static/IMG/Icons/buttonInfo256x256.png" width="32px" height="32px" alt="info" style="cursor: pointer" > </p> </div> <div class="col-8 text-center"> <p class="dataI text-center"></p> </div> <div class="col-2 " style="color: dodgerblue; font-weight: normal"> <p style="text-align: center"> <img src="../static/IMG/Icons/addButton256x256.png" alt="Partecipa" width="32px" height="32px" style="cursor: pointer" class="_id"> </p> </div> </div> </div> </div> <!-- fine post -->'
+                let newDiv = '<!-- Inizio Post --> <div class="container mt-2 mb-5"> <div class="postContainer col-12"> <div class="row bg-dark" style="border-radius: 5px 5px 0px 0px"> <div class="col-12 text-center text-white"> <h2> <span class="nome"></span></h2> </div> </div> <div class="row text-center"> <div class="col-4"><p class=" nomeCreatore ml-2"></p></div> <div class="col"></div> <div class="col"><p class="tipologia"></p></div> </div> <div class="row"></div> <div class="row"> <div class="col-2"> <p style="text-align: center"> <img class="_id mostraAltro" src="../static/IMG/Icons/buttonInfo.png" width="32px" height="32px" alt="info" style="cursor: pointer" > </p> </div> <div class="col-8 text-center"> <p class="dataI text-center"></p> </div> <div class="col-2 " style="color: dodgerblue; font-weight: normal"> <p style="text-align: center"> <img src="../static/IMG/Icons/addButton.png" alt="Partecipa" width="32px" height="32px" style="cursor: pointer" class="_id"> </p> </div> </div> </div> </div> <!-- fine post -->'
                 $("#contents").append(newDiv)
                 $("._id").attr('class', "_"+obj['_id'])
                 array.push("_" + obj['_id'])
@@ -87,9 +87,9 @@ function newDivInfo(indice) {
     let obj
     for (let i = 0; i < queryResult.length; i++) {
         obj = queryResult[i]
-        if (obj['_id'] == indice){
-            //trovato
-    let newDiv = '<!-- Inizio info post --> <div class="container _divInfo" id="_divInfo"> <div class="postContainer col-12"> <div class="row bg-dark" style="border-radius: 5px 5px 0px 0px;"> <div class="col-6 offset-3 text-center text-white"> <h2><span class="nome" style="font-size: "></span></h2> </div> <div class="col-2 offset-1 text-right"><img src="../static/IMG/Icons/CloseButton128x128.png" width="24px" height="24px" id="_close2" alt="chiudi" style="margin: 5px;" /></div> </div> <div class="row text-center">  <div class="col-12 text-center"><p class="quantita">Max Partecipanti:</p></div> </div> <div class="row"> <div class="col-6 text-center"><p class="text-center dataI">Inizio: 111111-11-11T11:22</p></div> <div class="col-6 text-center"><p class="text-center dataF">Fine: 111111-11-11T11:22</p></div> </div> <div class="row text-center"> <div class="col-6"> <label for="preferenze" class="font-weight-bold">Preferenze</label> <br /> <textarea class="preferenze ml-2 text-area _noresize" disabled rows="8"></textarea> </div> <div class="col-6"> <label for="descrizione2" class="font-weight-bold">Descrizione</label> <br /> <textarea class="descrizione text-area ml-2 _noresize" disabled rows="8"></textarea> </div> </div> <div id="map"></div> <div class="row"> <div class="col-12"> <p style="text-align: right;"><img src="../static/IMG/Icons/addButton256x256.png" alt="Partecipa" width="32px" height="32px" style="margin: 5px; cursor: pointer;" class="_id" /></p> </div> </div> </div> </div> <!-- Fine info post --> '
+        if (obj['_id'] == indice){//trovato
+
+    let newDiv = '<!-- Inizio info post --> <div class="container _divInfo" id="_divInfo"> <div class="postContainer col-12"> <div class="row bg-dark" style="border-radius: 5px 5px 0px 0px;"> <div class="col-6 offset-3 text-center text-white"> <h2><span class="nome" style="font-size: "></span></h2> </div> <div class="col-2 offset-1 text-right"><img src="../static/IMG/Icons/CloseButton128x128.png" width="24px" height="24px" id="_close2" alt="chiudi" style="margin: 5px;" /></div> </div> <div class="row text-center">  <div class="col-12 text-center"><p class="quantita">Max Partecipanti:</p></div> </div> <div class="row"> <div class="col-6 text-center"><p class="text-center dataI">Inizio: 111111-11-11T11:22</p></div> <div class="col-6 text-center"><p class="text-center dataF">Fine: 111111-11-11T11:22</p></div> </div> <div class="row text-center"> <div class="col"> <label for="preferenze" class="font-weight-bold">Preferenze</label> <br /> <textarea class="preferenze ml-2 text-area _noresize" disabled rows="8"></textarea> </div> <div class="col "> <label for="descrizione2" class="font-weight-bold">Descrizione</label> <br /> <textarea class="descrizione text-area ml-2 _noresize" disabled rows="8"></textarea> </div> </div> <div id="map"></div> <div class="row"> <div class="col-12"> <p style="text-align: right;"><img src="../static/IMG/Icons/addButton.png" alt="Partecipa" width="32px" height="32px" style="margin: 5px; cursor: pointer;" class="_id" /></p> </div> </div> </div> </div> <!-- Fine info post --> '
             $("#infocontents").append(newDiv)
             $("._id").attr('class', "_"+obj['_id'])
             $(".nome").attr("class", obj['nome']).text(obj['nome'])
@@ -183,7 +183,7 @@ $(document).ready(function (){
                 //ho trovato l'elemento cliccato
                 indice = array[i]
                 //inserisco le informazioni nel div info (escludo il carattere di pos 0 che è il _)
-                if ($(e.target).attr('src') === '../static/IMG/Icons/addButton256x256.png'){
+                if ($(e.target).attr('src') === '../static/IMG/Icons/addButton.png'){
                 addParticipant(indice.charAt(1))
                 }
                 else {
@@ -198,14 +198,6 @@ $(document).ready(function (){
     $(document).click(function (e){
         if(e.target.id === 'copri' || e.target.id === '_close2')
             close2()
-        /*if ($(e.target).attr('class') ==='addButton') {
-            if (typeof sessionID == 'undefined') {
-                window.location.replace('/accedi')
-            }
-            else{
-                addParticipant()
-            }
-        } */
 
 
     })
