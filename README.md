@@ -28,7 +28,7 @@ NotMiss is a <strong><a href=""https://en.wikipedia.org/wiki/Progressive_web_app
     <!-- <li> if you don't have pip, install pip: <code> sudo apt install python3-pip </code> -->
     <li> activate the corresponding environment: <code>$ . venv/bin/activate</code>
     <li> Go to project folder and install requirements by requirements.txt file: <code>$ pip install -r  requirements.txt </code> 
-    <li> Now configure the python interpreter in your IDE. </li>
+    <li> Make sure the python interpreter is configured correctly. </li>
     <li> If you don't have mongoDB, follow <a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/"> this guide</a> to install it.</li>
   <li>(linux only) you can start mongoDB with the command: <code>$ sudo systemctl start mongod</code>
     <br> If that doesn't work, run the following commands: 
