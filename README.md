@@ -3,7 +3,7 @@
 NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato Esposito</b> and <b>Luca Rubino</b> for a university project of <a href="https://www.uniparthenope.it/ugov/degreecourse/43358"><i><b>Web Technologies</i>(TW6)</b></a> of the <b><i><a href="https://www.uniparthenope.it/">Parthenope University of Naples</a></i><b>.
   
 <br><br>
-<h3><i>~Goals</i></h3>
+<h3><i>Goals</i></h3>
 
 ◉ The idea is to offer a platform for the management and organization of events.
 
@@ -14,7 +14,7 @@ NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato E
 ◉ NotMiss aims to be a PWA entirely dedicated to the concept of a 360 ° event.
 
 
-<h3><i>~Functionality</i></h3>
+<h3><i>Functionality</i></h3>
 
 <h4>The NotMiss PWA offers the possibily:</h4>
 
