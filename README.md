@@ -60,7 +60,7 @@ NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato E
     <li> (If you need to export NotMissDB for some reason, command is here: <code> sudo mongodump --host localhost --port 27017 --db NotMissDB</code>)</li>
   </ol>
   <br>
-        <h2> ~How to useNotMiss?</h2>
+        <h2> ~How to use NotMiss?</h2>
   <ol> 
    <li> <code> $ flask run</code> and <code> $ flask run -h 0.0.0.0</code> commands return the IP address and port to connect to access the PWA.</li>
     <li> From the main interface you can access the login / registration page. </li>
