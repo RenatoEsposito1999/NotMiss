@@ -3,7 +3,7 @@
 NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato Esposito</b> and <b>Luca Rubino</b> for a university project of <a href="https://www.uniparthenope.it/ugov/degreecourse/43358"><i><b>Web Technologies</i>(TW6)</b></a> of the <b><i><a href="https://www.uniparthenope.it/">Parthenope University of Naples</a></i><b>.
   
 <br><br>
-<h3><i>Goals</i></h3>
+<h3><i>~Goals</i></h3>
 
 ◉ The idea is to offer a platform for the management and organization of events.
 
@@ -14,7 +14,7 @@ NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato E
 ◉ NotMiss aims to be a PWA entirely dedicated to the concept of a 360 ° event.
 
 
-<h3><i>Functionality</i></h3>
+<h3><i>~Functionality</i></h3>
 
 <h4>The NotMiss PWA offers the possibily:</h4>
 
@@ -25,9 +25,9 @@ NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato E
 ◉ to make the events public in a bulletin board visible to all.
   <br>
   
+  <br><br>
   
-  
-  <h2> How to set up </h2>
+  <h2> ~How to set up </h2>
   <ol> 
     <li> Create virtual environment folder (by terminal): <code>python3 -m venv venv</code></li>
     <!-- <li> if you don't have pip, install pip: <code> sudo apt install python3-pip </code> -->
@@ -37,7 +37,7 @@ NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato E
     <li> If you don't have mongoDB, follow <a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/"> this guide</a> to install it.</li>
     <br>
     </ol> 
-      <h2> How to use</h2>
+      <h2> ~How to use</h2>
   <ol> 
     <li> The flask command is installed by Flask, not your application; it must be told where to find your application in order to use it. The FLASK_APP environment variable is used to specify how to load the application: <code> $ export FLASK_APP=hello</code></li>
     <li> Run flask: <code> $ flask run</code> </li>
