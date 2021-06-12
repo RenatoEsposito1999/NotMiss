@@ -23,14 +23,6 @@ function querySelector(ele1, ele2) {
     $(ele2).removeClass("_selected");
 }
 
-$("#_priv").click(function () {
-    querySelector("#_priv", "#_pub");
-});
-
-$("#_pub").click(function () {
-    querySelector("#_pub", "#_priv");
-});
-
 $("#_loginrequired").click(function () {
     window.location.replace("/accedi");
 });
@@ -164,7 +156,7 @@ function addParticipant(indice) {
                 if (result === "1") {
                     window.location.replace("/added");
                 } else if (result === "0") {
-                    alert("Sei già stato inserito in questo evento");
+                    alert("Sei già iscritto a questo evento");
                 } else {
                     alert("È stato raggiunto il massimo numero di partecipanti.");
                 }
@@ -193,6 +185,15 @@ $(document).ready(function () {
 
     //cerco la classe dell'elemento cliccato nell'array che contiene tutti gli id dei post, se lo trovo allora apro il div con maggiori info, inserendo tutti i dettagli gia contenuti in obj.
     $(document).click(function (e) {
+
+        if(e.target.id==="_priv"){
+            querySelector("#_priv", "#_pub");
+        }
+        else if (e.target.id==="_pub"){
+            querySelector("#_pub", "#_priv");
+        }
+
+
         if (e.target.id === "copri" || e.target.id === "_close2") close2();
         let indice;
         let classList = e.target.className;
@@ -205,11 +206,10 @@ $(document).ready(function () {
                     addParticipant(indice.charAt(1));
                 } else if($(e.target).attr("src") === "../static/IMG/Icons/ButtonInfo.png") {
                     nclick = nclick + 1
-                    console.log("Sono nell'esle brutto perché ho clicclato numero: " + nclick)
+                    console.log("Sono nell'esle brutto perché ho cliccato n volte: " + nclick)
                     newDivInfo(indice.charAt(1));
                 }
             }
         }
     });
-
 });
