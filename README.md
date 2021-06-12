@@ -52,7 +52,7 @@ NotMiss is a <strong>PWA (Progressive Web App)</strong> conceived by <b>Renato E
     <li> If you want if you already want a populated database, you can follow the procedure <i>"how to import the testing db"</i>
   </ol>
   <br>
-    <h2> ~how to import the testing db? (Linux only)</h2>
+    <h2> ~How to import the testing db? (Linux only)</h2>
     <ol> 
     <li>If your operating system is not linux, search on google "how to import a db in mongodb in X" (X = your OS)</li>
     <li>Else: run the command: <code> sudo mongorestore -d NotMissDB <NotmissDB_path></code></li>
