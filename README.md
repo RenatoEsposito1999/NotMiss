@@ -63,9 +63,13 @@ NotMiss is a <strong><a href=""https://en.wikipedia.org/wiki/Progressive_web_app
      </ol>
      </br>
      </br>
-     <h2> Google Drive link of the project presentation:</h2> 
+     <h2> Google Drive link of the project presentation [Italians version]:</h2> 
      <ul> 
-    <li>  <a href="https://drive.google.com/file/d/1_el__Wl7glptTIJAdWotckHus3mX1XGR/view?usp=sharing"> NotMiss Presentation</li></a> [USE PowerPoint to see the animations!]
+    <li>  <a href="https://studentiuniparthenope-my.sharepoint.com/:p:/g/personal/luca_rubino001_studenti_uniparthenope_it/ETFZzIFPZ_FGgHYJqviHdpgBLRSeSpzQpdWdr-VPYR7FEQ?e=AsBrQA"> [PowerPoint] NotMiss Presentation</li></a>
+    <li>  <a href="https://drive.google.com/file/d/1_el__Wl7glptTIJAdWotckHus3mX1XGR/view?usp=sharing"> [GOOGLE DRIVE] NotMiss Presentation</li></a>
+    <li>N.B: animations don't work with Google Drive!</li>
+    
+    
      </ul>
     
     
