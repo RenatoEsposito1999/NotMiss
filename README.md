@@ -65,7 +65,7 @@ NotMiss is a <strong><a href=""https://en.wikipedia.org/wiki/Progressive_web_app
      </br>
      <h2> Google Drive link of the project presentation:</h2> 
      <ul> 
-    <li>  <a href="https://drive.google.com/file/d/1hcCSI1GiDnyg1SejmHoymXjTlFWBOEEN/view"> NotMiss Presentation [25% COMPLETE]  </li>
+    <li>  <a href="https://drive.google.com/file/d/1_el__Wl7glptTIJAdWotckHus3mX1XGR/view?usp=sharing"> NotMiss Presentation</li>
      </ul>
     
     
