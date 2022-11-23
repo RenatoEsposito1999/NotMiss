@@ -69,3 +69,5 @@ NotMiss is a <strong><a href=""https://en.wikipedia.org/wiki/Progressive_web_app
     <li>  <a href="https://drive.google.com/file/d/1_el__Wl7glptTIJAdWotckHus3mX1XGR/view?usp=sharing"> [GOOGLE DRIVE] NotMiss Presentation</a></li>
     <li>N.B: animations don't work with Google Drive!</li>
     
+<h2>Collaborator</h2>
+<a href="https://github.com/Luruu">Luca Rubino</a>
