@@ -17,7 +17,7 @@ NotMiss is a <strong><a href=""https://en.wikipedia.org/wiki/Progressive_web_app
 
 - to make the events public in a bulletin board visible to all.
 
-### PWA home page (of the logged-in user) in desktop format and in smartphone format
+### PWA home page in desktop frame and in smartphone frame
 <img align="left" src="desktopmode.png"> <img align="center" src="phonemode.jpg">
 
 
