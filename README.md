@@ -2,26 +2,31 @@
 <img align="left" src="../main/static/IMG/logo/logo256x256.png" width="164" height="164"> <h3>~What is NotMiss?</h3>
 NotMiss is a <strong><a href=""https://en.wikipedia.org/wiki/Progressive_web_application> PWA(Progressive Web App)</a></strong> conceived by <b>Renato Esposito</b> and <b>Luca Rubino</b>. 
 <br>It is a project of <a href="https://www.uniparthenope.it/ugov/degreecourse/43358"><i><b>Web Technologies</i>(TW6)</b></a> (course of the <b><i><a href="https://www.uniparthenope.it/">Parthenope University of Naples</a></i></strong>).
-  
+
 <br><br>
-<h3><i>Goals</i></h3>
+### Idea
+- **The idea is to create a platform that allows the management and organization of user events**.
 
-◉ The idea is to offer a platform for the management and organization of events.
-
-◉ NotMiss aims to be a PWA entirely dedicated to the concept of a 360 ° event.
-
-<h3><i>Functionality</i></h3>
+### features implemented
 
 <h4>The NotMiss PWA offers the possibily:</h4>
 
-◉ to create events with extensive customization.
+-  to create events with customizations.
   
-◉ to make the events private in a bulletin board visible to all NotMiss users.
+- to make the events private in a bulletin board visible to all NotMiss users.
 
-◉ to make the events public in a bulletin board visible to all.
-  <br>
-  <br><br>
-  
+- to make the events public in a bulletin board visible to all.
+
+### PWA home page (of the logged-in user) in desktop format and in smartphone format
+<img align="left" src="desktopmode.png"> <img align="center" src="phonemode.jpg">
+
+
+
+https://user-images.githubusercontent.com/31493347/205743862-e8c57ffa-cd3c-43e2-a83e-903ad69d181f.mp4
+
+
+
+<h1> Guide </h1>
   <h2> ~How to set up NotMiss?</h2>
   <ol> 
     <li> Create virtual environment folder(by terminal): <code>$ python3 -m venv venv</code></li>
